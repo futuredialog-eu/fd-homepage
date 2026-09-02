@@ -1,0 +1,55 @@
+---
+import { getContent, localizePath, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { blogSection, ui } = getContent(locale);
+---
+
+<section class="ui-color-section">
+  <div class="wrapper latest-news-section">
+    <div class="row center-xs">
+      <h2 class="ui-title col-xs-12">{blogSection.title}</h2>
+      <a class="ui-read-me read-me" href={localizePath(blogSection.readMoreHref, locale)}>
+        {ui.readMore}
+      </a>
+    </div>
+    <div class="row news-container">
+      {
+        blogSection.posts.map((post) => {
+          const href = localizePath(post.href, locale);
+          return (
+            <article
+              class="ui-article col-xs-12 col-sm-6 col-lg-4"
+              itemscope
+              itemtype="http://schema.org/Article"
+            >
+              <a href={href} itemprop="url" class="news-images">
+                <img src={post.image} alt={post.title} />
+              </a>
+              <div class="info">
+                {post.categories.map((category) => (
+                  <a class="category" href={localizePath(category.href, locale)}>
+                    {category.label}&nbsp;
+                  </a>
+                ))}
+                <div class="time-for-read">{post.readingTime}</div>
+              </div>
+              <h3 class="title" itemprop="headline">
+                <a href={href}>{post.title}</a>
+              </h3>
+              <p class="date">
+                <time datetime={post.dateTime} itemprop="datePublished">
+                  {post.date}
+                </time>
+              </p>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,106 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Modals from '../components/Modals.astro';
+import { site } from '../data/site';
+import { getContent, localizePath, locales, ogLocales, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  /** Current path with the locale prefix stripped, e.g. `/contacts/`. */
+  path?: string;
+  title?: string;
+  description?: string;
+  bodyClass?: string;
+}
+
+const { locale, path = '/', bodyClass = '' } = Astro.props;
+const { meta } = getContent(locale);
+const title = Astro.props.title ?? meta.title;
+const description = Astro.props.description ?? meta.description;
+
+const canonical = new URL(localizePath(path, locale), site.url).href;
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${site.url}/#website`,
+  url: `${site.url}/`,
+  name: site.name,
+  inLanguage: locale,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${site.url}/?s={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${site.url}/#organization`,
+  url: `${site.url}/`,
+  sameAs: [],
+  name: site.organization,
+  logo: site.logo,
+};
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href="/favicons/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/favicons/favicon-32x32.png" type="image/png" />
+    <link rel="icon" sizes="512x512" href="/favicons/favicon-512x512.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+
+    {
+      locales.map((code) => (
+        <link
+          rel="alternate"
+          hreflang={code}
+          href={new URL(localizePath(path, code), site.url).href}
+        />
+      ))
+    }
+
+    <meta property="og:locale" content={ogLocales[locale]} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="stylesheet" href="/theme/style.css" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} is:inline />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />
+  </head>
+  <body class:list={['page-wrapper', 'push-container', bodyClass]}>
+    <Header locale={locale} path={path} />
+    <div class="content-wrapper push-container">
+      <main>
+        <slot />
+      </main>
+      <Footer locale={locale} path={path} />
+      <Modals locale={locale} />
+    </div>
+    <script is:inline src="/theme/js/main.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { localizePath, type Locale } from '../i18n';
+import type { NavItem } from '../i18n/types';
+
+interface Props {
+  locale: Locale;
+  items: NavItem[];
+  path?: string;
+  class?: string;
+}
+
+const { locale, items, path = '/', class: className } = Astro.props;
+---
+
+<ul class:list={['ui-navigation', 'navigation', className]}>
+  {
+    items.map((item) => {
+      const href = item.external ? item.href : localizePath(item.href, locale);
+      const current = !item.external && href === localizePath(path, locale);
+      return (
+        <li class:list={['menu-item', { 'current-menu-item': current }]}>
+          <a
+            href={href}
+            target={item.external ? '_blank' : undefined}
+            aria-current={current ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      );
+    })
+  }
+  <LanguageSwitcher locale={locale} path={path} />
+</ul>

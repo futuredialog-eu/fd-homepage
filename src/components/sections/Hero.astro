@@ -1,0 +1,31 @@
+---
+import { contact } from '../../data/site';
+import { getContent, localizePath, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { hero, ui } = getContent(locale);
+---
+
+<section class="one-scroll">
+  <div class="wrapper">
+    <div class="row engagement-section">
+      <div class="col-xs-12 col-sm-5 col-md-4 section-info">
+        <h1 class="ui-title title">{hero.title}</h1>
+        <div class="ui-description description">{hero.description}</div>
+        <a
+          href={localizePath(contact.demoPath, locale)}
+          class="ui-button ui-button-shadow nav-button fd-meet-button"
+        >
+          {ui.bookDemo}
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-7 col-md-5 images-container">
+        <img class="middle" src={hero.image} alt={hero.imageAlt} />
+      </div>
+    </div>
+  </div>
+</section>

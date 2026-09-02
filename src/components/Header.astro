@@ -1,0 +1,57 @@
+---
+import Navigation from './Navigation.astro';
+import SvgIcon from './SvgIcon.astro';
+import { contact, social } from '../data/site';
+import { getContent, localizePath, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  path?: string;
+}
+
+const { locale, path = '/' } = Astro.props;
+const { navigation, ui } = getContent(locale);
+---
+
+<header class="container-fluid push-container dynamic">
+  <div class="row between-xs middle-xs header">
+    <a class="logo" href={localizePath('/', locale)}>
+      <img src="/theme/images/icons/logo.svg" alt="Logo" />
+    </a>
+    <nav>
+      <div class="nav-container">
+        <a href="#" class="close-button">
+          <SvgIcon name="close" />
+        </a>
+        <Navigation locale={locale} items={navigation} path={path} class="inline-list" />
+        <div class="header-contact">
+          <ul class="block-list header-address">
+            <li><a class="mail" href={`mailto:${contact.email}`}>{contact.email}</a></li>
+            <li><a href={contact.phoneHref}>{contact.phone}</a></li>
+            <li><a target="blank" href={contact.addressHref}>{contact.address}</a></li>
+          </ul>
+          <ul class="inline-list header-social">
+            {
+              social.map((item) => (
+                <li>
+                  <a href={item.href}>
+                    <SvgIcon name={item.icon} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <a
+          href={localizePath(contact.demoPath, locale)}
+          class="ui-button ui-button-shadow nav-button fd-meet-button"
+        >
+          {ui.bookDemo}
+        </a>
+      </div>
+      <a class="burger-button" href="#">
+        <SvgIcon name="burger" />
+      </a>
+    </nav>
+  </div>
+</header>

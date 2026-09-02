@@ -1,0 +1,93 @@
+---
+import Navigation from './Navigation.astro';
+import SvgIcon from './SvgIcon.astro';
+import { contact, footer, site, social } from '../data/site';
+import { getContent, localizePath, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  path?: string;
+}
+
+const { locale, path = '/' } = Astro.props;
+const { navigation, policyLinks, ui } = getContent(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="ui-color-section">
+  <div class="wrapper">
+    <div class="row center-xs start-sm">
+      <div class="col-xs-12 col-md-3 footer-copyright">
+        <img src="/theme/images/icons/logo.svg" alt="Logo" />
+        <small>
+          © {year} {site.organization}. {ui.copyright}
+          <br />
+          <a href={footer.easHref}>
+            <img src={footer.easImage} alt="EAS" />
+          </a>
+        </small>
+      </div>
+      <div class="col-xs-12 col-md-2 footer-menu">
+        <nav>
+          <div class="nav-container">
+            <Navigation locale={locale} items={navigation} path={path} class="block-list" />
+          </div>
+        </nav>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 footer-contact">
+        <ul class="block-list footer-address">
+          <li><a class="mail" href={`mailto:${contact.email}`}>{contact.email}</a></li>
+          <li><a href={contact.phoneHref}>{contact.phone}</a></li>
+          <li><a target="blank" href={contact.addressHref}>{contact.address}</a></li>
+        </ul>
+        <ul class="inline-list footer-social">
+          {
+            social.map((item) => (
+              <li>
+                <a href={item.href}>
+                  <SvgIcon name={item.icon} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 footer-subscribe">
+        <form method="post" action="#">
+          <div class="title">{ui.subscribeTitle}</div>
+          <div class="form-field">
+            <div class="form-fields">
+              <input
+                class="form-control"
+                id="email"
+                type="email"
+                placeholder={ui.subscribePlaceholder}
+                name="EMAIL"
+                required
+              />
+              <button type="submit">
+                {ui.subscribeButton}
+                <SvgIcon name="subscribe" />
+              </button>
+            </div>
+          </div>
+        </form>
+        <ul class="inline-list ui-navigation policy-navigation">
+          {
+            policyLinks.map((link) => (
+              <li>
+                <a
+                  href={link.modal ? '#' : localizePath(link.href, locale)}
+                  target={link.target}
+                  data-remodal-target={link.modal}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

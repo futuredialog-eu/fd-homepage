@@ -1,0 +1,26 @@
+---
+import { getContent, type Locale } from '../i18n';
+import privacy from '../legal/privacy.html?raw';
+import terms from '../legal/terms.html?raw';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { policyLinks } = getContent(locale);
+
+const bodies: Record<string, string> = { terms, policy: privacy };
+const modals = policyLinks
+  .filter((link) => link.modal)
+  .map((link) => ({ id: link.modal!, content: bodies[link.modal!] }));
+---
+
+{
+  modals.map((modal) => (
+    <div class="remodal" data-remodal-id={modal.id}>
+      <button class="remodal-close" data-remodal-action="close"></button>
+      <div class="modal-content" set:html={modal.content} />
+    </div>
+  ))
+}

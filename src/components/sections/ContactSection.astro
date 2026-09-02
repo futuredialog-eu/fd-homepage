@@ -1,0 +1,58 @@
+---
+import { contact } from '../../data/site';
+import { getContent, localizePath, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { contactSection, ui } = getContent(locale);
+---
+
+<section class="wrapper contact-section">
+  <div class="row center-xs">
+    <div class="col-lg-4">
+      <h2 class="ui-title">{contactSection.title}</h2>
+    </div>
+  </div>
+  <hr class="ui-hr" />
+  <div class="row center-xs ui-quote-container">
+    <div class="col-lg-8">
+      <div class="quote">{contactSection.quote}<br /><br /></div>
+      <a
+        href={localizePath(contact.demoPath, locale)}
+        class="ui-button ui-button-shadow nav-button fd-meet-button"
+      >
+        {ui.bookDemo}
+      </a>
+    </div>
+  </div>
+  <div class="row center-sm no-wrap contact-users">
+    {
+      contactSection.people.map((person) => (
+        <div
+          itemscope
+          itemtype="http://schema.org/Person"
+          class="col-xs-12 col-sm-6 col-md-4 col-lg ui-contact-user"
+        >
+          <div class="contact-image">
+            <img itemprop="image" src={person.image} alt={person.name} />
+          </div>
+          <div itemprop="name" class="name">
+            {person.name}
+          </div>
+          <div itemprop="jobTitle" class="position">
+            {person.position}
+          </div>
+          <a itemprop="telephone" href={person.phoneHref}>
+            {person.phone}
+          </a>
+          <a itemprop="email" href={`mailto:${person.email}`}>
+            {person.email}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</section>

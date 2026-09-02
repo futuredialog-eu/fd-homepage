@@ -1,0 +1,40 @@
+---
+import SvgIcon from '../SvgIcon.astro';
+import { getContent, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { howSection } = getContent(locale);
+---
+
+<section class="wrapper how-section">
+  <div class="row center-sm">
+    <div class="col-xs-12 col-lg-6">
+      <h2 class="ui-title">{howSection.title}</h2>
+      <div class="ui-description description">{howSection.description}</div>
+    </div>
+  </div>
+  <div class="row center-lg how-container">
+    {
+      howSection.items.map((item) => (
+        <div class="col-xs-12 col-sm-6 how-item">
+          <div class="icon">
+            <SvgIcon name={item.icon} />
+          </div>
+          <div>
+            <div class="title">{item.title}</div>
+            <div class="sub-title">{item.subTitle}</div>
+            <ul class="list">
+              {item.list.map((entry) => (
+                <li>{entry}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

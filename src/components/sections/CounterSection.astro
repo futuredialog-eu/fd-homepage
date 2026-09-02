@@ -1,0 +1,23 @@
+---
+import { getContent, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { counters } = getContent(locale);
+---
+
+<section class="wrapper counter-section">
+  <div class="row counter-container">
+    {
+      counters.map((counter) => (
+        <div class="col">
+          <div class="count">{counter.count}</div>
+          <div class="description">{counter.description}</div>
+        </div>
+      ))
+    }
+  </div>
+</section>

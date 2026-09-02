@@ -1,0 +1,13 @@
+---
+interface Props {
+  name: string;
+  sprite?: 'svg-sprite' | 'svg-select-sprite';
+  class?: string;
+}
+
+const { name, sprite = 'svg-sprite', class: className } = Astro.props;
+---
+
+<svg class:list={['svg-icon', `icon-${name}`, className]}>
+  <use xlink:href={`/theme/images/sprites/${sprite}.svg#${name}`}></use>
+</svg>

@@ -1,0 +1,34 @@
+---
+import { getContent, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { reviews } = getContent(locale);
+---
+
+<section class="wrapper case-studies-section">
+  <div class="row center-lg">
+    <div class="col-xs-12 col-lg-8">
+      <div class="review-content">
+        {
+          reviews.map((item) => (
+            <div class="review-item" itemscope itemtype="http://schema.org/Review">
+              <p>
+                <q class="review" itemprop="description">
+                  {item.review}
+                </q>
+                <cite class="author" itemprop="author">
+                  {item.author}
+                  <span>{item.position}</span>
+                </cite>
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
