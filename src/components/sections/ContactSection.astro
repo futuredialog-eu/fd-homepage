@@ -1,6 +1,6 @@
 ---
 import { contact } from '../../data/site';
-import { getContent, localizePath, type Locale } from '../../i18n';
+import { getContent, localizePath, withBase, type Locale } from '../../i18n';
 
 interface Props {
   locale: Locale;
@@ -37,7 +37,7 @@ const { contactSection, ui } = getContent(locale);
           class="col-xs-12 col-sm-6 col-md-4 col-lg ui-contact-user"
         >
           <div class="contact-image">
-            <img itemprop="image" src={person.image} alt={person.name} />
+            <img itemprop="image" src={withBase(person.image)} alt={person.name} />
           </div>
           <div itemprop="name" class="name">
             {person.name}

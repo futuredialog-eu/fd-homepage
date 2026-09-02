@@ -26,9 +26,17 @@ export function getLocaleFromPath(pathname: string): Locale {
   return isLocale(segment) ? segment : defaultLocale;
 }
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+/** Prefixes a root-relative path with the configured `base` path. */
+export function withBase(path: string): string {
+  if (!path.startsWith('/')) return path;
+  return `${base}${path}`;
+}
+
 /** Prefixes a root-relative path with the locale, except for the default locale. */
 export function localizePath(path: string, locale: Locale): string {
   if (!path.startsWith('/')) return path;
-  if (locale === defaultLocale) return path;
-  return `/${locale}${path}`;
+  if (locale === defaultLocale) return withBase(path);
+  return withBase(`/${locale}${path}`);
 }

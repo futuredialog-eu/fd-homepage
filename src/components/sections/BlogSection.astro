@@ -1,5 +1,5 @@
 ---
-import { getContent, localizePath, type Locale } from '../../i18n';
+import { getContent, localizePath, withBase, type Locale } from '../../i18n';
 
 interface Props {
   locale: Locale;
@@ -28,7 +28,7 @@ const { blogSection, ui } = getContent(locale);
               itemtype="http://schema.org/Article"
             >
               <a href={href} itemprop="url" class="news-images">
-                <img src={post.image} alt={post.title} />
+                <img src={withBase(post.image)} alt={post.title} />
               </a>
               <div class="info">
                 {post.categories.map((category) => (

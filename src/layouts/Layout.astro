@@ -3,7 +3,7 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Modals from '../components/Modals.astro';
 import { site } from '../data/site';
-import { getContent, localizePath, locales, ogLocales, type Locale } from '../i18n';
+import { getContent, localizePath, locales, ogLocales, withBase, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
@@ -61,11 +61,11 @@ const organizationSchema = {
     <meta name="robots" content="max-image-preview:large" />
     <link rel="canonical" href={canonical} />
 
-    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
-    <link rel="icon" sizes="16x16" href="/favicons/favicon-16x16.png" type="image/png" />
-    <link rel="icon" sizes="32x32" href="/favicons/favicon-32x32.png" type="image/png" />
-    <link rel="icon" sizes="512x512" href="/favicons/favicon-512x512.png" type="image/png" />
-    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+    <link rel="shortcut icon" href={withBase('/favicons/favicon.ico')} type="image/x-icon" />
+    <link rel="icon" sizes="16x16" href={withBase('/favicons/favicon-16x16.png')} type="image/png" />
+    <link rel="icon" sizes="32x32" href={withBase('/favicons/favicon-32x32.png')} type="image/png" />
+    <link rel="icon" sizes="512x512" href={withBase('/favicons/favicon-512x512.png')} type="image/png" />
+    <link rel="apple-touch-icon" href={withBase('/favicons/apple-touch-icon.png')} />
 
     {
       locales.map((code) => (
@@ -87,7 +87,7 @@ const organizationSchema = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <link rel="stylesheet" href="/theme/style.css" />
+    <link rel="stylesheet" href={withBase('/theme/style.css')} />
 
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} is:inline />
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />
@@ -101,6 +101,6 @@ const organizationSchema = {
       <Footer locale={locale} path={path} />
       <Modals locale={locale} />
     </div>
-    <script is:inline src="/theme/js/main.min.js"></script>
+    <script is:inline src={withBase('/theme/js/main.min.js')}></script>
   </body>
 </html>

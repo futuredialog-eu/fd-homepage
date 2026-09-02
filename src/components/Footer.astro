@@ -2,7 +2,7 @@
 import Navigation from './Navigation.astro';
 import SvgIcon from './SvgIcon.astro';
 import { contact, footer, site, social } from '../data/site';
-import { getContent, localizePath, type Locale } from '../i18n';
+import { getContent, localizePath, withBase, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
@@ -18,12 +18,12 @@ const year = new Date().getFullYear();
   <div class="wrapper">
     <div class="row center-xs start-sm">
       <div class="col-xs-12 col-md-3 footer-copyright">
-        <img src="/theme/images/icons/logo.svg" alt="Logo" />
+        <img src={withBase('/theme/images/icons/logo.svg')} alt="Logo" />
         <small>
           © {year} {site.organization}. {ui.copyright}
           <br />
           <a href={footer.easHref}>
-            <img src={footer.easImage} alt="EAS" />
+            <img src={withBase(footer.easImage)} alt="EAS" />
           </a>
         </small>
       </div>
