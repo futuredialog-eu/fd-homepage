@@ -187,4 +187,14 @@ export const et: Content = {
       },
     ],
   },
+  contactsPage: {
+    meta: {
+      title: 'Kontakt - Future Dialog',
+      description: 'Future Dialogi kontaktandmed ja kontaktivorm müügiosakonnaga',
+    },
+    title: 'Kontakt',
+    aboutTitle: 'Kes me oleme?',
+    aboutDescription:
+      'Future Dialog sai alguse soovist ühendada tarkades linnades elavad inimesed ja omavalitsused, kes tahavad päriselt midagi muuta. Loome nüüdisaegseid mobiilirakendusi, mis soodustavad kaasamist. Aitame algatada sisukaid vestlusi ja teha andmepõhiseid otsuseid väiksema ressursikuluga.',
+  },
 };

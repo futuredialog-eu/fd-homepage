@@ -1,0 +1,84 @@
+---
+import SvgIcon from '../../components/SvgIcon.astro';
+import Layout from '../../layouts/Layout.astro';
+import { contact, social } from '../../data/site';
+import { defaultLocale, getContent, locales, withBase, type Locale } from '../../i18n';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({
+    params: { locale: locale === defaultLocale ? undefined : locale },
+    props: { locale },
+  }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const { contactSection, contactsPage } = getContent(locale);
+---
+
+<Layout
+  locale={locale}
+  path="/contacts/"
+  title={contactsPage.meta.title}
+  description={contactsPage.meta.description}
+  bodyClass="contacts"
+>
+  <section class="ui-color-section">
+    <div class="wrapper contact-form-section">
+      <div class="row">
+        <div class="col-xs-12 col-md-5 col-lg-offset-1 col-lg-4">
+          <h1 class="ui-title">{contactsPage.title}</h1>
+          <ul class="block-list contact-form-address">
+            <li><a class="mail" href={`mailto:${contact.email}`}>{contact.email}</a></li>
+            <li><a href={contact.phoneHref}>{contact.phone}</a></li>
+            <li><a target="blank" href={contact.addressHref}>{contact.address}</a></li>
+          </ul>
+          <ul class="inline-list contact-form-social">
+            {
+              social.map((item) => (
+                <li>
+                  <a href={item.href}>
+                    <SvgIcon name={item.icon} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <h2 class="ui-title" style="margin-top:-3rem;">{contactsPage.aboutTitle}</h2>
+          <div class="ui-description description" style="margin-bottom: 3rem; margin-top: 3rem;">
+            {contactsPage.aboutDescription}
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-6"></div>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper contact-users-container">
+    <div class="row center-sm no-wrap contact-users">
+      {
+        contactSection.people.map((person) => (
+          <div
+            itemscope
+            itemtype="http://schema.org/Person"
+            class="col-xs-12 col-sm-6 col-md-4 col-lg ui-contact-user"
+          >
+            <div class="contact-image">
+              <img itemprop="image" src={withBase(person.image)} alt={person.name} />
+            </div>
+            <div itemprop="name" class="name">
+              {person.name}
+            </div>
+            <div itemprop="jobTitle" class="position">
+              {person.position}
+            </div>
+            <a itemprop="telephone" href={person.phoneHref}>
+              {person.phone}
+            </a>
+            <a itemprop="email" href={`mailto:${person.email}`}>
+              {person.email}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

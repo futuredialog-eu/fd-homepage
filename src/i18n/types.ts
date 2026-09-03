@@ -80,4 +80,13 @@ export interface Content {
     quote: string;
     people: ContactPerson[];
   };
+  contactsPage: {
+    meta: {
+      title: string;
+      description: string;
+    };
+    title: string;
+    aboutTitle: string;
+    aboutDescription: string;
+  };
 }

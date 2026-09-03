@@ -160,4 +160,14 @@ export const fi: Content = {
       },
     ],
   },
+  contactsPage: {
+    meta: {
+      title: 'Yhteystiedot - Future Dialog',
+      description: 'Future Dialogin yhteystiedot ja yhteydenottolomake myyntiosastolle',
+    },
+    title: 'Yhteystiedot',
+    aboutTitle: 'Keitä me olemme?',
+    aboutDescription:
+      'Future Dialog syntyi tarpeesta yhdistää älykkäissä kaupungeissa asuvat ihmiset ja julkinen sektori, joka haluaa saada aikaan todellista muutosta. Rakennamme huippuluokan mobiilisovelluksia, jotka lisäävät osallisuutta. Autamme käynnistämään aktiivisen vuoropuhelun ja tekemään dataan perustuvia päätöksiä pienemmillä resursseilla.',
+  },
 };

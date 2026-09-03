@@ -31,3 +31,26 @@ const { locale, path = '/' } = Astro.props;
     </li>
   ))
 }
+
+<style>
+  :global(.block-list) > li.wpml-ls-item {
+    display: inline-block;
+  }
+
+  li.wpml-ls-item > a {
+    padding-right: 7px;
+  }
+
+  li.wpml-ls-item + li.wpml-ls-item > a {
+    padding-left: 7px;
+  }
+
+  :global(.inline-list) > li.wpml-ls-item > a {
+    padding-left: 7px;
+  }
+
+  .wpml-ls-flag {
+    width: 12px;
+    height: 12px;
+  }
+</style>

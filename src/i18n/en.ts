@@ -172,4 +172,14 @@ export const en: Content = {
       },
     ],
   },
+  contactsPage: {
+    meta: {
+      title: 'Contacts of the company - Future Dialog',
+      description: 'Contact details of Future Dialog, contact form with the sales department',
+    },
+    title: 'Contacts',
+    aboutTitle: 'Who are we?',
+    aboutDescription:
+      'Future Dialog was created to bridge the gap between people living in smart cities and governments trying to make a difference. We build state-of-the-art mobile apps that foster engagement. We help you initiate active conversations and make data-driven decisions with fewer resources.',
+  },
 };
