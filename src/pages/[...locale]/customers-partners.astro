@@ -1,0 +1,82 @@
+---
+import CounterSection from '../../components/sections/CounterSection.astro';
+import Layout from '../../layouts/Layout.astro';
+import { contact } from '../../data/site';
+import { defaultLocale, getContent, localizePath, locales, withBase, type Locale } from '../../i18n';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({
+    params: { locale: locale === defaultLocale ? undefined : locale },
+    props: { locale },
+  }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const { customersPage, ui } = getContent(locale);
+const { partners } = customersPage;
+---
+
+<Layout
+  locale={locale}
+  path="/customers-partners/"
+  title={customersPage.meta.title}
+  description={customersPage.meta.description}
+  bodyClass="customers-page"
+>
+  <section class="ui-color-section">
+    <div class="wrapper customers-secion">
+      <h1 class="ui-title">{customersPage.title}</h1>
+      <div class="news-heading customers-heading">
+        <div class="ui-description">{customersPage.description}</div>
+      </div>
+      <div class="row">
+        <div class="customers-list-container">
+          <div class="customers-list">
+            {
+              customersPage.items.map((item) => (
+                <div class="customers-item">
+                  <a target="_blank" href={item.href}>
+                    <img src={withBase(item.image)} alt={item.title} />
+                  </a>
+                  <div class="title">{item.title}</div>
+                  <div class="description">{item.description}</div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <CounterSection locale={locale} class="customers-counter" />
+  <section class="wrapper partners-secion">
+    <div class="row between-xs bottom-xs partners-heading"></div>
+    <hr class="ui-hr" />
+    <div class="row between-xs partners-container">
+      <div class="col-xs-12 col-sm-6">
+        <h3 class="title">{partners.offerTitle}</h3>
+        <div class="description">{partners.offerDescription}</div>
+        <h3 class="title">{partners.benefitsTitle}</h3>
+        <ul class="block-list">
+          {partners.benefits.map((benefit) => <li>{benefit}</li>)}
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-5">
+        <h3 class="title">{partners.workTitle}</h3>
+        <div class="description">{partners.workDescription}</div>
+      </div>
+    </div>
+    <hr class="ui-hr" />
+    <div class="row center-xs ui-quote-container">
+      <div class="col-lg-8">
+        <div class="quote">{customersPage.quote}<br /><br /></div>
+        <a
+          href={localizePath(contact.demoPath, locale)}
+          class="ui-button ui-button-shadow nav-button fd-meet-button"
+        >
+          {ui.bookDemo}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

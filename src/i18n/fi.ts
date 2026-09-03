@@ -17,7 +17,7 @@ export const fi: Content = {
   navigation: [
     { label: 'Koti', href: '/' },
     { label: 'Ominaisuudet', href: '/features/' },
-    { label: 'Asiakkaat', href: '/customers/' },
+    { label: 'Asiakkaat', href: '/customers-partners/' },
     { label: 'Blogit & uutiset', href: '/category/uutiset/' },
     { label: 'Yhteystiedot', href: '/contacts/' },
     { label: 'Kirjaudu sisään', href: 'https://futuredialog.app/login', external: true },
@@ -230,5 +230,59 @@ export const fi: Content = {
     aboutTitle: 'Keitä me olemme?',
     aboutDescription:
       'Future Dialog syntyi tarpeesta yhdistää älykkäissä kaupungeissa asuvat ihmiset ja julkinen sektori, joka haluaa saada aikaan todellista muutosta. Rakennamme huippuluokan mobiilisovelluksia, jotka lisäävät osallisuutta. Autamme käynnistämään aktiivisen vuoropuhelun ja tekemään dataan perustuvia päätöksiä pienemmillä resursseilla.',
+  },
+  customersPage: {
+    meta: {
+      title: 'Asiakkaat ja kumppanit - Future Dialog',
+      description:
+        'Tarjoamme pilvipohjaisia palveluita yhteisöille ja yrityksille. Paras pilvialusta eri tarpeisiin – henkilöstön johtaminen, markkinointi ja kansalaisten osallistaminen.',
+    },
+    title: 'Tyytyväiset asiakkaamme',
+    description: 'Tutustu esimerkkeihin pilvipalveluidemme käytöstä',
+    items: [
+      {
+        title: 'Kaiku',
+        description: 'Limingan kunta',
+        image: '/images/customers/liminka.jpg',
+        href: 'https://www.liminka.fi/',
+      },
+      {
+        title: 'Hiiumaa',
+        description: 'Hiiumaan kunta',
+        image: '/images/customers/hiiumaa.jpg',
+        href: 'https://vald.hiiumaa.ee/hiiumaa-mobiilirakendus',
+      },
+      {
+        title: 'MyKeusote',
+        description: 'Keski-Uudenmaan sosiaali- ja terveyspalvelut',
+        image: '/images/customers/mykeusote.jpg',
+        href: 'https://www.keski-uudenmaansote.fi/ajankohtaista/lataa-mykeusote-puhelimeesi-ja-voita-jopo/',
+      },
+      {
+        title: 'NÄPPI by Iisalmi',
+        description: 'Iisalmen kaupunki',
+        image: '/images/customers/iisalmi.jpg',
+        href: 'https://www.iisalmi.fi/Suomeksi',
+      },
+    ],
+    partners: {
+      offerTitle: 'Mitä tarjoamme',
+      offerDescription:
+        'Future Dialogin kumppanina tavoitat asiakkaasi paremmin, kasvatat liikevaihtoasi, tehostat tiimityötä ja laajennat liiketoimintaasi. Kumppanimme luovat pilvipohjaisen platformimme avulla itselleen uutta liiketoimintaa. Tekninen ratkaisumme on valmispakettien ansiosta käytettävissä ja räätälöitävissä useisiin eri käyttötarkoituksiin.',
+      benefitsTitle: 'Mitä hyödyt meistä?',
+      benefits: [
+        'Täysi tuki menestyvien liiketoimintamallien rakentamiseen',
+        'Nopea ja skaalautuva käyttöönotto sekä täysi tekninen ylläpito',
+        'Älykkäät tehtävät ja kohdentaminen palautteen ja kyselyiden perusteella',
+        'Nopeampi viestintä ja vaivaton yhteistyö',
+        'Valmiit myynnin ja markkinoinnin työkalut',
+        'Täysin valmis tekninen pilvialusta',
+      ],
+      workTitle: 'Kuinka toimimme',
+      workDescription:
+        'Rakennamme huippuluokan teknologiaa osallistamiseen mobiiliympäristössä. Siksi odotamme kumppaneiltamme vahvaa ja vakiintunutta asemaa omalla toimialallaan, jotta voimme varmistaa loppukäyttäjälle parhaan mahdollisen kokemuksen. Jos haluat osallistaa vakiintunutta yhteisöäsi mobiilisti ja mitattavasti, ota yhteyttä – kerromme mielellämme lisää pilvialustastamme.',
+    },
+    quote:
+      'Jutellaan lisää siitä, miten Future Dialog voi auttaa juuri sinua ymmärtämään yhteisöäsi paremmin!',
   },
 };

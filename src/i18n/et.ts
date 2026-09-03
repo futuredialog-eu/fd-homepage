@@ -262,4 +262,56 @@ export const et: Content = {
     aboutDescription:
       'Future Dialog sai alguse soovist ühendada tarkades linnades elavad inimesed ja omavalitsused, kes tahavad päriselt midagi muuta. Loome nüüdisaegseid mobiilirakendusi, mis soodustavad kaasamist. Aitame algatada sisukaid vestlusi ja teha andmepõhiseid otsuseid väiksema ressursikuluga.',
   },
+  customersPage: {
+    meta: {
+      title: 'Kliendid - Future Dialog',
+      description:
+        'Future Dialogi kliendid ja koostööpartnerid – omavalitsused, ettevõtted ja kogukonnad, kes kasutavad meie pilvepõhist platvormi.',
+    },
+    title: 'Kliendid',
+    description: 'Varasemad tööd',
+    items: [
+      {
+        title: 'Kaiku',
+        description: 'Liminka linn',
+        image: '/images/customers/liminka.jpg',
+        href: 'http://www.liminka.fi/sivu/fi/palaute/',
+      },
+      {
+        title: 'Hiiumaa',
+        description: 'Hiiumaa vald',
+        image: '/images/customers/hiiumaa.jpg',
+        href: 'https://vald.hiiumaa.ee/uudised-ja-teated/-/asset_publisher/4Ahqku2H581b/content/laadi-alla-hiiumaa-app-',
+      },
+      {
+        title: 'My Keusote',
+        description: 'Sotsiaal- ja tervishoiuteenused Kesk-Uusimaal',
+        image: '/images/customers/mykeusote.jpg',
+        href: 'https://www.keski-uudenmaansote.fi/ajankohtaista/lataa-mykeusote-puhelimeesi-ja-voita-jopo/',
+      },
+      {
+        title: 'NÄPPI by Iisalmi',
+        description: 'Iisalmi linn',
+        image: '/images/customers/iisalmi.jpg',
+        href: 'https://www.iisalmi.fi/Suomeksi/Osallistu-ja-vaikuta/NAPPI-By-Iisalmi--sovellus',
+      },
+    ],
+    partners: {
+      offerTitle: 'Mida me pakume?',
+      offerDescription:
+        'Future Dialogi kööstööpartneriks olemine võimaldab sul tunda paremini oma kliente, suurendada tulukust ning laiendada ärivõimalusi. Meie platvormi kasutamine võimaldab rakendada ka täiesti uusi ärisuundi. Meie valmislahendused on kohandatud vastavalt kliendi soovidele.',
+      benefitsTitle: 'Mis kasu meist on?',
+      benefits: [
+        'Välja arendatud tehniline platvorm;',
+        'Kiire ja kohandatud lahendus ning selle toimimise tagamine;',
+        'Müügi- ja turunduslahendused;',
+        'Täismahus tugiteenus.',
+      ],
+      workTitle: 'Kuidas me töötame?',
+      workDescription:
+        'Rakendame tänapäevast tehnoloogiat mobiilses keskkonnas tegutsemiseks. Lähtudes lõppkasutajast, soovime, et meie partnerid oleksid oma erialal tugevad ja väljakujunenud tegijad. Kui soovid oma kogukonda kiirelt ja lihtsalt kaasata, võta meiega julgelt ühendust.',
+    },
+    quote:
+      'Võta meiega ühendust ja arutame, kuidas Future Dialog aitab teil enda kogukonda paremini mõista.',
+  },
 };

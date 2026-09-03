@@ -45,6 +45,13 @@ export interface CaseItem {
   href: string;
 }
 
+export interface CustomerItem {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+}
+
 export interface ContactPerson {
   name: string;
   position: string;
@@ -114,5 +121,23 @@ export interface Content {
     title: string;
     aboutTitle: string;
     aboutDescription: string;
+  };
+  customersPage: {
+    meta: {
+      title: string;
+      description: string;
+    };
+    title: string;
+    description: string;
+    items: CustomerItem[];
+    partners: {
+      offerTitle: string;
+      offerDescription: string;
+      benefitsTitle: string;
+      benefits: string[];
+      workTitle: string;
+      workDescription: string;
+    };
+    quote: string;
   };
 }

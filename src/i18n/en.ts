@@ -242,4 +242,57 @@ export const en: Content = {
     aboutDescription:
       'Future Dialog was created to bridge the gap between people living in smart cities and governments trying to make a difference. We build state-of-the-art mobile apps that foster engagement. We help you initiate active conversations and make data-driven decisions with fewer resources.',
   },
+  customersPage: {
+    meta: {
+      title: 'Cloud platform with a suite of tools - Future Dialog',
+      description:
+        'We offer cloud based services for communities and business. Best cloud platforms for different spheres – employee management, marketing, civic participation.',
+    },
+    title: 'Our happy customers',
+    description: 'Check out some cases of using cloud services',
+    items: [
+      {
+        title: 'Kaiku',
+        description: 'Municipality of Liminka',
+        image: '/images/customers/liminka.jpg',
+        href: 'https://www.liminka.fi/',
+      },
+      {
+        title: 'Hiiumaa',
+        description: 'Municipality of Hiiumaa',
+        image: '/images/customers/hiiumaa.jpg',
+        href: 'https://vald.hiiumaa.ee/hiiumaa-mobiilirakendus',
+      },
+      {
+        title: 'MyKeusote',
+        description: 'Social and health services of Central Uusimaa',
+        image: '/images/customers/mykeusote.jpg',
+        href: 'https://www.keski-uudenmaansote.fi/ajankohtaista/lataa-mykeusote-puhelimeesi-ja-voita-jopo/',
+      },
+      {
+        title: 'Näppi by Iisalmi',
+        description: 'City of Iisalmi',
+        image: '/images/customers/iisalmi.jpg',
+        href: 'https://www.iisalmi.fi/Suomeksi',
+      },
+    ],
+    partners: {
+      offerTitle: 'What we offer',
+      offerDescription:
+        'As a Future Dialog partner, you can improve your traction to your customers, increase your revenue, make better teamwork and expand your business base. Our partners create new business for themselves with our cloud-based platform. Our technical solution can be used and tailored for multiple use cases with our ready-made packages.',
+      benefitsTitle: 'What you benefit from us?',
+      benefits: [
+        'Full support for building successful business cases',
+        'Quick and scalable set up, full technical maintenance',
+        'Smart tasks and targeting based on feedback, surveys',
+        'Communicate faster and collaborate with ease',
+        'Ready-made sales and marketing tools',
+        'Fully developed technical cloud platform',
+      ],
+      workTitle: 'How we work',
+      workDescription:
+        "We build state-of-the-art technology for engagement in a mobile environment. Therefore we expect our partners to be strong and well-established players in their fields of expertise to ensure the best possible experience for the end user. If you have an established community you want to engage within a mobile and measurable way, get in touch and we're happy to tell you more about our cloud platform",
+    },
+    quote: 'Let’s talk about how Future Dialog can help you understand your community better!',
+  },
 };
