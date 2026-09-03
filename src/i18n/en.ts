@@ -172,6 +172,67 @@ export const en: Content = {
       },
     ],
   },
+  featuresPage: {
+    meta: {
+      title: 'SaaS platform: online surveys, media dashboard, posts - Future Dialog',
+      description:
+        'We offer digital SaaS product with survey tools, feedback channel, posts for publishing content, media dashboard. SaaS tools for providing ease of management and access.',
+    },
+    intro:
+      'Future Dialog is the future of engaged communities. Our mobile app makes reading news and contributing to the community transparent and available to people at all times. We help you initiate active conversations and make data-driven decisions with fewer resources.',
+    storeTitle: 'Try it now on your platform',
+    items: [
+      {
+        title: 'Mobile app and website',
+        description:
+          'Your new app runs on iOS, Android, and the web. Customize it to look exactly like you want - add your logo, colors and style.',
+        image: '/images/features/1.png',
+      },
+      {
+        title: 'Powerful data',
+        description:
+          "Do you know who you're talking to? Our dashboard and data center let's you control content and gain actionable insights about your community.",
+        image: '/images/features/2.png',
+      },
+      {
+        title: 'Posts',
+        description:
+          'Create posts in the online dashboard to publish news stories, make announcements or create surveys. Posts make it easy to navigate through the content.',
+        image: '/images/features/3.png',
+      },
+      {
+        title: 'RSS',
+        description:
+          'Less work for you, more content for the community. Bring the most important news to the app automatically with easy RSS feed.',
+        image: '/images/features/4.png',
+      },
+      {
+        title: 'Actionable feedback',
+        description:
+          'Create a dialog with the members of your community in the feedback channel. In addition to surveys, ask for detailed opinions and offer solutions immediately.',
+        image: '/images/features/5.png',
+      },
+    ],
+    caseSection: {
+      title: 'Case Studies',
+      description: 'Who uses the solution',
+      items: [
+        {
+          icon: 'case-1',
+          title: 'Municipalities',
+          href: 'https://futuredialog.co/category/municipality/',
+        },
+        { icon: 'case-2', title: 'Business', href: 'https://futuredialog.co/category/business/' },
+        {
+          icon: 'case-3',
+          title: 'Political Parties',
+          href: 'https://futuredialog.co/category/political-parties/',
+        },
+        { icon: 'case-4', title: 'Others', href: 'https://futuredialog.co/category/news/' },
+      ],
+    },
+    quote: 'Let’s talk about how Future Dialog can help you understand your community better!',
+  },
   contactsPage: {
     meta: {
       title: 'Contacts of the company - Future Dialog',

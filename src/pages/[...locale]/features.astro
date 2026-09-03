@@ -1,0 +1,136 @@
+---
+import SvgIcon from '../../components/SvgIcon.astro';
+import Layout from '../../layouts/Layout.astro';
+import { contact, stores } from '../../data/site';
+import { defaultLocale, getContent, localizePath, locales, withBase, type Locale } from '../../i18n';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({
+    params: { locale: locale === defaultLocale ? undefined : locale },
+    props: { locale },
+  }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const { featuresPage, ui } = getContent(locale);
+const [platforms, data, posts, rss, feedback] = featuresPage.items;
+---
+
+<Layout
+  locale={locale}
+  path="/features/"
+  title={featuresPage.meta.title}
+  description={featuresPage.meta.description}
+  bodyClass="features-page"
+>
+  <section class="features-title wrapper">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-9">{featuresPage.intro}</div>
+    </div>
+  </section>
+  <section class="ui-color-section">
+    <div class="wrapper">
+      <div class="row middle-xs features features-platforms">
+        <div class="col-xs-12 col-sm-6 col-md-4 section-info">
+          <div class="ui-title title">{platforms.title}</div>
+          <div class="ui-description description">{platforms.description}</div>
+          <div class="title-store">{featuresPage.storeTitle}</div>
+          <div class="containers-links">
+            {
+              stores.map((store) => (
+                <a class="ui-button ui-white market" target="_blank" href={store.href}>
+                  <img src={withBase(store.icon)} alt={store.name} />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 images-container">
+          <img class="bottom" src={withBase(platforms.image)} alt={platforms.title} />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrapper">
+      <div class="row middle-xs features">
+        <div class="col-sm-6 col-md-8 features-image">
+          <img src={withBase(data.image)} alt={data.title} />
+        </div>
+        <div class="first-xs last-sm col-xs-12 col-sm-6 col-md-4 section-info">
+          <div class="ui-title title">{data.title}</div>
+          <div class="ui-description description">{data.description}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ui-color-section">
+    <div class="wrapper">
+      <div class="row middle-xs features">
+        <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 section-info">
+          <div class="ui-title title">{posts.title}</div>
+          <div class="ui-description description">{posts.description}</div>
+        </div>
+        <div class="col-xs-12 col-sm-6 features-image">
+          <img src={withBase(posts.image)} alt={posts.title} />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper">
+    <div class="row middle-xs features">
+      <div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-5 features-image">
+        <img src={withBase(rss.image)} alt={rss.title} />
+      </div>
+      <div class="first-xs last-sm col-xs-12 col-sm-6 col-md-4 section-info">
+        <div class="ui-title title">{rss.title}</div>
+        <div class="ui-description description">{rss.description}</div>
+      </div>
+    </div>
+  </section>
+  <section class="ui-color-section">
+    <div class="wrapper">
+      <div class="row middle-xs features">
+        <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 section-info">
+          <div class="ui-title title">{feedback.title}</div>
+          <div class="ui-description description">{feedback.description}</div>
+        </div>
+        <div class="col-xs-12 col-sm-6 features-image">
+          <img src={withBase(feedback.image)} alt={feedback.title} />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper case-studies-section contact-section">
+    <div class="row center-xs">
+      <div class="col-lg-4">
+        <h2 class="ui-title">{featuresPage.caseSection.title}</h2>
+        <div class="ui-description">{featuresPage.caseSection.description}</div>
+      </div>
+    </div>
+    <div class="case-container">
+      {
+        featuresPage.caseSection.items.map((item) => (
+          <div class="case-item">
+            <a href={item.href}>
+              <SvgIcon name={item.icon} sprite="svg-select-sprite" />
+              <span class="title">{item.title}</span>
+              <span class="ui-read-me read-me">{ui.readMore}</span>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+    <div class="row center-xs ui-quote-container">
+      <div class="col-lg-8">
+        <div class="quote">{featuresPage.quote}<br /><br /></div>
+        <a
+          href={localizePath(contact.demoPath, locale)}
+          class="ui-button ui-button-shadow nav-button fd-meet-button"
+        >
+          {ui.bookDemo}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

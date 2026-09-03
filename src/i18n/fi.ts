@@ -160,6 +160,68 @@ export const fi: Content = {
       },
     ],
   },
+  featuresPage: {
+    meta: {
+      title: 'Ominaisuudet - Future Dialog',
+      description:
+        'Tarjoamme digitaalisen SaaS-tuotteen, joka sisältää kyselytyökalut, palautekanavan, julkaisut ja analytiikkatyöpöydän. SaaS-työkalut helppoon hallintaan ja käyttöön.',
+    },
+    intro:
+      'Future Dialog on osallistuvien yhteisöjen tulevaisuus. Mobiilisovelluksemme tekee uutisten lukemisesta ja yhteisöön osallistumisesta asukkaille mukavan ja ympäri vuorokauden käytettävän. Autamme aloittamaan rakentavia keskusteluja ja tekemään tietoon perustuvia päätöksiä tuhlaamatta resursseja.',
+    storeTitle: 'Kokeile sovellusta',
+    items: [
+      {
+        title: 'Sovellus ja verkkosivusto',
+        description:
+          'Uusi sovelluksesi toimii iOS- ja Android- alustoilla sekä internetverkossa. Muokkaa sitä juuri haluamallasi tavalla – lisää logosi, värisi, tyylisi ja keskustele yhteisön kanssa äidinkielellään.',
+        image: '/images/features/1.png',
+      },
+      {
+        title: 'Hyödyllinen analytiikka',
+        description:
+          'Tunnetko yhteisösi? Tehokkaan analytiikkatyöpöytämme avulla näet, kuka on näytön toisella puolella ja miten sisältöä vastaanotetaan.',
+        image: '/images/features/2.png',
+      },
+      {
+        title: 'Julkaisut',
+        description:
+          'Luo julkaisuja ja jaa uutisia, ilmoita tulevista tapahtumista tai suorita kyselyjä. Julkaisut helpottavat tarvitsemasi sisällön löytämistä.',
+        image: '/images/features/3.png',
+      },
+      {
+        title: 'RSS syötteet',
+        description:
+          'Vähemmän työtä, enemmän sisältöä yhteisölle, RSS-syötteet näyttävät sovelluksen tärkeimmät uutiset automaattisesti.',
+        image: '/images/features/4.png',
+      },
+      {
+        title: 'Palaute, joka tavoittaa sinut hetkessä',
+        description:
+          'Luo keskusteluyhteys yhteisöjäsenten kanssa sekunneissa. Palautteen lisäksi voit pyytää yksityiskohtaisia mielipiteitä ja ehdottaa ratkaisuja.',
+        image: '/images/features/5.png',
+      },
+    ],
+    caseSection: {
+      title: 'Asiakascaset',
+      description: 'Ketkä käyttävät ratkaisuamme',
+      items: [
+        { icon: 'case-1', title: 'Kunnat', href: 'https://fi.futuredialog.co/category/kunnat/' },
+        {
+          icon: 'case-2',
+          title: 'Yritykset',
+          href: 'https://fi.futuredialog.co/category/yritykset/',
+        },
+        {
+          icon: 'case-3',
+          title: 'Puolueet',
+          href: 'https://fi.futuredialog.co/category/puolueet/',
+        },
+        { icon: 'case-4', title: 'Muut', href: 'https://fi.futuredialog.co/category/uutiset/' },
+      ],
+    },
+    quote:
+      'Jutellaan lisää siitä, miten Future Dialog voi auttaa juuri sinua ymmärtämään yhteisöäsi paremmin!',
+  },
   contactsPage: {
     meta: {
       title: 'Yhteystiedot - Future Dialog',

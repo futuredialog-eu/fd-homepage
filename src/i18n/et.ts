@@ -187,6 +187,72 @@ export const et: Content = {
       },
     ],
   },
+  featuresPage: {
+    meta: {
+      title: 'Omadused - Future Dialog',
+      description:
+        'Pakume digitaalset SaaS-lahendust, mis sisaldab küsitlustööriistu, tagasisidekanalit, postitusi ja analüütikatöölauda. SaaS-tööriistad mugavaks haldamiseks ja ligipääsuks.',
+    },
+    intro:
+      'Future Dialog on kaasatud kogukondade tulevik. Meie mobiilirakendus muudab uudiste lugemise ja kogukonnas panustamise elanike jaoks mugavaks ja ööpäev läbi kättesaadavaks. Aitame alustada edasiviivaid vestlusi ja langetada andmepõhiseid otsuseid ressursse raiskamata.',
+    storeTitle: 'Proovi rakendust',
+    items: [
+      {
+        title: 'Äpp ja veebileht',
+        description:
+          'Sinu uus rakendus töötab iOS-il, Androidil ja veebis. Kohanda seda täpselt nii, nagu soovid - lisa oma logo, värvid, stiil ja räägi kogukonnaga nende emakeeles.',
+        image: '/images/features/1.png',
+      },
+      {
+        title: 'Kasulik analüütika',
+        description:
+          'Kas tunned enda kogukonda? Meie võimekas analüütikatöölaud võimaldab näha, kes on teisel pool ekraani ning kuidas ta sisu vastu võtab. See aitab ka sõnumeid paremini sihtida.',
+        image: '/images/features/2.png',
+      },
+      {
+        title: 'Postitused',
+        description:
+          'Loo postitusi ja avalda neis uudiseid, anna märku eesootavatest sündmustest või korralda küsitlusi. Postitused muudavad vajaliku sisu leidmise mugavaks.',
+        image: '/images/features/3.png',
+      },
+      {
+        title: 'RSS uudistevoog',
+        description:
+          'Vähem tööd, rohkem sisu kogukonnale. RSS-voo abil ilmuvad kõige olulisemad uudised rakendusse automaatselt.',
+        image: '/images/features/4.png',
+      },
+      {
+        title: 'Tagasiside, mis jõuab sinuni hetkega',
+        description:
+          'Loo sekunditega vestlus kogukonnaliikmetega. Peale tagasiside saad küsida üksikasjalikke arvamusi ning pakkuda välja lahendusi.',
+        image: '/images/features/5.png',
+      },
+    ],
+    caseSection: {
+      title: 'Kogemuslood',
+      description: 'Mida räägivad meie partnerid',
+      items: [
+        {
+          icon: 'case-1',
+          title: 'Omavalitsused',
+          href: 'https://et.futuredialog.co/category/omavalitsused/',
+        },
+        {
+          icon: 'case-2',
+          title: 'Ettevõtted',
+          href: 'https://et.futuredialog.co/category/ettevotted/',
+        },
+        {
+          icon: 'case-3',
+          title: 'Erakonnad',
+          href: 'https://et.futuredialog.co/category/erakonnad',
+        },
+        { icon: 'case-4', title: 'Muu', href: 'https://et.futuredialog.co/category/uudised/' },
+      ],
+    },
+    quote:
+      'Võta meiega ühendust ja arutame, kuidas Future Dialog aitab teil enda kogukonda paremini mõista.',
+  },
   contactsPage: {
     meta: {
       title: 'Kontakt - Future Dialog',

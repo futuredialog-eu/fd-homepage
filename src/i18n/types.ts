@@ -33,6 +33,18 @@ export interface BlogPost {
   dateTime: string;
 }
 
+export interface FeatureItem {
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface CaseItem {
+  icon: string;
+  title: string;
+  href: string;
+}
+
 export interface ContactPerson {
   name: string;
   position: string;
@@ -79,6 +91,21 @@ export interface Content {
     title: string;
     quote: string;
     people: ContactPerson[];
+  };
+  featuresPage: {
+    meta: {
+      title: string;
+      description: string;
+    };
+    intro: string;
+    storeTitle: string;
+    items: FeatureItem[];
+    caseSection: {
+      title: string;
+      description: string;
+      items: CaseItem[];
+    };
+    quote: string;
   };
   contactsPage: {
     meta: {

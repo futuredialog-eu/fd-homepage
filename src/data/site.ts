@@ -21,6 +21,19 @@ export const social = [
   { icon: 'social-tw', href: 'https://twitter.com/FutureDialog' },
 ];
 
+export const stores = [
+  {
+    name: 'App Store',
+    href: 'https://itunes.apple.com/fi/app/future-dialog/id1211602821',
+    icon: '/theme/images/icons/apple.svg',
+  },
+  {
+    name: 'Google Play',
+    href: 'https://play.google.com/store/apps/details?id=pro.theboard.futuredialog',
+    icon: '/theme/images/icons/google.svg',
+  },
+];
+
 export const footer = {
   easHref: 'https://futuredialog.co/future-dialog-arendusosak-2014-2020-4-04-22-2301/',
   easImage: '/images/EAS.png',
