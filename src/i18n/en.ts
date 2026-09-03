@@ -180,7 +180,6 @@ export const en: Content = {
     },
     intro:
       'Future Dialog is the future of engaged communities. Our mobile app makes reading news and contributing to the community transparent and available to people at all times. We help you initiate active conversations and make data-driven decisions with fewer resources.',
-    storeTitle: 'Try it now on your platform',
     items: [
       {
         title: 'Mobile app and website',

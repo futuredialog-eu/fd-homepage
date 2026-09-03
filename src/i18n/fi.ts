@@ -168,7 +168,6 @@ export const fi: Content = {
     },
     intro:
       'Future Dialog on osallistuvien yhteisöjen tulevaisuus. Mobiilisovelluksemme tekee uutisten lukemisesta ja yhteisöön osallistumisesta asukkaille mukavan ja ympäri vuorokauden käytettävän. Autamme aloittamaan rakentavia keskusteluja ja tekemään tietoon perustuvia päätöksiä tuhlaamatta resursseja.',
-    storeTitle: 'Kokeile sovellusta',
     items: [
       {
         title: 'Sovellus ja verkkosivusto',

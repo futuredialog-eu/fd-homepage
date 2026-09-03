@@ -1,7 +1,7 @@
 ---
 import SvgIcon from '../../components/SvgIcon.astro';
 import Layout from '../../layouts/Layout.astro';
-import { contact, stores } from '../../data/site';
+import { contact } from '../../data/site';
 import { defaultLocale, getContent, localizePath, locales, withBase, type Locale } from '../../i18n';
 
 export function getStaticPaths() {
@@ -34,16 +34,6 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
         <div class="col-xs-12 col-sm-6 col-md-4 section-info">
           <div class="ui-title title">{platforms.title}</div>
           <div class="ui-description description">{platforms.description}</div>
-          <div class="title-store">{featuresPage.storeTitle}</div>
-          <div class="containers-links">
-            {
-              stores.map((store) => (
-                <a class="ui-button ui-white market" target="_blank" href={store.href}>
-                  <img src={withBase(store.icon)} alt={store.name} />
-                </a>
-              ))
-            }
-          </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 images-container">
           <img class="bottom" src={withBase(platforms.image)} alt={platforms.title} />

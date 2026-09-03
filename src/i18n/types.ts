@@ -98,7 +98,6 @@ export interface Content {
       description: string;
     };
     intro: string;
-    storeTitle: string;
     items: FeatureItem[];
     caseSection: {
       title: string;

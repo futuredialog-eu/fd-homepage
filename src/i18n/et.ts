@@ -195,7 +195,6 @@ export const et: Content = {
     },
     intro:
       'Future Dialog on kaasatud kogukondade tulevik. Meie mobiilirakendus muudab uudiste lugemise ja kogukonnas panustamise elanike jaoks mugavaks ja ööpäev läbi kättesaadavaks. Aitame alustada edasiviivaid vestlusi ja langetada andmepõhiseid otsuseid ressursse raiskamata.',
-    storeTitle: 'Proovi rakendust',
     items: [
       {
         title: 'Äpp ja veebileht',
