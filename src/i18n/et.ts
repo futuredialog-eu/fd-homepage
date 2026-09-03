@@ -9,9 +9,9 @@ export const et: Content = {
   ui: {
     bookDemo: 'Broneeri kohtumine',
     readMore: 'Loe lisaks',
-    subscribeTitle: 'Liitu meie uudiskirjaga:',
-    subscribePlaceholder: 'E-post',
-    subscribeButton: 'Liitu',
+    // subscribeTitle: 'Liitu meie uudiskirjaga:',
+    // subscribePlaceholder: 'E-post',
+    // subscribeButton: 'Liitu',
     copyright: 'Kõik õigused kaitstud.',
   },
   navigation: [
@@ -23,11 +23,6 @@ export const et: Content = {
     { label: 'Logi sisse', href: 'https://futuredialog.app/login', external: true },
   ],
   policyLinks: [
-    {
-      label: 'Juhend',
-      href: 'https://drive.google.com/file/d/11j7f4tJD-gBWEyTzFzAl3GJjJhdqCq8y/view?usp=sharing',
-      target: 'blank',
-    },
     { label: 'Tingimused', href: '#', modal: 'terms' },
     { label: 'Privaatsuspoliitika', href: '#', modal: 'policy' },
   ],

@@ -9,9 +9,9 @@ export const fi: Content = {
   ui: {
     bookDemo: 'Sovi tapaaminen',
     readMore: 'Lue lisää',
-    subscribeTitle: 'Tilaa uutiskirje:',
-    subscribePlaceholder: 'Sähköposti',
-    subscribeButton: 'Tilaa',
+    // subscribeTitle: 'Tilaa uutiskirje:',
+    // subscribePlaceholder: 'Sähköposti',
+    // subscribeButton: 'Tilaa',
     copyright: 'Kaikki oikeudet pidätetään.',
   },
   navigation: [
@@ -23,11 +23,6 @@ export const fi: Content = {
     { label: 'Kirjaudu sisään', href: 'https://futuredialog.app/login', external: true },
   ],
   policyLinks: [
-    {
-      label: 'Ohje',
-      href: 'https://drive.google.com/file/d/11j7f4tJD-gBWEyTzFzAl3GJjJhdqCq8y/view?usp=sharing',
-      target: 'blank',
-    },
     { label: 'Palveluehdot', href: '#', modal: 'terms' },
     { label: 'Tietosuojalauseke', href: '#', modal: 'policy' },
   ],

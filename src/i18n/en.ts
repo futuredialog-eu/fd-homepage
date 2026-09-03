@@ -9,9 +9,9 @@ export const en: Content = {
   ui: {
     bookDemo: 'Book a demo',
     readMore: 'Read more',
-    subscribeTitle: 'Subscribe to our newsletter:',
-    subscribePlaceholder: 'Email',
-    subscribeButton: 'Subscribe',
+    // subscribeTitle: 'Subscribe to our newsletter:',
+    // subscribePlaceholder: 'Email',
+    // subscribeButton: 'Subscribe',
     copyright: 'All rights reserved.',
   },
   navigation: [
@@ -23,11 +23,6 @@ export const en: Content = {
     { label: 'Log in', href: 'https://futuredialog.app/login', external: true },
   ],
   policyLinks: [
-    {
-      label: 'User Manual',
-      href: 'https://drive.google.com/file/d/11j7f4tJD-gBWEyTzFzAl3GJjJhdqCq8y/view?usp=sharing',
-      target: 'blank',
-    },
     { label: 'Terms of Service', href: '#', modal: 'terms' },
     { label: 'Privacy policy', href: '#', modal: 'policy' },
   ],

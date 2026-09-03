@@ -69,9 +69,9 @@ export interface Content {
   ui: {
     bookDemo: string;
     readMore: string;
-    subscribeTitle: string;
-    subscribePlaceholder: string;
-    subscribeButton: string;
+    // subscribeTitle: string;
+    // subscribePlaceholder: string;
+    // subscribeButton: string;
     copyright: string;
   };
   navigation: NavItem[];
