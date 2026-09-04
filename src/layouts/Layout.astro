@@ -14,9 +14,11 @@ interface Props {
   title?: string;
   description?: string;
   bodyClass?: string;
+  /** Snap each top-level `<section>` to the top of the viewport while scrolling. */
+  snapScroll?: boolean;
 }
 
-const { locale, path = '/', bodyClass = '' } = Astro.props;
+const { locale, path = '/', bodyClass = '', snapScroll = false } = Astro.props;
 const { meta } = getContent(locale);
 const title = Astro.props.title ?? meta.title;
 const description = Astro.props.description ?? meta.description;
@@ -56,7 +58,7 @@ const organizationSchema = {
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang={locale} class:list={{ 'snap-sections': snapScroll }}>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -100,6 +102,36 @@ const organizationSchema = {
 
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} is:inline />
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />
+
+    <style is:global>
+      html.snap-sections {
+        scroll-snap-type: y proximity;
+        scroll-padding-top: 3.75rem;
+      }
+
+      @media (min-width: 1440px) {
+        html.snap-sections {
+          scroll-padding-top: 5.625rem;
+        }
+      }
+
+      html.snap-sections main {
+        display: flow-root;
+        overflow-x: clip;
+        overflow-y: visible;
+      }
+
+      html.snap-sections main > section,
+      html.snap-sections .content-wrapper > footer {
+        scroll-snap-align: start;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html.snap-sections {
+          scroll-snap-type: none;
+        }
+      }
+    </style>
   </head>
   <body class:list={['page-wrapper', 'push-container', bodyClass]}>
     <Header locale={locale} path={path} paths={alternates} />

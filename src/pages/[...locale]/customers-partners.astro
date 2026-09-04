@@ -22,16 +22,14 @@ const { partners } = customersPage;
   title={customersPage.meta.title}
   description={customersPage.meta.description}
   bodyClass="customers-page"
+  snapScroll
 >
   <section class="ui-color-section">
     <div class="wrapper customers-secion">
       <h1 class="ui-title">{customersPage.title}</h1>
-      <div class="news-heading customers-heading">
-        <div class="ui-description">{customersPage.description}</div>
-      </div>
       <div class="row">
         <div class="customers-list-container">
-          <div class="customers-list">
+          <div class="customers-static-list">
             {
               customersPage.items.map((item) => (
                 <div class="customers-item">
@@ -80,3 +78,68 @@ const { partners } = customersPage;
     </div>
   </section>
 </Layout>
+
+<style>
+  /* Only a couple of customers, so the theme's slick carousel (1 slide below
+     768px) is replaced by a static, wrapping row. */
+  .customers-static-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.75rem;
+    margin-top: 6.25rem;
+  }
+
+  @media (max-width: 1024px) {
+    .customers-static-list {
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+  }
+
+  .customers-static-list .customers-item {
+    width: 13.75rem;
+    text-align: center;
+  }
+
+  .customers-static-list a {
+    position: relative;
+    display: inline-block;
+  }
+
+  .customers-static-list a::before {
+    box-shadow: 0 1.875rem 3.75rem 0 rgba(0, 0, 0, 0.08);
+    position: absolute;
+    inset: 0;
+    display: block;
+    border-radius: 50%;
+    z-index: -1;
+    content: '';
+  }
+
+  .customers-static-list .title {
+    margin-top: 1.5625rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .customers-static-list .description {
+    margin-top: 0.625rem;
+    font-size: 1.0625rem;
+    letter-spacing: -0.00625rem;
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1.5229;
+  }
+
+  @media (max-width: 1280px) {
+    .customers-static-list .title {
+      font-size: 1.0625rem;
+    }
+
+    .customers-static-list .description {
+      font-size: 0.9375rem;
+    }
+  }
+</style>

@@ -143,7 +143,6 @@ export interface Content {
       description: string;
     };
     title: string;
-    description: string;
     items: CustomerItem[];
     partners: {
       offerTitle: string;
