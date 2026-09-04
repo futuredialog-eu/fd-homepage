@@ -7,9 +7,11 @@ import { getContent, localizePath, withBase, type Locale } from '../i18n';
 interface Props {
   locale: Locale;
   path?: string;
+  /** Per-locale override of `path`, for pages that are not translated everywhere. */
+  paths?: Record<Locale, string>;
 }
 
-const { locale, path = '/' } = Astro.props;
+const { locale, path = '/', paths } = Astro.props;
 const { navigation, policyLinks, ui } = getContent(locale);
 const year = new Date().getFullYear();
 ---
@@ -30,7 +32,7 @@ const year = new Date().getFullYear();
       <div class="col-xs-12 col-md-2 footer-menu">
         <nav>
           <div class="nav-container">
-            <Navigation locale={locale} items={navigation} path={path} class="block-list" />
+            <Navigation locale={locale} items={navigation} path={path} paths={paths} class="block-list" />
           </div>
         </nav>
       </div>

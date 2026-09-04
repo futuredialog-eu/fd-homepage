@@ -1,0 +1,64 @@
+---
+import BlogCard from '../../../../components/BlogCard.astro';
+import BlogCategoryNav from '../../../../components/BlogCategoryNav.astro';
+import BlogQuote from '../../../../components/BlogQuote.astro';
+import Layout from '../../../../layouts/Layout.astro';
+import type { BlogCategory } from '../../../../data/blog';
+import { site } from '../../../../data/site';
+import { defaultLocale, getContent, locales, type Locale } from '../../../../i18n';
+import {
+  categoryLocalePaths,
+  categoryPath,
+  getPosts,
+  getUsedCategories,
+} from '../../../../utils/blog';
+
+export async function getStaticPaths() {
+  const paths = await Promise.all(
+    locales.map(async (locale) => {
+      const categories = await getUsedCategories(locale);
+      return categories.map((category) => ({
+        params: { locale: locale === defaultLocale ? undefined : locale, category },
+        props: { locale, category },
+      }));
+    }),
+  );
+  return paths.flat();
+}
+
+const { locale, category } = Astro.props as { locale: Locale; category: BlogCategory };
+const { blogPage } = getContent(locale);
+const label = blogPage.categoryLabels[category];
+const posts = await getPosts(locale, category);
+const categories = await getUsedCategories(locale);
+const alternates = await categoryLocalePaths(category);
+---
+
+<Layout
+  locale={locale}
+  path={categoryPath(category)}
+  paths={alternates}
+  title={`${label} - ${site.name}`}
+  description={blogPage.meta.description}
+  bodyClass="news"
+>
+  <section class="wrapper news-section">
+    <h1 class="ui-title">{label}</h1>
+    <div class="news-heading">
+      <div class="ui-description"><p>{blogPage.description}</p></div>
+      <BlogCategoryNav locale={locale} categories={categories} active={category} />
+    </div>
+    <div class="row news-content">
+      {
+        posts.map((post, index) => (
+          <BlogCard
+            entry={post}
+            locale={locale}
+            class={index < 2 ? 'large-article col-xs-12 col-sm-6' : 'col-xs-12 col-sm-4'}
+          />
+        ))
+      }
+    </div>
+    <BlogQuote locale={locale} />
+  </section>
+</Layout>

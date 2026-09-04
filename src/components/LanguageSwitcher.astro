@@ -5,9 +5,11 @@ interface Props {
   locale: Locale;
   /** Current path with the locale prefix stripped, e.g. `/contacts/`. */
   path?: string;
+  /** Per-locale override of `path`, for pages that are not translated everywhere. */
+  paths?: Record<Locale, string>;
 }
 
-const { locale, path = '/' } = Astro.props;
+const { locale, path = '/', paths } = Astro.props;
 ---
 
 {
@@ -20,7 +22,7 @@ const { locale, path = '/' } = Astro.props;
         { 'wpml-ls-current-language': code === locale },
       ]}
     >
-      <a href={localizePath(path, code)} hreflang={code}>
+      <a href={localizePath(paths?.[code] ?? path, code)} hreflang={code}>
         <img
           class="wpml-ls-flag"
           src={withBase(`/images/flags/${code}.svg`)}

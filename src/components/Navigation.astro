@@ -7,10 +7,12 @@ interface Props {
   locale: Locale;
   items: NavItem[];
   path?: string;
+  /** Per-locale override of `path`, for pages that are not translated everywhere. */
+  paths?: Record<Locale, string>;
   class?: string;
 }
 
-const { locale, items, path = '/', class: className } = Astro.props;
+const { locale, items, path = '/', paths, class: className } = Astro.props;
 ---
 
 <ul class:list={['ui-navigation', 'navigation', className]}>
@@ -31,5 +33,5 @@ const { locale, items, path = '/', class: className } = Astro.props;
       );
     })
   }
-  <LanguageSwitcher locale={locale} path={path} />
+  <LanguageSwitcher locale={locale} path={path} paths={paths} />
 </ul>

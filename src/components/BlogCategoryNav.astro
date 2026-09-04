@@ -1,0 +1,29 @@
+---
+import type { BlogCategory } from '../data/blog';
+import { getContent, localizePath, type Locale } from '../i18n';
+import { categoryPath } from '../utils/blog';
+
+interface Props {
+  locale: Locale;
+  categories: BlogCategory[];
+  active?: BlogCategory;
+}
+
+const { locale, categories, active } = Astro.props;
+const { blogPage } = getContent(locale);
+---
+
+<ul class="news-category inline-list">
+  {
+    categories.map((category) => (
+      <li class="nav-item">
+        <a
+          class:list={[{ active: category === active }]}
+          href={localizePath(categoryPath(category), locale)}
+        >
+          {blogPage.categoryLabels[category]}
+        </a>
+      </li>
+    ))
+  }
+</ul>

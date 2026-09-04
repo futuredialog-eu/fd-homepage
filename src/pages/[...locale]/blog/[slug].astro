@@ -1,0 +1,114 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogQuote from '../../../components/BlogQuote.astro';
+import SvgIcon from '../../../components/SvgIcon.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { site } from '../../../data/site';
+import {
+  defaultLocale,
+  getContent,
+  localizePath,
+  withBase,
+  type Locale,
+} from '../../../i18n';
+import {
+  categoryPath,
+  entryLocale,
+  entrySlug,
+  formatDate,
+  postLocalePaths,
+  postPath,
+  type BlogEntry,
+} from '../../../utils/blog';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('blog');
+  return entries.map((entry) => {
+    const locale = entryLocale(entry);
+    return {
+      params: { locale: locale === defaultLocale ? undefined : locale, slug: entrySlug(entry) },
+      props: { locale, entry },
+    };
+  });
+}
+
+const { locale, entry } = Astro.props as { locale: Locale; entry: BlogEntry };
+const { blogPage } = getContent(locale);
+const { title, description, pubDate, readingMinutes, categories, image, imageCredit } = entry.data;
+const { Content } = await render(entry);
+
+const path = postPath(entry);
+const alternates = await postLocalePaths(entry);
+const shareUrl = new URL(localizePath(path, locale), Astro.site!).href;
+const readingTime = blogPage.readingTime.replace('{minutes}', String(readingMinutes));
+
+const shareLinks = [
+  { icon: 'social-in', href: `https://www.linkedin.com/shareArticle?url=${shareUrl}` },
+  { icon: 'social-fb', href: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}` },
+  { icon: 'social-tw', href: `https://twitter.com/share?url=${shareUrl}` },
+];
+---
+
+<Layout
+  locale={locale}
+  path={path}
+  paths={alternates}
+  title={`${title} - ${site.name}`}
+  description={description}
+  bodyClass="news-single"
+>
+  <section class="news-detail">
+    <div class="wrapper" itemscope itemtype="http://schema.org/Article">
+      <div class="news-info">
+        {
+          categories.map((category) => (
+            <a class="category" href={localizePath(categoryPath(category), locale)}>
+              {blogPage.categoryLabels[category]}&nbsp;
+            </a>
+          ))
+        }
+        <span class="time-for-read">{readingTime}</span>
+        <h1 itemprop="headline">{title}</h1>
+        <time datetime={pubDate.toISOString()} itemprop="datePublished">
+          {formatDate(pubDate, locale)}
+        </time>
+      </div>
+    </div>
+    <figure itemscope itemtype="http://schema.org/ImageObject">
+      <img itemprop="image" src={withBase(image)} alt={title} />
+      {
+        imageCredit && (
+          <figcaption class="wrapper">
+            <div class="row">
+              <div class="col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8">
+                {blogPage.photoCredit} <span itemprop="author">{imageCredit}</span>
+              </div>
+            </div>
+          </figcaption>
+        )
+      }
+    </figure>
+    <div class="wrapper" itemprop="articleBody">
+      <div class="row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 article">
+          <Content />
+        </div>
+      </div>
+      <div class="center-xs article-footer">
+        <h3 class="social-title">{blogPage.shareTitle}</h3>
+        <ul class="inline-list center-xs contact-form-social col-xs-12">
+          {
+            shareLinks.map((link) => (
+              <li>
+                <a href={link.href} target="_blank" rel="noopener">
+                  <SvgIcon name={link.icon} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <BlogQuote locale={locale} />
+    </div>
+  </section>
+</Layout>

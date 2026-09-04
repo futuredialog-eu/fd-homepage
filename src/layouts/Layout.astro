@@ -9,6 +9,8 @@ interface Props {
   locale: Locale;
   /** Current path with the locale prefix stripped, e.g. `/contacts/`. */
   path?: string;
+  /** Per-locale override of `path`, for pages that are not translated everywhere. */
+  paths?: Record<Locale, string>;
   title?: string;
   description?: string;
   bodyClass?: string;
@@ -19,18 +21,25 @@ const { meta } = getContent(locale);
 const title = Astro.props.title ?? meta.title;
 const description = Astro.props.description ?? meta.description;
 
-const canonical = new URL(localizePath(path, locale), site.url).href;
+// Absolute URLs derive from the `site` + `base` pair in astro.config.mjs, so
+// they stay correct on GitHub Pages and after a move to a custom domain.
+const origin = Astro.site!;
+const siteRoot = new URL(withBase('/'), origin).href;
+const canonical = new URL(localizePath(path, locale), origin).href;
+const alternates =
+  Astro.props.paths ??
+  (Object.fromEntries(locales.map((code) => [code, path])) as Record<Locale, string>);
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': `${site.url}/#website`,
-  url: `${site.url}/`,
+  '@id': `${siteRoot}#website`,
+  url: siteRoot,
   name: site.name,
   inLanguage: locale,
   potentialAction: {
     '@type': 'SearchAction',
-    target: `${site.url}/?s={search_term_string}`,
+    target: `${siteRoot}?s={search_term_string}`,
     'query-input': 'required name=search_term_string',
   },
 };
@@ -38,11 +47,11 @@ const websiteSchema = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': `${site.url}/#organization`,
-  url: `${site.url}/`,
+  '@id': `${siteRoot}#organization`,
+  url: siteRoot,
   sameAs: [],
   name: site.organization,
-  logo: site.logo,
+  logo: new URL(withBase(site.logo), origin).href,
 };
 ---
 
@@ -72,7 +81,7 @@ const organizationSchema = {
         <link
           rel="alternate"
           hreflang={code}
-          href={new URL(localizePath(path, code), site.url).href}
+          href={new URL(localizePath(alternates[code], code), origin).href}
         />
       ))
     }
@@ -93,12 +102,12 @@ const organizationSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />
   </head>
   <body class:list={['page-wrapper', 'push-container', bodyClass]}>
-    <Header locale={locale} path={path} />
+    <Header locale={locale} path={path} paths={alternates} />
     <div class="content-wrapper push-container">
       <main>
         <slot />
       </main>
-      <Footer locale={locale} path={path} />
+      <Footer locale={locale} path={path} paths={alternates} />
       <Modals locale={locale} />
     </div>
     <script is:inline src={withBase('/theme/js/main.min.js')}></script>

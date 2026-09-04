@@ -20,12 +20,6 @@ export function isLocale(value: string | undefined): value is Locale {
   return locales.includes(value as Locale);
 }
 
-/** Reads the locale from a pathname such as `/et/contacts/`. */
-export function getLocaleFromPath(pathname: string): Locale {
-  const segment = pathname.split('/').filter(Boolean)[0];
-  return isLocale(segment) ? segment : defaultLocale;
-}
-
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 /** Prefixes a root-relative path with the configured `base` path. */

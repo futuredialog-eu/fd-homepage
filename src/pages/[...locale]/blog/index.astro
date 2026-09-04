@@ -1,0 +1,48 @@
+---
+import BlogCard from '../../../components/BlogCard.astro';
+import BlogCategoryNav from '../../../components/BlogCategoryNav.astro';
+import BlogQuote from '../../../components/BlogQuote.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { defaultLocale, getContent, locales, type Locale } from '../../../i18n';
+import { getPosts, getUsedCategories } from '../../../utils/blog';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({
+    params: { locale: locale === defaultLocale ? undefined : locale },
+    props: { locale },
+  }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const { blogPage } = getContent(locale);
+const posts = await getPosts(locale);
+const categories = await getUsedCategories(locale);
+---
+
+<Layout
+  locale={locale}
+  path="/blog/"
+  title={blogPage.meta.title}
+  description={blogPage.meta.description}
+  bodyClass="news"
+>
+  <section class="wrapper news-section">
+    <h1 class="ui-title">{blogPage.title}</h1>
+    <div class="news-heading">
+      <div class="ui-description"><p>{blogPage.description}</p></div>
+      <BlogCategoryNav locale={locale} categories={categories} />
+    </div>
+    <div class="row news-content">
+      {
+        posts.map((post, index) => (
+          <BlogCard
+            entry={post}
+            locale={locale}
+            class={index < 2 ? 'large-article col-xs-12 col-sm-6' : 'col-xs-12 col-sm-4'}
+          />
+        ))
+      }
+    </div>
+    <BlogQuote locale={locale} />
+  </section>
+</Layout>

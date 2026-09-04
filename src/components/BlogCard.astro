@@ -1,0 +1,44 @@
+---
+import { getContent, localizePath, withBase, type Locale } from '../i18n';
+import { categoryPath, formatDate, postPath, type BlogEntry } from '../utils/blog';
+
+interface Props {
+  entry: BlogEntry;
+  locale: Locale;
+  class?: string;
+}
+
+const { entry, locale, class: className } = Astro.props;
+const { blogPage } = getContent(locale);
+const { title, thumbnail, categories, readingMinutes, pubDate } = entry.data;
+const href = localizePath(postPath(entry), locale);
+const readingTime = blogPage.readingTime.replace('{minutes}', String(readingMinutes));
+---
+
+<article
+  class:list={['ui-article', className]}
+  itemscope
+  itemtype="http://schema.org/Article"
+>
+  <a class="news-images" href={href} itemprop="url">
+    <img src={withBase(thumbnail)} alt={title} />
+  </a>
+  <div class="info">
+    {
+      categories.map((category) => (
+        <a class="category" href={localizePath(categoryPath(category), locale)}>
+          {blogPage.categoryLabels[category]}&nbsp;
+        </a>
+      ))
+    }
+    <div class="time-for-read">{readingTime}</div>
+  </div>
+  <h3 class="title" itemprop="headline">
+    <a href={href}>{title}</a>
+  </h3>
+  <p class="date">
+    <time datetime={pubDate.toISOString()} itemprop="datePublished">
+      {formatDate(pubDate, locale)}
+    </time>
+  </p>
+</article>

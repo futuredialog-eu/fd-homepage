@@ -1,3 +1,5 @@
+import type { BlogCategory } from '../data/blog';
+
 export interface NavItem {
   label: string;
   /** Root-relative path without the locale prefix, or an absolute URL. */
@@ -112,6 +114,19 @@ export interface Content {
       items: CaseItem[];
     };
     quote: string;
+  };
+  blogPage: {
+    meta: {
+      title: string;
+      description: string;
+    };
+    title: string;
+    description: string;
+    categoryLabels: Record<BlogCategory, string>;
+    /** Contains a `{minutes}` placeholder. */
+    readingTime: string;
+    photoCredit: string;
+    shareTitle: string;
   };
   contactsPage: {
     meta: {
