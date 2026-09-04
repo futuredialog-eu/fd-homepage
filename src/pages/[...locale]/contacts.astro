@@ -44,12 +44,13 @@ const { contactSection, contactsPage } = getContent(locale);
               ))
             }
           </ul>
-          <h2 class="ui-title about-title">{contactsPage.aboutTitle}</h2>
+        </div>
+        <div class="col-xs-12 col-md-7 col-lg-6 contact-about">
+          <h2 class="ui-title">{contactsPage.aboutTitle}</h2>
           <div class="ui-description description about-description">
             {contactsPage.aboutDescription}
           </div>
         </div>
-        <div class="col-md-7 col-lg-6"></div>
       </div>
     </div>
   </section>
@@ -149,8 +150,8 @@ const { contactSection, contactsPage } = getContent(locale);
   }
 
   .contact-users-container {
-    margin-top: 16.125rem;
-    margin-bottom: 11.25rem;
+    margin-top: 8.0625rem;
+    margin-bottom: 5.625rem;
   }
 
   @media (width < 1024px) {
@@ -167,8 +168,18 @@ const { contactSection, contactsPage } = getContent(locale);
     }
   }
 
-  .about-title {
-    margin-top: -3rem;
+  .contact-form-social a {
+    background-color: var(--color-brand-10);
+  }
+
+  .contact-form-social a :global(svg) {
+    fill: var(--color-brand);
+  }
+
+  @media (width < 992px) {
+    .contact-about {
+      margin-top: 3.75rem;
+    }
   }
 
   .about-description {
