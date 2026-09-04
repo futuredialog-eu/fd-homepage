@@ -13,22 +13,68 @@ const { reviews } = getContent(locale);
   <div class="row center-lg">
     <div class="col-xs-12 col-lg-8">
       <div class="review-content">
+        <div class="review-stack">
+          {
+            reviews.map((item, index) => (
+              <div
+                class:list={['review-item', { 'is-current': index === 0 }]}
+                itemscope
+                itemtype="http://schema.org/Review"
+              >
+                <p>
+                  <q class="review" itemprop="description">
+                    {item.review}
+                  </q>
+                  <cite class="author" itemprop="author">
+                    {item.author}
+                    <span>{item.position}</span>
+                  </cite>
+                </p>
+              </div>
+            ))
+          }
+        </div>
         {
-          reviews.map((item) => (
-            <div class="review-item" itemscope itemtype="http://schema.org/Review">
-              <p>
-                <q class="review" itemprop="description">
-                  {item.review}
-                </q>
-                <cite class="author" itemprop="author">
-                  {item.author}
-                  <span>{item.position}</span>
-                </cite>
-              </p>
-            </div>
-          ))
+          reviews.length > 1 && (
+            <ul class="review-dots">
+              {reviews.map((item, index) => (
+                <li>
+                  <button
+                    type="button"
+                    class:list={[{ 'is-current': index === 0 }]}
+                    aria-label={item.author}
+                    aria-current={index === 0 ? 'true' : undefined}
+                  >
+                    {item.author}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )
         }
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Replaces the theme's slick carousel. The first review is marked current
+  // server-side, so there is nothing to initialise — only the dots to wire up.
+  const carousel = document.querySelector<HTMLElement>('.review-content');
+
+  if (carousel) {
+    const items = carousel.querySelectorAll<HTMLElement>('.review-item');
+    const dots = carousel.querySelectorAll<HTMLButtonElement>('.review-dots button');
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        items.forEach((item, i) => item.classList.toggle('is-current', i === index));
+        dots.forEach((other, i) => {
+          other.classList.toggle('is-current', i === index);
+          if (i === index) other.setAttribute('aria-current', 'true');
+          else other.removeAttribute('aria-current');
+        });
+      });
+    });
+  }
+</script>

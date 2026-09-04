@@ -13,3 +13,79 @@ const { name, sprite = 'svg-sprite', class: className } = Astro.props;
 <svg class:list={['svg-icon', `icon-${name}`, className]}>
   <use xlink:href={withBase(`/theme/images/sprites/${sprite}.svg#${name}`)}></use>
 </svg>
+
+<style>
+  .svg-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+
+  .svg-icon.icon-burger {
+    width: 18px;
+    height: 12px;
+  }
+
+  .svg-icon.icon-case-1 {
+    width: 52px;
+    height: 43px;
+  }
+
+  .svg-icon.icon-case-2 {
+    width: 52px;
+    height: 47px;
+  }
+
+  .svg-icon.icon-case-3 {
+    width: 52px;
+    height: 50px;
+  }
+
+  .svg-icon.icon-case-4 {
+    width: 40px;
+    height: 50px;
+  }
+
+  .svg-icon.icon-close {
+    width: 14px;
+    height: 14px;
+  }
+
+  .svg-icon.icon-how-1 {
+    width: 52px;
+    height: 47px;
+  }
+
+  .svg-icon.icon-how-2 {
+    width: 47px;
+    height: 54px;
+  }
+
+  .svg-icon.icon-how-3 {
+    width: 74px;
+    height: 54px;
+  }
+
+  .svg-icon.icon-how-4 {
+    width: 54px;
+    height: 50px;
+  }
+
+  .svg-icon.icon-social-fb {
+    width: 10px;
+    height: 20px;
+  }
+
+  .svg-icon.icon-social-in {
+    width: 20px;
+    height: 20px;
+  }
+
+  .svg-icon.icon-social-tw {
+    width: 21px;
+    height: 19px;
+  }
+</style>

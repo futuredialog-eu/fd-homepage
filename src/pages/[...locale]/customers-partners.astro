@@ -80,6 +80,233 @@ const { partners } = customersPage;
 </Layout>
 
 <style>
+  .partners-container ol,
+  .partners-container ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .partners-container ol+p,
+  .partners-container ul+p {
+    margin-top: 3.375rem;
+  }
+
+  @media (width < 768px) {
+    .partners-container ol+p,
+    .partners-container ul+p {
+      margin-top: 1.875rem;
+    }
+  }
+
+  .partners-container ol li,
+  .partners-container ul li {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.7777;
+  }
+
+  .partners-container ol li:before,
+  .partners-container ul li:before {
+    display: inline-block;
+    margin-left: -1em;
+    width: 1em;
+    color: var(--color-brand);
+  }
+
+  .partners-container ul li:before {
+    content: "\2022";
+  }
+
+  .partners-container ol li {
+    counter-increment: a;
+  }
+
+  .partners-container ol li:before {
+    content: counter(a);
+  }
+
+  .customers-secion {
+    padding-top: 12.5rem;
+    padding-bottom: 17.5rem;
+  }
+
+  @media (width < 1440px) {
+    .customers-secion {
+      padding-bottom: 13.75rem;
+    }
+
+    .customers-secion {
+      padding-top: 8.125rem;
+    }
+  }
+
+  @media (width < 1024px) {
+    .customers-secion {
+      padding-top: 11.0625rem;
+      padding-bottom: 12.5rem;
+    }
+  }
+
+  @media (width < 992px) {
+    .customers-secion {
+      padding-top: 9.8125rem;
+      padding-bottom: 11.25rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .customers-secion {
+      padding-top: 6.0625rem;
+      padding-bottom: 15rem;
+    }
+
+    .customers-secion .news-category {
+      display: none;
+    }
+  }
+
+  .customers-list-container {
+    width: 100%;
+  }
+
+  @media (width < 1280px) {
+    .customers-list-container {
+      overflow: hidden;
+    }
+  }
+
+  .partners-secion {
+    margin-top: 1.25rem;
+    margin-bottom: 11.25rem;
+  }
+
+  @media (width < 1440px) {
+    .partners-secion {
+      margin-top: -3.75rem;
+    }
+  }
+
+  @media (width < 1280px) {
+    .partners-secion {
+      margin-bottom: 5.625rem;
+    }
+  }
+
+  @media (width < 992px) {
+    .partners-secion {
+      margin-top: -4.375rem;
+      margin-bottom: 3.75rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .partners-secion {
+      margin-top: -8.75rem;
+    }
+  }
+
+  .partners-heading {
+    margin-bottom: 3.75rem;
+  }
+
+  @media (width < 768px) {
+    .partners-heading {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .partners-heading .description {
+    margin-top: .9375rem;
+  }
+
+  .partners-container {
+    margin-top: 3.4375rem;
+    margin-bottom: 9.625rem;
+  }
+
+  @media (width < 1440px) {
+    .partners-container {
+      margin-bottom: 7.5rem;
+    }
+  }
+
+  @media (width < 992px) {
+    .partners-container {
+      margin-bottom: 5.625rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .partners-container {
+      margin-top: .625rem;
+      margin-bottom: 3.125rem;
+    }
+  }
+
+  .partners-container .title {
+    margin: 1.875rem 0;
+    font-size: 1.625rem;
+    letter-spacing: -.0375rem;
+    line-height: 1.5384;
+  }
+
+  @media (width < 768px) {
+    .partners-container .title {
+      margin-bottom: .625rem;
+      font-size: 1.375rem;
+      line-height: 1.5;
+    }
+  }
+
+  .partners-container .description {
+    margin-top: 1.25rem;
+    font-size: 1.125rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.7777;
+  }
+
+  @media (width < 768px) {
+    .partners-container .description {
+      margin-top: .625rem;
+      font-size: .9375rem;
+    }
+  }
+
+  .partners-container .description+.title {
+    margin-top: 3.125rem;
+  }
+
+  @media (width < 768px) {
+    .partners-container .description+.title {
+      margin-top: 1.875rem;
+    }
+  }
+
+  .partners-container ul {
+    margin-top: 1.5625rem;
+  }
+
+  @media (width < 768px) {
+    .partners-container ul {
+      margin-top: .625rem;
+    }
+  }
+
+  .partners-container ul li {
+    color: var(--color-text);
+  }
+
+  @media (width < 768px) {
+    .partners-container ul li {
+      font-size: .9375rem;
+    }
+  }
+
+  .partners-container ul li+li {
+    margin-top: .625rem;
+  }
+
   /* Only a couple of customers, so the theme's slick carousel (1 slide below
      768px) is replaced by a static, wrapping row. */
   .customers-static-list {
@@ -90,7 +317,7 @@ const { partners } = customersPage;
     margin-top: 6.25rem;
   }
 
-  @media (max-width: 1024px) {
+  @media (width < 1024px) {
     .customers-static-list {
       gap: 2.5rem;
       margin-top: 2.5rem;
@@ -133,7 +360,7 @@ const { partners } = customersPage;
     line-height: 1.5229;
   }
 
-  @media (max-width: 1280px) {
+  @media (width < 1280px) {
     .customers-static-list .title {
       font-size: 1.0625rem;
     }

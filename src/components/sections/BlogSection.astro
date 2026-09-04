@@ -53,3 +53,54 @@ const { blogSection, ui } = getContent(locale);
     </div>
   </div>
 </section>
+
+<style>
+  .latest-news-section {
+    padding-top: 8.4375rem;
+    padding-bottom: 9.375rem;
+  }
+
+  @media (width < 1440px) {
+    .latest-news-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .latest-news-section {
+      padding-top: 3.75rem;
+      padding-bottom: 3.75rem;
+    }
+  }
+
+  .latest-news-section .read-me {
+    color: var(--color-brand);
+  }
+
+  .latest-news-section .news-container {
+    margin-top: 7rem;
+  }
+
+  @media (width < 1024px) {
+    .latest-news-section .news-container .ui-article:nth-child(n+3) {
+      display: none;
+    }
+  }
+
+  @media (width < 1440px) {
+    .latest-news-section .news-container {
+      margin-top: 5rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .latest-news-section .news-container {
+      margin-top: 3.125rem;
+    }
+
+    .latest-news-section .news-container .ui-article:nth-child(n+2) {
+      margin-top: 2.5rem;
+    }
+  }
+</style>

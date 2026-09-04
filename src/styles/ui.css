@@ -1,0 +1,461 @@
+/* The theme's `ui-*` primitives, shared by several components. */
+.inline-list {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+}
+
+.block-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.ui-button {
+  border-radius: .25rem;
+  padding: 1.0625rem 2.5rem 1.125rem;
+  font-size: 1.0625rem;
+  letter-spacing: -.00625rem;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1.7647;
+  background-color: var(--color-brand);
+  color: #fff;
+  transition: all .2s ease;
+}
+
+.ui-button:hover {
+  cursor: pointer;
+  color: hsla(0,0%,100%,.9);
+}
+
+@media (width < 1440px) {
+  .ui-button {
+    padding: .9375rem 1.875rem;
+    font-size: .9375rem;
+  }
+}
+
+@media (width < 1024px) {
+  .ui-button {
+    padding: 1.0625rem 1.875rem 1.125rem;
+  }
+}
+
+@media (width < 768px) {
+  .ui-button {
+    padding: 1.0625rem 2.5rem 1.125rem;
+    font-size: .9375rem;
+    letter-spacing: 0;
+  }
+}
+
+.ui-button:hover {
+  text-decoration: none;
+}
+
+.ui-button-shadow {
+  position: relative;
+  background-color: var(--color-brand-90);
+}
+
+.ui-button-shadow:before {
+  bottom: -.5rem;
+  position: absolute;
+  display: block;
+  top: 20%;
+  left: 5%;
+  right: 5%;
+  z-index: -1;
+  background-color: var(--color-brand-55);
+  filter: blur(10px);
+  transition: all .5s ease;
+  content: "";
+}
+
+.ui-button-shadow:hover:before {
+  opacity: 0;
+}
+
+.ui-contact-user .contact-image {
+  position: relative;
+}
+
+.ui-contact-user .contact-image:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 101%;
+  height: 101%;
+  background-size: contain;
+  content: "";
+}
+
+.ui-description:first-letter,
+.ui-title:first-letter {
+  text-transform: uppercase;
+}
+
+.ui-title {
+  font-size: 3.125rem;
+  letter-spacing: -.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media (width < 1440px) {
+  .ui-title {
+    font-size: 2.25rem;
+    letter-spacing: -.05rem;
+  }
+}
+
+@media (width < 1024px) {
+  .ui-title {
+    font-size: 2.75rem;
+  }
+}
+
+@media (width < 768px) {
+  .ui-title {
+    font-size: 2.5rem;
+  }
+}
+
+.ui-description {
+  font-size: 1.3125rem;
+  font-weight: 500;
+  line-height: 1.9;
+  color: var(--color-text);
+}
+
+@media (width < 1440px) {
+  .ui-description {
+    font-size: 1.125rem;
+  }
+}
+
+@media (width < 768px) {
+  .ui-description {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+}
+
+.ui-description+.ui-button {
+  margin-top: 3.375rem;
+}
+
+@media (width < 1440px) {
+  .ui-description+.ui-button {
+    margin-top: 1.875rem;
+  }
+}
+
+.ui-read-me {
+  font-size: 1.0625rem;
+  letter-spacing: -.00625rem;
+  line-height: 1.7647;
+}
+
+@media (width < 1440px) {
+  .ui-read-me {
+    font-size: .9375rem;
+  }
+}
+
+.ui-quote-container .quote {
+  padding: 0 4.6875rem;
+  font-size: 2rem;
+  letter-spacing: -.0625rem;
+  font-weight: 700;
+  line-height: 1.375;
+  color: var(--color-brand);
+}
+
+@media (width < 768px) {
+  .ui-quote-container .quote {
+    padding: 0 1.25rem;
+    font-size: 1.5rem;
+    letter-spacing: -.01875rem;
+  }
+}
+
+.ui-hr {
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(270deg,var(--color-brand-0),var(--color-brand-15),var(--color-brand-0));
+  text-align: center;
+}
+
+.ui-navigation {
+  margin: 0 0 0 -1.0625rem;
+  font-size: 1.0625rem;
+  letter-spacing: -.00625rem;
+  font-weight: 600;
+  line-height: 2.36;
+  align-items: center;
+}
+
+@media (width < 1440px) {
+  .ui-navigation {
+    margin: 0 0 0 -.75rem;
+    font-size: .9375rem;
+  }
+}
+
+@media (width <= 1150px) {
+  .ui-navigation {
+    font-size: .875rem;
+  }
+}
+
+/* The `button` in these groups is the footer's two policy links, which open a
+   dialog rather than navigate and so are not anchors. They have to read as the
+   links beside them. */
+.ui-navigation a,
+.ui-navigation button {
+  padding: 0 1.0625rem;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--color-text);
+}
+
+/* A button inherits none of the list's type, and brings a background of its own. */
+.ui-navigation button {
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  background: none;
+}
+
+@media (width < 1440px) {
+  .ui-navigation a,
+  .ui-navigation button {
+    padding: 0 .9375rem;
+  }
+}
+
+@media (width <= 1150px) {
+  .ui-navigation a,
+  .ui-navigation button {
+    padding: 0 .625rem;
+  }
+}
+
+.ui-navigation .current-menu-item a,
+.ui-navigation a:hover,
+.ui-navigation button:hover {
+  color: var(--color-brand);
+  text-decoration: none;
+}
+
+.ui-color-section {
+  background-color: rgba(0,0,0,.03);
+}
+
+.ui-article .news-images {
+  border-radius: .25rem;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.ui-article .news-images:before {
+  display: block;
+  padding-top: 66.66%;
+  width: 100%;
+  content: "";
+}
+
+.ui-article .news-images img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: auto;
+  max-width: none;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.ui-article .info {
+  margin-top: 1.75rem;
+  font-size: .8125rem;
+  letter-spacing: -.01875rem;
+  display: flex;
+  line-height: 1;
+}
+
+.ui-article .info .category {
+  font-weight: 700;
+  color: var(--color-brand);
+}
+
+.ui-article .info .category:hover {
+  color: #c79d00;
+}
+
+.ui-article .info .category+.time-for-read {
+  margin-left: .625rem;
+}
+
+.ui-article .info .time-for-read {
+  align-self: flex-end;
+  font-weight: 400;
+}
+
+.ui-article .title a {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 1.625rem;
+  letter-spacing: -.0375rem;
+  font-weight: 700;
+  line-height: 1.5384;
+  color: #000;
+}
+
+@media (width < 1024px) {
+  .ui-article .title a {
+    font-size: 1.25rem;
+    letter-spacing: -.01875rem;
+  }
+}
+
+@media (width < 768px) {
+  .ui-article .title a {
+    font-size: 1.125rem;
+    letter-spacing: 0;
+    line-height: 1.35;
+  }
+}
+
+.ui-article .title a:hover {
+  color: var(--color-brand);
+  text-decoration: none;
+}
+
+.ui-article.large-article .title a {
+  margin-top: 1.25rem;
+  font-size: 2rem;
+  letter-spacing: -.0625rem;
+  line-height: 1.35;
+}
+
+@media (width < 1024px) {
+  .ui-article.large-article .title a {
+    font-size: 1.75rem;
+    letter-spacing: -.0375rem;
+  }
+}
+
+@media (width < 992px) {
+  .ui-article.large-article .title a {
+    font-size: 1.5rem;
+    letter-spacing: -.01875rem;
+  }
+}
+
+@media (width < 768px) {
+  .ui-article.large-article .title a {
+    margin-top: .9375rem;
+    font-size: 1.125rem;
+    letter-spacing: 0;
+    line-height: 1.35;
+  }
+}
+
+.ui-article .date {
+  margin-top: 1.25rem;
+  font-size: .8125rem;
+  letter-spacing: -.01875rem;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+@media (width < 768px) {
+  .ui-article .date {
+    margin-top: .9375rem;
+  }
+}
+
+.ui-article .date time {
+  font-weight: 700;
+}
+
+.ui-contact-user .contact-image {
+  width: 12.5rem;
+  height: 12.5rem;
+  margin: 0 auto;
+}
+
+.ui-contact-user .contact-image:after {
+  background: url('../assets/icons/mask.svg') 50%/cover;
+}
+
+.ui-contact-user .contact-image img {
+  border: .0625rem solid #fff;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.ui-contact-user .name {
+  margin-top: 1.4375rem;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.ui-contact-user .position {
+  font-size: 1.0625rem;
+  letter-spacing: -.00625rem;
+  min-width: 100%;
+  line-height: 1.7647;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.ui-contact-user .position+a {
+  margin-top: .9375rem;
+}
+
+.ui-contact-user a {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.0625rem;
+  letter-spacing: -.00625rem;
+  line-height: 1.4117;
+  font-weight: 500;
+}
+
+.ui-quote-container {
+  margin-top: 7.5rem;
+}
+
+@media (width < 1440px) {
+  .ui-quote-container {
+    margin-top: 6.25rem;
+  }
+}
+
+@media (width < 1024px) {
+  .ui-quote-container {
+    margin-top: 5rem;
+    text-align: center;
+  }
+}
+
+@media (width < 768px) {
+  .ui-quote-container {
+    margin-top: 3.125rem;
+  }
+}
+
+.ui-quote-container .quote+.button {
+  margin-top: 2.125rem;
+}

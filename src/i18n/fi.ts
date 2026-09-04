@@ -9,10 +9,10 @@ export const fi: Content = {
   ui: {
     bookDemo: 'Sovi tapaaminen',
     readMore: 'Lue lisää',
-    // subscribeTitle: 'Tilaa uutiskirje:',
-    // subscribePlaceholder: 'Sähköposti',
-    // subscribeButton: 'Tilaa',
     copyright: 'Kaikki oikeudet pidätetään.',
+    openMenu: 'Avaa valikko',
+    closeMenu: 'Sulje valikko',
+    close: 'Sulje',
   },
   navigation: [
     { label: 'Koti', href: '/' },

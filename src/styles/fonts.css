@@ -1,0 +1,44 @@
+/* Gilroy. The files live in `src/assets` so Vite fingerprints them and the
+   `base` path stays out of the URLs.
+
+   The theme also shipped `.eot` sources for IE8; they are dropped because Astro
+   supports no browser that needs them. */
+@font-face {
+  font-family: Gilroy;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('../assets/fonts/Gilroy/393C60_1_0.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy/393C60_1_0.woff') format('woff'),
+    url('../assets/fonts/Gilroy/393C60_1_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('../assets/fonts/Gilroy/393C60_2_0.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy/393C60_2_0.woff') format('woff'),
+    url('../assets/fonts/Gilroy/393C60_2_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url('../assets/fonts/Gilroy/393C60_0_0.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy/393C60_0_0.woff') format('woff'),
+    url('../assets/fonts/Gilroy/393C60_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url('../assets/fonts/Gilroy/393C60_3_0.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy/393C60_3_0.woff') format('woff'),
+    url('../assets/fonts/Gilroy/393C60_3_0.ttf') format('truetype');
+}

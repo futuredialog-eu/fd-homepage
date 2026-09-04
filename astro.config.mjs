@@ -20,6 +20,7 @@ const defaultLocale = 'en';
 export default defineConfig({
   site,
   base,
+
   i18n: {
     locales,
     defaultLocale,
@@ -27,6 +28,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
   // Legacy WordPress URLs. Static builds emit a meta-refresh stub per entry
   // (GitHub Pages cannot serve a 301), and `base` is NOT applied to the
   // destination, so each one spells it out.
@@ -64,6 +66,7 @@ export default defineConfig({
     '/fi/uutiset/kriisitiedot-nopeasti-yhteison-tietoon-sovelluksen-avulla-kokemustarina-elvan-kunnalta/':
       `${basePrefix}/fi/blog/kriisitiedot-nopeasti-yhteison-tietoon-sovelluksen-avulla-kokemustarina-elvan-kunnalta/`,
   },
+
   markdown: {
     processor: satteri({
       hastPlugins: [blogLinks({ base: basePrefix, locales, defaultLocale })],

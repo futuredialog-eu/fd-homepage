@@ -6,6 +6,9 @@ import Layout from '../../../layouts/Layout.astro';
 import { defaultLocale, getContent, locales, type Locale } from '../../../i18n';
 import { getPosts, getUsedCategories } from '../../../utils/blog';
 
+// Listing CSS, shared with the other blog listing page.
+import '../../../styles/blog.css';
+
 export function getStaticPaths() {
   return locales.map((locale) => ({
     params: { locale: locale === defaultLocale ? undefined : locale },

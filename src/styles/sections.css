@@ -1,0 +1,457 @@
+/* Section styles used by more than one component or page, so they cannot be
+   scoped to a single one. */
+.contact-form-social a {
+  position: relative;
+}
+
+.contact-form-social a:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 101%;
+  height: 101%;
+  background-size: contain;
+  content: "";
+}
+
+.case-studies-section .review {
+  padding: 0 4.6875rem;
+  font-size: 2rem;
+  letter-spacing: -.0625rem;
+  font-weight: 700;
+  line-height: 1.375;
+  color: var(--color-brand);
+}
+
+@media (width < 768px) {
+  .case-studies-section .review {
+    padding: 0 1.25rem;
+    font-size: 1.5rem;
+    letter-spacing: -.01875rem;
+  }
+}
+
+.contact-form-social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.125rem;
+  height: 3.125rem;
+  background-color: rgba(0,156,171,.2);
+}
+
+.contact-form-social a:after {
+  background-image: url('../assets/icons/mask-color.svg');
+}
+
+/* The dots and the stacked reviews are rendered by `ReviewsSection.astro`,
+   which replaced the theme's slick carousel. These rules sit here rather than
+   in that component's scoped block to keep every `.case-studies-section` rule
+   together, since the section itself is shared with the features page.
+   `font-size: 0` hides each button's label, which is there for the accessible
+   name. */
+.case-studies-section .review-dots {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+.case-studies-section .review-dots li+li {
+  margin-left: .75rem;
+}
+
+.case-studies-section .review-dots button {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  font-size: 0;
+  cursor: pointer;
+  background: url('../assets/icons/dots.svg') 50%/cover;
+}
+
+.case-studies-section .review-dots button.is-current,
+.case-studies-section .review-dots button:hover {
+  position: relative;
+  background-color: var(--color-brand);
+}
+
+.case-studies-section .review-dots button.is-current:after,
+.case-studies-section .review-dots button:hover:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 101%;
+  height: 101%;
+  background-size: contain;
+  background-image: url('../assets/icons/mask.svg');
+  content: "";
+}
+
+.images-container {
+  position: relative;
+  height: 100%;
+}
+
+.images-container img {
+  position: absolute;
+  max-width: none;
+  max-height: 100%;
+  left: 0;
+}
+
+.images-container img.middle {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.images-container img.bottom {
+  bottom: 0;
+}
+
+.case-studies-section {
+  margin-top: 11.25rem;
+  margin-bottom: 11.25rem;
+}
+
+@media (width < 1440px) {
+  .case-studies-section {
+    margin-top: 7.5rem;
+    margin-bottom: 7.5rem;
+  }
+}
+
+@media (width < 768px) {
+  .case-studies-section {
+    margin-top: 3.75rem;
+    margin-bottom: 3.75rem;
+  }
+}
+
+.case-studies-section .case-container {
+  margin-top: 7.25rem;
+  border: .0625rem solid var(--color-brand-tint);
+  border-radius: .25rem;
+  display: flex;
+}
+
+@media (width >= 1440px) {
+  .case-studies-section .case-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (width < 1440px) {
+  .case-studies-section .case-container {
+    margin-top: 5.625rem;
+  }
+}
+
+@media (width < 992px) {
+  .case-studies-section .case-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (width < 768px) {
+  .case-studies-section .case-container {
+    margin-top: 3.75rem;
+    margin-bottom: 3.75rem;
+  }
+}
+
+.case-studies-section .case-item {
+  display: flex;
+  flex: 0 1 50%;
+  box-sizing: border-box;
+}
+
+@media (width >= 1440px) {
+  .case-studies-section .case-item:nth-child(2n) {
+    border-left: .0625rem solid var(--color-brand-tint);
+  }
+
+  .case-studies-section .case-item:nth-child(n+3) {
+    border-top: .0625rem solid var(--color-brand-tint);
+  }
+}
+
+@media (1024px <= width < 1440px) {
+  .case-studies-section .case-item {
+    flex-basis: 25%;
+  }
+
+  .case-studies-section .case-item+.case-item {
+    border-left: .0625rem solid var(--color-brand-tint);
+  }
+}
+
+@media (768px <= width < 992px) {
+  .case-studies-section .case-item {
+    flex-basis: 50%;
+  }
+
+  .case-studies-section .case-item:nth-child(2n) {
+    border-left: .0625rem solid var(--color-brand-tint);
+  }
+
+  .case-studies-section .case-item:nth-child(n+3) {
+    border-top: .0625rem solid var(--color-brand-tint);
+  }
+}
+
+@media (width < 768px) {
+  .case-studies-section .case-item {
+    flex-basis: 100%;
+  }
+
+  .case-studies-section .case-item+.case-item {
+    border-top: .0625rem solid var(--color-brand-tint);
+  }
+}
+
+.case-studies-section .case-item a {
+  padding: 3.125rem 4.375rem;
+  position: relative;
+  display: flex;
+  z-index: 1;
+  flex: 1;
+  flex-wrap: wrap;
+  transition: all .2s ease;
+  color: #000;
+}
+
+@media (width < 1440px) {
+  .case-studies-section .case-item a {
+    padding: 2.5rem;
+  }
+}
+
+@media (width < 992px) {
+  .case-studies-section .case-item a {
+    padding: 2.5rem;
+  }
+}
+
+.case-studies-section .case-item svg {
+  stroke: var(--color-brand);
+}
+
+.case-studies-section .case-item .title {
+  margin-top: 4.125rem;
+  font-size: 2rem;
+  width: 100%;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+@media (width < 1440px) {
+  .case-studies-section .case-item .title {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+}
+
+.case-studies-section .case-item .read-me {
+  margin-top: .625rem;
+  display: inline-block;
+  width: 100%;
+  color: var(--color-text);
+}
+
+@media (width < 1440px) {
+  .case-studies-section .case-item .read-me {
+    margin-top: 0;
+  }
+}
+
+@media (width < 992px) {
+  .case-studies-section .case-item .read-me {
+    font-size: .9375rem;
+  }
+}
+
+.case-studies-section .case-item:hover a {
+  border-radius: .25rem;
+  background-color: var(--color-brand);
+  color: #fff;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+.case-studies-section .case-item:hover a svg {
+  stroke: #fff;
+}
+
+.case-studies-section .case-item:hover a .read-me {
+  color: #fff;
+}
+
+/* Every review shares one grid cell, so the section keeps the height of the
+   tallest one whichever is showing and switching dots cannot resize it. That
+   matters beyond the flicker: a height change inside a scroll-snap container
+   makes the browser re-snap, which reads as the page jumping on its own.
+   `visibility` rather than `display` so the hidden ones still set the height. */
+.case-studies-section .review-stack {
+  display: grid;
+}
+
+.case-studies-section .review-stack > .review-item {
+  grid-area: 1 / 1;
+  visibility: hidden;
+}
+
+.case-studies-section .review-stack > .review-item.is-current {
+  visibility: visible;
+}
+
+.case-studies-section .review-content {
+  margin-top: 11.25rem;
+  padding: 0 3.75rem;
+  width: 100%;
+}
+
+@media (width < 1440px) {
+  .case-studies-section .review-content {
+    margin-top: 5rem;
+    padding: 0 3.75rem;
+  }
+}
+
+@media (width < 768px) {
+  .case-studies-section .review-content {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.case-studies-section .review {
+  padding: 0;
+}
+
+@media (width < 768px) {
+  .case-studies-section .review {
+    font-size: 1.25rem;
+  }
+}
+
+.case-studies-section .author {
+  margin-top: 1.5625rem;
+  font-size: 1.125rem;
+  display: block;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.6666;
+  color: #000;
+}
+
+@media (width < 768px) {
+  .case-studies-section .author {
+    font-size: .9375rem;
+  }
+}
+
+.case-studies-section .author span {
+  display: block;
+  color: var(--color-text);
+}
+
+.contact-section {
+  margin-top: 11.25rem;
+  margin-bottom: 11.25rem;
+}
+
+@media (width < 1440px) {
+  .contact-section {
+    margin-top: 5rem;
+    margin-bottom: 7.5rem;
+  }
+}
+
+@media (width < 1280px) {
+  .contact-section {
+    margin-bottom: 5.625rem;
+  }
+}
+
+@media (width < 992px) {
+  .contact-section {
+    margin-top: 5.625rem;
+  }
+}
+
+@media (width < 768px) {
+  .contact-section {
+    margin-top: 3.75rem;
+  }
+}
+
+.contact-section .contact-users {
+  margin-top: 7.5rem;
+  margin-bottom: 8.875rem;
+}
+
+@media (width < 1440px) {
+  .contact-section .contact-users {
+    margin-top: 5rem;
+    margin-bottom: 7.5rem;
+  }
+}
+
+@media (width < 1024px) {
+  .contact-section .contact-users {
+    margin-top: 1.25rem;
+    margin-bottom: 5.625rem;
+  }
+}
+
+@media (width < 992px) {
+  .contact-section .contact-users {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+@media (width < 768px) {
+  .contact-section .contact-users {
+    margin-top: 0;
+  }
+}
+
+.contact-form-social {
+  margin-top: 2.5rem;
+  margin-bottom: 8.125rem;
+}
+
+@media (width < 1024px) {
+  .contact-form-social {
+    margin-top: 1.875rem;
+    margin-bottom: 5.625rem;
+  }
+}
+
+@media (width < 992px) {
+  .contact-form-social {
+    margin-bottom: 6.25rem;
+  }
+}
+
+.contact-form-social li+li {
+  margin-left: 1.25rem;
+}
+
+.contact-form-social a {
+  background-color: var(--color-brand);
+}
+
+.contact-form-social a:after {
+  background-image: url('../assets/icons/mask-color.svg');
+}
+
+.contact-form-social a svg {
+  fill: #fff;
+}

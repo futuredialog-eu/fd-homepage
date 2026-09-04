@@ -125,3 +125,80 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
     </div>
   </section>
 </Layout>
+
+<style>
+  @media (width >= 1024px) {
+    .features {
+      height: 100vh;
+      min-height: 768px;
+    }
+  }
+
+  .features .images-container {
+    height: 100vh;
+  }
+
+  @media (width < 992px) {
+    .features .images-container {
+      height: 32.5rem;
+    }
+  }
+
+  @media (768px <= width < 1024px) {
+    .features .section-info {
+      margin: 5rem 0;
+    }
+  }
+
+  @media (width < 768px) {
+    .features .section-info {
+      margin: 3.75rem 0 1.25rem;
+    }
+
+    .features .features-image {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  @media (width < 1440px) {
+    .features .title {
+      font-size: 2.25rem;
+    }
+  }
+
+  .features .description {
+    margin-top: 2.5rem;
+  }
+
+  @media (width < 1440px) {
+    .features .description {
+      margin-top: 1.25rem;
+      font-size: 1.125rem;
+      line-height: 1.75;
+    }
+  }
+
+  .features-title {
+    margin-top: 17.5rem;
+    margin-bottom: 14rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  @media (width < 1440px) {
+    .features-title {
+      margin-top: 10rem;
+      margin-bottom: 7.5rem;
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .features-title {
+      margin-top: 6.25rem;
+      margin-bottom: 3.75rem;
+      font-size: 1.375rem;
+    }
+  }
+</style>

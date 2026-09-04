@@ -1,0 +1,34 @@
+/* Theme values that repeat across the stylesheets.
+
+   The brand alpha variants are spelled out rather than derived with
+   `rgb(from ...)`, so no browser has to support relative colour syntax. Change
+   the brand hue in all of them together.
+
+   Breakpoints are deliberately absent: plain CSS cannot use a custom property
+   inside a media query. The stylesheets use range syntax against a single
+   scale instead — 768, 992, 1024, 1280 and 1440px. A token may still be
+   redefined per breakpoint, as `--header-height` is below. */
+:root {
+  --color-brand: #0050c7;
+  --color-brand-0: rgb(0 80 199 / 0);
+  --color-brand-10: rgb(0 80 199 / 0.1);
+  --color-brand-15: rgb(0 80 199 / 0.15);
+  --color-brand-30: rgb(0 80 199 / 0.3);
+  --color-brand-55: rgb(0 80 199 / 0.55);
+  --color-brand-90: rgb(0 80 199 / 0.9);
+  --color-brand-tint: #cfe0f7;
+  --color-ink: #2b2e38;
+  --color-text: rgb(0 0 0 / 0.7);
+  --font-body: Gilroy, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+
+  /* Height of the fixed header once it has collapsed on scroll. It lives here
+     rather than in `Header.astro` because `snap-scroll.css` offsets every
+     snapped section by it, and the two must not drift apart. */
+  --header-height: 3.75rem;
+}
+
+@media (width >= 1440px) {
+  :root {
+    --header-height: 5.625rem;
+  }
+}

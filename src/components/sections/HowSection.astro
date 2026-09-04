@@ -38,3 +38,209 @@ const { howSection } = getContent(locale);
     }
   </div>
 </section>
+
+<style>
+  .how-section .icon {
+    position: relative;
+  }
+
+  .how-section .icon:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 101%;
+    height: 101%;
+    background-size: contain;
+    content: "";
+  }
+
+  .how-section {
+    margin-top: 8.4375rem;
+    margin-bottom: 8.4375rem;
+  }
+
+  @media (width < 1440px) {
+    .how-section {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .how-section {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .how-section .how-container {
+    margin-top: 8.75rem;
+    position: relative;
+  }
+
+  @media (width < 1440px) {
+    .how-section .how-container {
+      margin-top: 3.125rem;
+    }
+  }
+
+  @media (width >= 768px) {
+    .how-section .how-container:before {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      border: none;
+      width: 1px;
+      background-image: linear-gradient(0deg,var(--color-brand-0),var(--color-brand-30),var(--color-brand-0));
+      content: "";
+    }
+  }
+
+  .how-section .how-item {
+    padding: 3.5rem;
+    position: relative;
+    display: flex;
+    text-align: left;
+  }
+
+  @media (width < 768px) {
+    .how-section .how-item {
+      padding: .625rem;
+    }
+
+    .how-section .how-item+.how-item {
+      margin-top: 10px;
+    }
+  }
+
+  @media (width >= 768px) {
+    .how-section .how-item {
+      padding: 1.875rem;
+    }
+
+    .how-section .how-item:nth-child(2n+3):before,
+    .how-section .how-item:nth-child(2n+4):before {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 0;
+      right: 0;
+      border: none;
+      height: 1px;
+      content: "";
+    }
+
+    .how-section .how-item:nth-child(2n+3):before {
+      background-image: linear-gradient(270deg,var(--color-brand-30),var(--color-brand-0));
+    }
+
+    .how-section .how-item:nth-child(2n+4):before {
+      background-image: linear-gradient(270deg,var(--color-brand-0),var(--color-brand-30));
+    }
+  }
+
+  .how-section .how-item .title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  @media (width < 992px) {
+    .how-section .how-item .title {
+      font-size: 1.75rem;
+    }
+  }
+
+  .how-section .how-item .sub-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 2.1;
+  }
+
+  @media (width < 1440px) {
+    .how-section .how-item .sub-title {
+      font-size: 1.125rem;
+      line-height: 1.75;
+    }
+  }
+
+  @media (width < 992px) {
+    .how-section .how-item .sub-title {
+      font-size: 1rem;
+    }
+  }
+
+  .how-section .how-item .list {
+    margin-top: .9375rem;
+    margin-left: -2.375rem;
+    font-size: 1rem;
+    line-height: 2.25;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  @media (width < 1440px) {
+    .how-section .how-item .list {
+      font-size: .9375rem;
+      line-height: 1.75;
+    }
+
+    .how-section .how-item .list li+li {
+      margin-top: .625rem;
+    }
+  }
+
+  @media (width < 992px) {
+    .how-section .how-item .list {
+      font-size: .8125rem;
+    }
+
+    .how-section .how-item .list li+li {
+      margin-top: .3125rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .how-section .how-item .list {
+      margin-top: .3125rem;
+    }
+  }
+
+  .how-section .icon {
+    min-width: 5.625rem;
+    width: 5.625rem;
+    height: 5.625rem;
+    margin-right: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-brand);
+  }
+
+  .how-section .icon:after {
+    background-image: url('../../assets/icons/mask.svg');
+  }
+
+  @media (width < 992px) {
+    .how-section .icon {
+      min-width: 3.125rem;
+      width: 3.125rem;
+      height: 3.125rem;
+      margin-right: 1.25rem;
+    }
+  }
+
+  .how-section .icon :global(svg) {
+    position: relative;
+    z-index: 2;
+    stroke: #fff;
+  }
+
+  @media (width < 992px) {
+    .how-section .icon :global(svg) {
+      width: 30px;
+    }
+  }
+</style>

@@ -27,3 +27,40 @@ const { blogPage } = getContent(locale);
     ))
   }
 </ul>
+
+<style>
+  .news-category {
+    margin-right: -1.125rem;
+  }
+
+  @media (width < 1024px) {
+    .news-category {
+      margin-left: -1.125rem;
+      margin-top: 1.875rem;
+      margin-right: 0;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+  .news-category a {
+    padding: .625rem 1.125rem;
+    font-size: 1.0625rem;
+    letter-spacing: -.00625rem;
+    font-weight: 600;
+    line-height: 1.7647;
+    color: #000;
+  }
+
+  @media (width < 768px) {
+    .news-category a {
+      font-size: .9375rem;
+    }
+  }
+
+  .news-category a.active,
+  .news-category a:hover {
+    color: var(--color-brand);
+    text-decoration: none;
+  }
+</style>

@@ -71,10 +71,11 @@ export interface Content {
   ui: {
     bookDemo: string;
     readMore: string;
-    // subscribeTitle: string;
-    // subscribePlaceholder: string;
-    // subscribeButton: string;
     copyright: string;
+    /** Accessible names for the icon-only header controls and the dialog close. */
+    openMenu: string;
+    closeMenu: string;
+    close: string;
   };
   navigation: NavItem[];
   policyLinks: (NavItem & { modal?: string; target?: string })[];

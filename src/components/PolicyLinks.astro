@@ -1,0 +1,145 @@
+---
+import SvgIcon from './SvgIcon.astro';
+import { getContent, localizePath, type Locale } from '../i18n';
+import privacy from '../legal/privacy.html?raw';
+import terms from '../legal/terms.html?raw';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { policyLinks, ui } = getContent(locale);
+
+/** Keyed by the `modal` id on the policy link that opens each one. */
+const bodies: Record<string, string> = { terms, policy: privacy };
+const modals = policyLinks.filter((link) => link.modal);
+---
+
+<ul class="inline-list ui-navigation policy-navigation">
+  {
+    policyLinks.map((link) =>
+      link.modal ? (
+        <li>
+          {/* A button, not an anchor: it opens a dialog rather than navigating. */}
+          <button type="button" data-dialog-target={`dialog-${link.modal}`}>
+            {link.label}
+          </button>
+        </li>
+      ) : (
+        <li>
+          <a href={localizePath(link.href, locale)} target={link.target}>
+            {link.label}
+          </a>
+        </li>
+      ),
+    )
+  }
+</ul>
+
+{
+  modals.map((link) => (
+    <dialog id={`dialog-${link.modal}`} class="legal-dialog" aria-label={link.label}>
+      <div class="legal-dialog-panel">
+        <button type="button" class="legal-dialog-close" aria-label={ui.close}>
+          <SvgIcon name="close" />
+        </button>
+        <div class="modal-content" set:html={bodies[link.modal!]} />
+      </div>
+    </dialog>
+  ))
+}
+
+<script>
+  // Replaces the theme's remodal. A native `<dialog>` brings its own top layer,
+  // backdrop, focus trap and Escape handling, so only opening, the close button
+  // and the backdrop click are left to wire up.
+  for (const trigger of document.querySelectorAll<HTMLButtonElement>('[data-dialog-target]')) {
+    const dialog = document.getElementById(trigger.dataset.dialogTarget ?? '');
+    if (!(dialog instanceof HTMLDialogElement)) continue;
+
+    trigger.addEventListener('click', () => dialog.showModal());
+    dialog.querySelector('.legal-dialog-close')?.addEventListener('click', () => dialog.close());
+
+    // A click that lands on the dialog itself rather than on the panel inside
+    // it is a click on the backdrop.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  }
+</script>
+
+<style>
+  @media (width < 1024px) {
+    .policy-navigation {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (width < 768px) {
+    .policy-navigation {
+      justify-content: center;
+    }
+  }
+
+  /* Undo the UA's dialog box, then rebuild the look remodal had. */
+  .legal-dialog {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 10px 10px 0;
+    border: 0;
+    overflow: auto;
+    background: none;
+    color: var(--color-ink);
+  }
+
+  .legal-dialog::backdrop {
+    background: rgba(43, 46, 56, .9);
+  }
+
+  /* `showModal()` makes the page behind inert but does not stop it scrolling. */
+  :global(body:has(.legal-dialog[open])) {
+    overflow: hidden;
+  }
+
+  .legal-dialog-panel {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 35px;
+    background: #fff;
+    text-align: left;
+  }
+
+  .legal-dialog-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    color: #95979c;
+    transition: color .2s;
+  }
+
+  .legal-dialog-close:hover,
+  .legal-dialog-close:focus-visible {
+    color: var(--color-ink);
+  }
+
+  /* The legal copy arrives through `set:html`, so it carries no scope of its
+     own and has to be reached with `:global()`. */
+  .modal-content :global(li.no-marker) {
+    list-style-type: none;
+  }
+</style>

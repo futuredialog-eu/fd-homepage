@@ -9,10 +9,10 @@ export const en: Content = {
   ui: {
     bookDemo: 'Book a demo',
     readMore: 'Read more',
-    // subscribeTitle: 'Subscribe to our newsletter:',
-    // subscribePlaceholder: 'Email',
-    // subscribeButton: 'Subscribe',
     copyright: 'All rights reserved.',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    close: 'Close',
   },
   navigation: [
     { label: 'Home', href: '/' },

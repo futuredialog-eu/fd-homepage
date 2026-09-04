@@ -13,6 +13,9 @@ import {
   getUsedCategories,
 } from '../../../../utils/blog';
 
+// Listing CSS, shared with the other blog listing page.
+import '../../../../styles/blog.css';
+
 export async function getStaticPaths() {
   const paths = await Promise.all(
     locales.map(async (locale) => {

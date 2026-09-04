@@ -1,9 +1,21 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import Modals from '../components/Modals.astro';
 import { site } from '../data/site';
 import { getContent, localizePath, locales, ogLocales, withBase, type Locale } from '../i18n';
+
+// Global CSS, in cascade order. Astro bundles, minifies and fingerprints these,
+// which a `<link>` to a file in `public/` would not get. Component-specific
+// rules live in a scoped `<style>` in the component that owns the markup, and
+// `blog.css` is imported by the two listing pages that share it.
+import '../styles/vendor/flexboxgrid.css';
+import '../styles/vendor/normalize.css';
+import '../styles/tokens.css';
+import '../styles/fonts.css';
+import '../styles/base.css';
+import '../styles/ui.css';
+import '../styles/sections.css';
+import '../styles/snap-scroll.css';
 
 interface Props {
   locale: Locale;
@@ -98,40 +110,8 @@ const organizationSchema = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <link rel="stylesheet" href={withBase('/theme/style.css')} />
-
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} is:inline />
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />
-
-    <style is:global>
-      html.snap-sections {
-        scroll-snap-type: y proximity;
-        scroll-padding-top: 3.75rem;
-      }
-
-      @media (min-width: 1440px) {
-        html.snap-sections {
-          scroll-padding-top: 5.625rem;
-        }
-      }
-
-      html.snap-sections main {
-        display: flow-root;
-        overflow-x: clip;
-        overflow-y: visible;
-      }
-
-      html.snap-sections main > section,
-      html.snap-sections .content-wrapper > footer {
-        scroll-snap-align: start;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html.snap-sections {
-          scroll-snap-type: none;
-        }
-      }
-    </style>
   </head>
   <body class:list={['page-wrapper', 'push-container', bodyClass]}>
     <Header locale={locale} path={path} paths={alternates} />
@@ -140,8 +120,6 @@ const organizationSchema = {
         <slot />
       </main>
       <Footer locale={locale} path={path} paths={alternates} />
-      <Modals locale={locale} />
     </div>
-    <script is:inline src={withBase('/theme/js/main.min.js')}></script>
   </body>
 </html>

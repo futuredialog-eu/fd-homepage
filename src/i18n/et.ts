@@ -9,10 +9,10 @@ export const et: Content = {
   ui: {
     bookDemo: 'Broneeri kohtumine',
     readMore: 'Loe lisaks',
-    // subscribeTitle: 'Liitu meie uudiskirjaga:',
-    // subscribePlaceholder: 'E-post',
-    // subscribeButton: 'Liitu',
     copyright: 'Kõik õigused kaitstud.',
+    openMenu: 'Ava menüü',
+    closeMenu: 'Sulge menüü',
+    close: 'Sulge',
   },
   navigation: [
     { label: 'Esileht', href: '/' },

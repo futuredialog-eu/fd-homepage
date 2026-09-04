@@ -29,3 +29,129 @@ const { hero, ui } = getContent(locale);
     </div>
   </div>
 </section>
+
+<style>
+  .one-scroll {
+    overflow-x: hidden;
+  }
+
+  @media (width >= 992px) {
+    .engagement-section {
+      height: 100vh;
+      min-height: 700px;
+      align-items: center;
+    }
+  }
+
+  @media (width <= 1900px) {
+    .engagement-section .title {
+      font-size: 2.375rem;
+    }
+  }
+
+  @media (width < 1440px) {
+    .engagement-section .title {
+      font-size: 2.25rem;
+    }
+  }
+
+  /* The theme wrapped the second half of this in `@media (max-width: 14319009px)`
+     — a typo that made it unconditional. Folded together so it reads as what it
+     actually does; the intended bound was probably 1440px. */
+  .engagement-section .description {
+    margin-top: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  @media (768px <= width < 1024px) {
+    .engagement-section .section-info {
+      margin: 5rem 0;
+    }
+  }
+
+  @media (width < 768px) {
+    .engagement-section .section-info {
+      margin: 3.75rem 0 1.25rem;
+    }
+
+    .engagement-section {
+      text-align: center;
+    }
+  }
+
+  @media (width < 992px) {
+    .engagement-section .title {
+      margin-top: 1.25rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .engagement-section .title {
+      margin-top: 5.625rem;
+      font-size: 2.875rem;
+    }
+  }
+
+  .engagement-section .images-container {
+    max-height: 80%;
+    height: 50rem;
+  }
+
+  @media (height <= 767px) {
+    .engagement-section .images-container {
+      height: 36.25rem;
+    }
+  }
+
+  @media (width >= 2000px) {
+    .engagement-section .images-container {
+      height: 62.5rem;
+    }
+  }
+
+  @media (width < 1440px) {
+    .engagement-section .images-container {
+      height: 40rem;
+    }
+
+    .engagement-section .images-container {
+      height: 41.875rem;
+    }
+  }
+
+  @media (width < 1280px) {
+    .engagement-section .images-container {
+      height: 35.625rem;
+    }
+  }
+
+  @media (width < 1024px) {
+    .engagement-section .images-container {
+      height: 31.25rem;
+    }
+  }
+
+  @media (width < 992px) {
+    .engagement-section .images-container {
+      margin-top: 6.25rem;
+      height: 23.75rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .engagement-section .images-container {
+      display: none;
+    }
+  }
+
+  .engagement-section .images-container img {
+    padding-bottom: 3.125rem;
+  }
+
+  @media (width < 768px) {
+    .engagement-section .section-info {
+      margin: 1.25rem 0 3.75rem;
+    }
+  }
+</style>

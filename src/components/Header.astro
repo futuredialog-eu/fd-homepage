@@ -15,16 +15,16 @@ const { locale, path = '/', paths } = Astro.props;
 const { navigation, ui } = getContent(locale);
 ---
 
-<header class="container-fluid push-container dynamic">
+<header class="container-fluid push-container">
   <div class="row between-xs middle-xs header">
     <a class="logo" href={localizePath('/', locale)}>
       <img src={withBase('/theme/images/icons/logo.svg')} alt="Logo" />
     </a>
     <nav>
-      <div class="nav-container">
-        <a href="#" class="close-button">
+      <div class="nav-container" id="header-nav">
+        <button type="button" class="close-button" aria-label={ui.closeMenu}>
           <SvgIcon name="close" />
-        </a>
+        </button>
         <Navigation locale={locale} items={navigation} path={path} paths={paths} class="inline-list" />
         <div class="header-contact">
           <ul class="block-list header-address">
@@ -51,9 +51,337 @@ const { navigation, ui } = getContent(locale);
           {ui.bookDemo}
         </a>
       </div>
-      <a class="burger-button" href="#">
+      <button
+        type="button"
+        class="burger-button"
+        aria-label={ui.openMenu}
+        aria-controls="header-nav"
+        aria-expanded="false"
+      >
         <SvgIcon name="burger" />
-      </a>
+      </button>
     </nav>
   </div>
 </header>
+
+<script>
+  // The header's two behaviours: the collapse on scroll, and the mobile drawer.
+  // Astro hoists and bundles this, and it only ships on pages that render the
+  // component. One header per page, so a single `querySelector` is enough.
+  const header = document.querySelector<HTMLElement>('header');
+  const row = header?.querySelector<HTMLElement>('.header');
+  const nav = header?.querySelector<HTMLElement>('nav');
+  const burger = nav?.querySelector<HTMLButtonElement>('.burger-button');
+  const closeButton = nav?.querySelector<HTMLButtonElement>('.close-button');
+
+  if (header && row && nav) {
+    // Height of the expanded header. Only ever measured at the very top of the
+    // page, where the header cannot already be collapsed, so the threshold can
+    // never be taken from the shrunken height and start flapping.
+    let expandedHeight = 0;
+
+    const syncCollapse = () => {
+      if (window.scrollY === 0) expandedHeight = row.offsetHeight;
+      header.classList.toggle('header-on', window.scrollY > expandedHeight);
+    };
+
+    syncCollapse();
+    window.addEventListener('scroll', syncCollapse, { passive: true });
+    window.addEventListener('resize', syncCollapse);
+
+    // The drawer slides in by shifting the whole page, so the class that opens
+    // it goes on <body> rather than on anything inside the header.
+    const setNavOpen = (open: boolean) => {
+      document.body.classList.toggle('nav-open', open);
+      burger?.setAttribute('aria-expanded', String(open));
+    };
+
+    burger?.addEventListener('click', () => setNavOpen(true));
+    closeButton?.addEventListener('click', () => setNavOpen(false));
+
+    // `pointerdown` runs before the burger's own `click`, so opening the drawer
+    // cannot immediately close it again.
+    document.addEventListener('pointerdown', (event) => {
+      if (!document.body.classList.contains('nav-open')) return;
+      if (!nav.contains(event.target as Node)) setNavOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setNavOpen(false);
+    });
+  }
+</script>
+
+<style>
+  nav .header-social a {
+    position: relative;
+  }
+
+  nav .header-social a:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 101%;
+    height: 101%;
+    background-size: contain;
+    content: "";
+  }
+
+  nav .header-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.125rem;
+    height: 3.125rem;
+    background-color: rgba(0,156,171,.2);
+  }
+
+  nav .header-social a:after {
+    background-image: url('../assets/icons/mask-color.svg');
+  }
+
+  header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #fff;
+  }
+
+  header.header-on {
+    box-shadow: 0 .0625rem .125rem rgba(0,0,0,.15);
+  }
+
+  @media (width >= 1440px) {
+    header.header-on .header {
+      padding: 0 1.25rem;
+      height: var(--header-height);
+    }
+  }
+
+  header .header {
+    padding: 3.5rem 3.125rem;
+    box-sizing: border-box;
+    transition: all .5s ease;
+  }
+
+  @media (width < 1440px),
+  (height <= 899px) {
+    header .header {
+      padding: 0 .625rem;
+      height: 6.25rem;
+    }
+  }
+
+  @media (width < 1440px) {
+    header .header {
+      padding: 0 .625rem;
+      height: var(--header-height);
+    }
+  }
+
+  @media (width < 1440px),
+  (height <= 899px) {
+    header .logo {
+      max-width: 10.3125rem;
+      padding-bottom: .5rem;
+    }
+  }
+
+  @media (width >= 1440px) {
+    .header-on .logo {
+      max-width: 13.0625rem;
+      padding-bottom: .875rem;
+      align-self: center;
+    }
+  }
+
+  nav {
+    position: relative;
+    padding-right: 52px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (width < 1024px) {
+    nav {
+      padding-right: 0;
+      padding-left: 52px;
+    }
+  }
+
+  nav .burger-button,
+  nav .header-address,
+  nav .header-social {
+    display: none;
+  }
+
+  @media (width >= 1024px) {
+    nav .nav-container {
+      padding-right: 10.3125rem;
+    }
+  }
+
+  @media (width >= 1440px) and (height >= 800px) {
+    nav .nav-container {
+      padding-right: 13.75rem;
+    }
+  }
+
+  nav .nav-button {
+    font-weight: 500;
+    right: 0;
+  }
+
+  @media (width >= 1024px) {
+    nav .nav-button {
+      position: absolute;
+      top: 50%;
+    }
+  }
+
+  @media (width >= 1440px) {
+    nav .nav-button {
+      width: auto;
+      white-space: nowrap;
+      margin-top: -1.75rem;
+      padding: .9375rem 1.25rem;
+      font-size: .9375rem;
+      font-weight: 600;
+    }
+  }
+
+  @media (width < 1440px),
+  (height <= 899px) {
+    nav .nav-button {
+      width: auto;
+      white-space: nowrap;
+      margin-top: -1.375rem;
+      padding: .625rem .9375rem;
+      font-size: .875rem;
+    }
+  }
+
+  @media (width < 1024px) {
+    nav .nav-button {
+      padding: .625rem 1.5625rem;
+      margin-top: 1.25rem;
+      margin-left: 1.875rem;
+    }
+  }
+
+  nav .header-social {
+    margin-top: 2.5rem;
+  }
+
+  nav .header-social li+li {
+    margin-left: 1.25rem;
+  }
+
+  nav .header-social a {
+    background-color: var(--color-brand-10);
+  }
+
+  nav .header-social a:after {
+    background-image: url('../assets/icons/mask.svg');
+  }
+
+  nav .header-social a :global(svg) {
+    fill: var(--color-brand);
+  }
+
+  /* Both menu controls are icon-only buttons now; the links they replaced
+     brought their own background and pointer, a button does not. */
+  .burger-button,
+  .close-button {
+    padding: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  .close-button {
+    display: none;
+  }
+
+  @media (width < 1024px) {
+    .header .nav-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 105;
+      visibility: hidden;
+      width: 290px;
+      height: 100vh;
+      background: #fff;
+      transition: all .5s;
+      transform: translate3d(100%,0,0);
+    }
+
+    .header :global(.navigation) {
+      margin-top: 2rem;
+      display: inline-block;
+      margin-left: 0;
+    }
+
+    .header :global(.navigation a) {
+      padding: 0 2rem;
+    }
+
+    .header :global(.navigation li) {
+      width: 100%;
+    }
+
+    .header .close-button {
+      top: .9375rem;
+      padding: 0 1.25rem;
+      display: inline-block;
+      position: absolute;
+      width: auto;
+      right: 0;
+    }
+
+    .header .burger-button {
+      margin-left: 1.25rem;
+      display: inline-block;
+    }
+
+    .header .header-address,
+    .header .header-social {
+      padding: 0 2rem;
+      display: inline-block;
+    }
+
+    .header .header-contact {
+      position: absolute;
+      bottom: 20px;
+    }
+
+    .header .header-address a {
+      font-size: 1.0625rem;
+      letter-spacing: .00625rem;
+      font-weight: 600;
+      line-height: 1.7624;
+      color: #000;
+    }
+
+    .header .header-address a.mail {
+      color: var(--color-brand);
+    }
+
+    .header .header-social {
+      display: flex;
+    }
+
+    /* `.nav-open` sits on <body>, set by the script above, so it has to be
+       opened up. `.header` is in the selector only for weight: `:global()`
+       suppresses the scope attribute on that compound, and without it this rule
+       would lose to `.header .nav-container` above and the drawer would never
+       show. */
+    :global(.nav-open) .header .nav-container {
+      visibility: visible;
+      transition: transform .5s;
+    }
+  }
+</style>

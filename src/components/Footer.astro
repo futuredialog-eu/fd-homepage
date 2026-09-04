@@ -1,8 +1,9 @@
 ---
 import Navigation from './Navigation.astro';
+import PolicyLinks from './PolicyLinks.astro';
 import SvgIcon from './SvgIcon.astro';
 import { contact, footer, site, social } from '../data/site';
-import { getContent, localizePath, withBase, type Locale } from '../i18n';
+import { getContent, withBase, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
@@ -12,7 +13,7 @@ interface Props {
 }
 
 const { locale, path = '/', paths } = Astro.props;
-const { navigation, policyLinks, ui } = getContent(locale);
+const { navigation, ui } = getContent(locale);
 const year = new Date().getFullYear();
 ---
 
@@ -22,11 +23,12 @@ const year = new Date().getFullYear();
       <div class="col-xs-12 col-md-3 footer-copyright">
         <img src={withBase('/theme/images/icons/logo.svg')} alt="Logo" />
         <small>
-          © {year} {site.organization}. {ui.copyright}
-          <br />
+          © {year}
+          {site.organization}. {ui.copyright}
+          <!-- <br />
           <a href={footer.easHref}>
             <img src={withBase(footer.easImage)} alt="EAS" />
-          </a>
+          </a> -->
         </small>
       </div>
       <div class="col-xs-12 col-md-2 footer-menu">
@@ -54,44 +56,243 @@ const year = new Date().getFullYear();
           }
         </ul>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 footer-subscribe">
-        {/* Newsletter subscription disabled - we do not send newsletters at the moment.
-        <form method="post" action="#">
-          <div class="title">{ui.subscribeTitle}</div>
-          <div class="form-field">
-            <div class="form-fields">
-              <input
-                class="form-control"
-                id="email"
-                type="email"
-                placeholder={ui.subscribePlaceholder}
-                name="EMAIL"
-                required
-              />
-              <button type="submit">
-                {ui.subscribeButton}
-                <SvgIcon name="subscribe" />
-              </button>
-            </div>
-          </div>
-        </form>
-        */}
-        <ul class="inline-list ui-navigation policy-navigation">
-          {
-            policyLinks.map((link) => (
-              <li>
-                <a
-                  href={link.modal ? '#' : localizePath(link.href, locale)}
-                  target={link.target}
-                  data-remodal-target={link.modal}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
+      <div class="col-xs-12 col-sm-6 col-md-4 footer-legal">
+        <PolicyLinks locale={locale} />
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-address a.mail {
+    color: var(--color-brand);
+  }
+
+  .footer-social a {
+    position: relative;
+  }
+
+  .footer-social a:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 101%;
+    height: 101%;
+    background-size: contain;
+    content: "";
+  }
+
+  .footer-copyright small:before {
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(270deg,var(--color-brand-0),var(--color-brand-15),var(--color-brand-0));
+    text-align: center;
+  }
+
+  .footer-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.125rem;
+    height: 3.125rem;
+    background-color: rgba(0,156,171,.2);
+  }
+
+  .footer-social a:after {
+    background-image: url('../assets/icons/mask-color.svg');
+  }
+
+  footer {
+    padding: 6.5rem 0 7.5rem;
+  }
+
+  @media (width < 1440px) {
+    footer {
+      padding: 3.75rem 0;
+    }
+  }
+
+  @media (width < 1280px) {
+    footer {
+      padding: 2.5rem 0 3.125rem;
+    }
+  }
+
+  @media (width < 992px) {
+    footer {
+      padding: 4.625rem 0 8.125rem;
+    }
+  }
+
+  @media (width < 768px) {
+    footer {
+      padding: 3.125rem 0 5.625rem;
+    }
+  }
+
+  .footer-copyright img {
+    width: 14.0625rem;
+    display: inline-block;
+    height: auto;
+  }
+
+  @media (width < 1024px) {
+    .footer-copyright img {
+      width: 100%;
+    }
+  }
+
+  @media (width < 992px) {
+    .footer-copyright img {
+      display: none;
+    }
+  }
+
+  .footer-copyright img+small {
+    margin-top: 1.125rem;
+  }
+
+  @media (width >= 1024px) {
+    .footer-copyright img+small {
+      margin-left: 1.5rem;
+    }
+  }
+
+  .footer-copyright small {
+    font-size: .8125rem;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.615;
+    font-weight: 500;
+    color: rgba(0,0,0,.5);
+  }
+
+  .footer-copyright small:before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    width: 100%;
+  }
+
+  @media (width < 992px) {
+    .footer-copyright small {
+      padding: 1.4375rem 1.25rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      text-align: center;
+    }
+
+    .footer-copyright small:before {
+      content: "";
+    }
+
+    .footer-copyright small br {
+      display: none;
+    }
+  }
+
+  .footer-address,
+  .footer-menu,
+  .footer-social,
+  .footer-legal {
+    margin-top: 1.5rem;
+  }
+
+  @media (width < 1280px) {
+    .footer-address,
+    .footer-menu,
+    .footer-social,
+    .footer-legal {
+      margin-top: 1rem;
+    }
+  }
+
+  @media (width < 992px) {
+    .footer-address,
+    .footer-menu,
+    .footer-social,
+    .footer-legal {
+      margin: 0;
+    }
+  }
+
+  @media (width < 1280px) {
+    .footer-menu {
+      display: none;
+    }
+  }
+
+  .footer-menu nav {
+    padding: 0;
+  }
+
+  .footer-menu :global(a) {
+    white-space: nowrap;
+  }
+
+  @media (width < 1024px) {
+    .footer-menu .nav-container {
+      margin: 0 auto;
+    }
+
+    .footer-menu .nav-container :global(.navigation) {
+      margin: 0;
+    }
+  }
+
+  @media (992px <= width < 1280px) {
+    .footer-contact {
+      flex-basis: 33.33333%;
+      max-width: 33.33333%;
+    }
+  }
+
+  .footer-address a {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 2;
+    color: #000;
+  }
+
+  .footer-social {
+    margin-top: 2.25rem;
+  }
+
+  @media (width < 1440px) {
+    .footer-social {
+      margin-top: 1.5625rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .footer-social {
+      margin-top: 1.5625rem;
+      justify-content: center;
+    }
+  }
+
+  .footer-social li+li {
+    margin-left: 1.25rem;
+  }
+
+  .footer-social a {
+    background-color: var(--color-brand-10);
+  }
+
+  .footer-social a :global(svg) {
+    fill: var(--color-brand);
+  }
+
+  @media (992px <= width < 1280px) {
+    .footer-legal {
+      flex-basis: 41.66667%;
+      max-width: 41.66667%;
+    }
+  }
+
+</style>
