@@ -56,8 +56,9 @@ that component:
   focus trap and Escape handling.
 
 Two rules for these scripts. Render the initial state server-side and let the
-script only handle changes, so nothing moves on load — a height change inside a
-scroll-snap container makes the browser re-snap. And a script is per page, not
+script only handle changes, so nothing moves on load — a script that paints the
+first state itself leaves the page laid out wrong until it runs, and the
+correction reads as a flash of the wrong content. And a script is per page, not
 per instance: it is hoisted out of the component, so it runs once however many
 times the component renders, and reaching for `querySelector` is only safe while
 a page has one of them.

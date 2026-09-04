@@ -18,7 +18,7 @@ export function getStaticPaths() {
 const { locale } = Astro.props as { locale: Locale };
 ---
 
-<Layout locale={locale} path="/" bodyClass="home" snapScroll>
+<Layout locale={locale} path="/" bodyClass="home">
   <Hero locale={locale} />
   <HowSection locale={locale} />
   <CounterSection locale={locale} />

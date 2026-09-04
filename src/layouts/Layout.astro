@@ -15,7 +15,6 @@ import '../styles/fonts.css';
 import '../styles/base.css';
 import '../styles/ui.css';
 import '../styles/sections.css';
-import '../styles/snap-scroll.css';
 
 interface Props {
   locale: Locale;
@@ -26,11 +25,9 @@ interface Props {
   title?: string;
   description?: string;
   bodyClass?: string;
-  /** Snap each top-level `<section>` to the top of the viewport while scrolling. */
-  snapScroll?: boolean;
 }
 
-const { locale, path = '/', bodyClass = '', snapScroll = false } = Astro.props;
+const { locale, path = '/', bodyClass = '' } = Astro.props;
 const { meta } = getContent(locale);
 const title = Astro.props.title ?? meta.title;
 const description = Astro.props.description ?? meta.description;
@@ -70,7 +67,7 @@ const organizationSchema = {
 ---
 
 <!doctype html>
-<html lang={locale} class:list={{ 'snap-sections': snapScroll }}>
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

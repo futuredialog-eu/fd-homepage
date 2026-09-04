@@ -292,9 +292,7 @@
 }
 
 /* Every review shares one grid cell, so the section keeps the height of the
-   tallest one whichever is showing and switching dots cannot resize it. That
-   matters beyond the flicker: a height change inside a scroll-snap container
-   makes the browser re-snap, which reads as the page jumping on its own.
+   tallest one whichever is showing and switching dots cannot resize it.
    `visibility` rather than `display` so the hidden ones still set the height. */
 .case-studies-section .review-stack {
   display: grid;

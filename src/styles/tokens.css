@@ -21,9 +21,7 @@
   --color-text: rgb(0 0 0 / 0.7);
   --font-body: Gilroy, Arial, 'Helvetica Neue', Helvetica, sans-serif;
 
-  /* Height of the fixed header once it has collapsed on scroll. It lives here
-     rather than in `Header.astro` because `snap-scroll.css` offsets every
-     snapped section by it, and the two must not drift apart. */
+  /* Height of the fixed header once it has collapsed on scroll. */
   --header-height: 3.75rem;
 }
 

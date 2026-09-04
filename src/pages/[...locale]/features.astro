@@ -22,7 +22,6 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
   title={featuresPage.meta.title}
   description={featuresPage.meta.description}
   bodyClass="features-page"
-  snapScroll
 >
   <section class="features-title wrapper">
     <div class="row">
@@ -93,7 +92,7 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
     </div>
   </section>
   <section class="wrapper case-studies-section contact-section">
-    <div class="row center-xs">
+    <!-- <div class="row center-xs">
       <div class="col-lg-4">
         <h2 class="ui-title">{featuresPage.caseSection.title}</h2>
         <div class="ui-description">{featuresPage.caseSection.description}</div>
@@ -111,14 +110,12 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
           </div>
         ))
       }
-    </div>
+    </div> -->
+
     <div class="row center-xs ui-quote-container">
       <div class="col-lg-8">
         <div class="quote">{featuresPage.quote}<br /><br /></div>
-        <a
-          href={localizePath(contact.demoPath, locale)}
-          class="ui-button ui-button-shadow nav-button fd-meet-button"
-        >
+        <a href={localizePath(contact.demoPath, locale)} class="ui-button ui-button-shadow nav-button fd-meet-button">
           {ui.bookDemo}
         </a>
       </div>
