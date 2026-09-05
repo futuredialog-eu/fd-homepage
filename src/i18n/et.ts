@@ -2,7 +2,7 @@ import type { Content } from './types';
 
 export const et: Content = {
   meta: {
-    title: 'Esileht - Future Dialog',
+    title: 'Elanike suhtlus- ja kaasamisplatvorm | Future Dialog',
     description:
       'Future Dialog loob mobiilirakendusi, mis aitavad kogukondadel koostööd teha, muudatusi ellu viia ja targa tehnoloogia abil enda elukeskkonda paremaks muuta.',
   },
@@ -31,9 +31,9 @@ export const et: Content = {
     { label: 'Privaatsuspoliitika', href: '#', modal: 'policy' },
   ],
   hero: {
-    title: 'Ühendame kogukondi mugavate mobiilirakenduste abiga.',
+    title: 'Ühendus sinu ja sinu kogukonna vahel.',
     description:
-      'Future Dialog loob mobiilirakendusi, mis aitavad kogukondadel koostööd teha, muudatusi ellu viia ja targa tehnoloogia abil enda elukeskkonda paremaks muuta.',
+      'Hoia elanikke kursis, kogu tagasisidet ja julgusta kaasa rääkima – kõik seda omavalitsuse enda mobiilirakenduses. Sinu ja kogukonna vahel ei seisa ükski sotsiaalmeedia algoritm.',
     image: '/images/hub.jpg',
     imageAlt: 'Kogukonna kaasamine',
   },

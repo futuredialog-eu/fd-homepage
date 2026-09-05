@@ -2,7 +2,7 @@ import type { Content } from './types';
 
 export const en: Content = {
   meta: {
-    title: 'Easy-to-use mobile applications for communities - Future Dialog',
+    title: 'Resident Communication & Engagement Platform | Future Dialog',
     description:
       'We create mobile apps that allow communities to open dialogue, work together, and use smart technologies in the growing urban or business environment.',
   },
@@ -27,9 +27,9 @@ export const en: Content = {
     { label: 'Privacy policy', href: '#', modal: 'policy' },
   ],
   hero: {
-    title: 'We bring communities together with easy-to-use mobile applications.',
+    title: 'A direct connection between you and your community.',
     description:
-      'Future Dialog creates mobile apps that allow communities to work together, launch initiatives, and use smart technologies in the growing urban environment.',
+      'Keep residents informed, collect feedback, and encourage participation—all through your municipality’s own mobile app. No social media algorithms standing between you and your community.',
     image: '/images/hub.jpg',
     imageAlt: 'Community Engagement',
   },

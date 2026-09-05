@@ -2,7 +2,7 @@ import type { Content } from './types';
 
 export const fi: Content = {
   meta: {
-    title: 'Koti - Future Dialog',
+    title: 'Asukkaiden viestintä- ja osallistamisalusta | Future Dialog',
     description:
       'Future Dialog luo mobiilisovelluksia, jotka auttavat yhteisöjä tekemään yhteistyötä, toteuttamaan muutoksia ja parantamaan elinympäristöään älykkään tekniikan avulla.',
   },
@@ -31,9 +31,9 @@ export const fi: Content = {
     { label: 'Tietosuojalauseke', href: '#', modal: 'policy' },
   ],
   hero: {
-    title: 'Yhdistämme yhteisöt kätevällä mobiilisovelluksella.',
+    title: 'Yhteys sinun ja yhteisösi välillä.',
     description:
-      'Future Dialog luo mobiilisovelluksia, jotka auttavat yhteisöjä tekemään yhteistyötä, toteuttamaan muutoksia ja parantamaan elinympäristöään älykkään tekniikan avulla.',
+      'Pidä asukkaat ajan tasalla, kerää palautetta ja kannusta osallistumaan – kaikki kunnan omassa mobiilisovelluksessa. Sinun ja yhteisösi välissä ei ole yhtään sosiaalisen median algoritmia.',
     image: '/images/hub.jpg',
     imageAlt: 'Yhteisön osallistaminen',
   },
