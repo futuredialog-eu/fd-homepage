@@ -1,0 +1,23 @@
+---
+import { defaultLocale, localizePath, locales } from '../i18n';
+
+// Landing-page URL per locale, so the script only has to match a language tag.
+const hrefs = Object.fromEntries(locales.map((code) => [code, localizePath('/', code)]));
+---
+
+{/* `define:vars` keeps this inline and render-blocking in <head>: a bundled
+    module script is deferred, so the English landing page would paint first and
+    the redirect would read as a flash of the wrong language. */}
+<script define:vars={{ hrefs, defaultLocale }}>
+  const SESSION_KEY = 'fd:locale-detected';
+
+  if (!sessionStorage.getItem(SESSION_KEY)) {
+    sessionStorage.setItem(SESSION_KEY, '1');
+
+    const preferred = (navigator.languages ?? [navigator.language])
+      .map((tag) => String(tag).toLowerCase().split('-')[0])
+      .find((tag) => tag in hrefs);
+
+    if (preferred && preferred !== defaultLocale) location.replace(hrefs[preferred]);
+  }
+</script>

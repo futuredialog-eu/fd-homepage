@@ -1,8 +1,17 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import LocaleRedirect from '../components/LocaleRedirect.astro';
 import { site } from '../data/site';
-import { getContent, localizePath, locales, ogLocales, withBase, type Locale } from '../i18n';
+import {
+  defaultLocale,
+  getContent,
+  localizePath,
+  locales,
+  ogLocales,
+  withBase,
+  type Locale,
+} from '../i18n';
 
 // Global CSS, in cascade order. Astro bundles, minifies and fingerprints these,
 // which a `<link>` to a file in `public/` would not get. Component-specific
@@ -41,6 +50,11 @@ const alternates =
   Astro.props.paths ??
   (Object.fromEntries(locales.map((code) => [code, path])) as Record<Locale, string>);
 
+// The browser's language decides where a visitor starts, but only on the
+// unprefixed landing page and only once per session, so it never overrides a
+// link into a specific locale or a switch made with the flags.
+const detectLocale = locale === defaultLocale && path === '/';
+
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -70,6 +84,7 @@ const organizationSchema = {
 <html lang={locale}>
   <head>
     <meta charset="utf-8" />
+    {detectLocale && <LocaleRedirect />}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta
