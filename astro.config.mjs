@@ -7,8 +7,8 @@ import { blogLinks } from './src/utils/blog-links.mjs';
 // two values to change when the deployment target moves. Currently a GitHub
 // Pages project site: https://futuredialog-eu.github.io/fd-homepage/
 // To serve from a domain root instead, set `site` to that domain and `base` to '/'.
-const site = 'https://futuredialog-eu.github.io';
-const base = '/fd-homepage';
+const site = 'https://www.futuredialog.eu';
+const base = '/';
 
 /** `base` without a trailing slash, and empty when serving from the root. */
 const basePrefix = base === '/' ? '' : base.replace(/\/$/, '');
