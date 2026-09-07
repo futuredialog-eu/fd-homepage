@@ -12,7 +12,6 @@ export const fi: Content = {
     copyright: 'Kaikki oikeudet pidätetään.',
     openMenu: 'Avaa valikko',
     closeMenu: 'Sulje valikko',
-    close: 'Sulje',
   },
   navigation: [
     { label: 'Koti', href: '/' },
@@ -27,8 +26,8 @@ export const fi: Content = {
     },
   ],
   policyLinks: [
-    { label: 'Palveluehdot', href: '#', modal: 'terms' },
-    { label: 'Tietosuojalauseke', href: '#', modal: 'policy' },
+    { label: 'Käyttöehdot', href: '/eula/' },
+    { label: 'Tietosuojalauseke', href: '/application-privacy-policy/' },
   ],
   hero: {
     title: 'Yhteys sinun ja yhteisösi välillä.',

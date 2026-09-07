@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  /** Path with the locale prefix stripped, e.g. `/eula/`. */
+  path: string;
+  /** Tab title and meta description. */
+  title: string;
+  description: string;
+  /** Visible page heading. */
+  heading: string;
+  /** The legal copy, imported from `src/legal/*.html?raw`. */
+  body: string;
+}
+
+const { locale, path, title, description, heading, body } = Astro.props;
+---
+
+<Layout locale={locale} path={path} title={title} description={description} bodyClass="legal-page">
+  <section class="wrapper legal-document">
+    <div class="row center-xs">
+      <div class="col-xs-12 col-md-10 col-lg-8">
+        <h1 class="legal-document-title">{heading}</h1>
+        {/* The legal copy arrives through `set:html`, so it carries no scope of
+            its own and is reached with `:global()`, the same as the footer
+            dialog in `PolicyLinks.astro`. */}
+        <div class="legal-document-body" set:html={body} />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* The header is `position: fixed`, so the copy has to clear it — the same
+     manual top offset the other standalone pages use (see `features.astro`). */
+  .legal-document {
+    margin-top: 12rem;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  @media (width < 1024px) {
+    .legal-document {
+      margin-top: 8rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .legal-document {
+      margin-top: 6.25rem;
+      margin-bottom: 3.75rem;
+    }
+  }
+
+  .legal-document-title {
+    margin: 0 0 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  @media (width < 768px) {
+    .legal-document-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .legal-document-body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-ink);
+  }
+
+  .legal-document-body :global(h1),
+  .legal-document-body :global(h2),
+  .legal-document-body :global(h3),
+  .legal-document-body :global(h4),
+  .legal-document-body :global(h5) {
+    margin: 2rem 0 1rem;
+    font-weight: 700;
+  }
+
+  .legal-document-body :global(p) {
+    margin: 0 0 1rem;
+  }
+
+  .legal-document-body :global(ol),
+  .legal-document-body :global(ul) {
+    margin: 0 0 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .legal-document-body :global(li) {
+    margin: 0 0 .5rem;
+  }
+
+  .legal-document-body :global(li.no-marker) {
+    list-style-type: none;
+  }
+
+  .legal-document-body :global(a) {
+    color: var(--color-brand);
+  }
+
+  .legal-document-body :global(a:hover) {
+    text-decoration: underline;
+  }
+</style>

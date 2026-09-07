@@ -1,0 +1,27 @@
+---
+import LegalDocument from '../../components/LegalDocument.astro';
+import eula from '../../legal/eula.html?raw';
+import { defaultLocale, locales, type Locale } from '../../i18n';
+
+// The mobile app and back office link to `/eula/` with no locale prefix (see
+// `eulaUrl` in fd-backoffice / fd-backoffice-api), which is this route for the
+// default locale. The copy is English-only, so the prefixed locales serve the
+// same text.
+export function getStaticPaths() {
+  return locales.map((locale) => ({
+    params: { locale: locale === defaultLocale ? undefined : locale },
+    props: { locale },
+  }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+---
+
+<LegalDocument
+  locale={locale}
+  path="/eula/"
+  title="End User License Agreement (EULA) | Future Dialog"
+  description="The End User License Agreement that governs use of the Future Dialog applications."
+  heading="End User License Agreement (EULA)"
+  body={eula}
+/>

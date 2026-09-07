@@ -12,7 +12,6 @@ export const et: Content = {
     copyright: 'Kõik õigused kaitstud.',
     openMenu: 'Ava menüü',
     closeMenu: 'Sulge menüü',
-    close: 'Sulge',
   },
   navigation: [
     { label: 'Esileht', href: '/' },
@@ -27,8 +26,8 @@ export const et: Content = {
     },
   ],
   policyLinks: [
-    { label: 'Tingimused', href: '#', modal: 'terms' },
-    { label: 'Privaatsuspoliitika', href: '#', modal: 'policy' },
+    { label: 'Kasutustingimused', href: '/eula/' },
+    { label: 'Privaatsuspoliitika', href: '/application-privacy-policy/' },
   ],
   hero: {
     title: 'Ühendus sinu ja sinu kogukonna vahel.',

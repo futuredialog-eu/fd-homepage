@@ -51,9 +51,11 @@ that component:
   `<body>` rather than on anything in the header.
 - `sections/ReviewsSection.astro` — the review dots, replacing slick. The first
   review is marked current server-side, so there is nothing to initialise.
-- `PolicyLinks.astro` — the footer's legal links and the `<dialog>`s they open,
-  replacing remodal. A native `<dialog>` brings its own top layer, backdrop,
-  focus trap and Escape handling.
+
+The footer's legal links (`PolicyLinks.astro`) are plain anchors to the
+`/application-privacy-policy/` and `/eula/` pages, which render the copy in
+`src/legal/*.html` through `LegalDocument.astro`. Those two URLs are also what
+the mobile app and back office link to, so the routes must keep their paths.
 
 Two rules for these scripts. Render the initial state server-side and let the
 script only handle changes, so nothing moves on load — a script that paints the

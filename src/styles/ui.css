@@ -211,11 +211,7 @@
   }
 }
 
-/* The `button` in these groups is the footer's two policy links, which open a
-   dialog rather than navigate and so are not anchors. They have to read as the
-   links beside them. */
-.ui-navigation a,
-.ui-navigation button {
+.ui-navigation a {
   padding: 0 1.0625rem;
   display: inline-block;
   width: 100%;
@@ -223,32 +219,20 @@
   color: var(--color-text);
 }
 
-/* A button inherits none of the list's type, and brings a background of its own. */
-.ui-navigation button {
-  font: inherit;
-  letter-spacing: inherit;
-  text-align: inherit;
-  cursor: pointer;
-  background: none;
-}
-
 @media (width < 1440px) {
-  .ui-navigation a,
-  .ui-navigation button {
+  .ui-navigation a {
     padding: 0 .9375rem;
   }
 }
 
 @media (width <= 1150px) {
-  .ui-navigation a,
-  .ui-navigation button {
+  .ui-navigation a {
     padding: 0 .625rem;
   }
 }
 
 .ui-navigation .current-menu-item a,
-.ui-navigation a:hover,
-.ui-navigation button:hover {
+.ui-navigation a:hover {
   color: var(--color-brand);
   text-decoration: none;
 }

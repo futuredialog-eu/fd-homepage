@@ -1,0 +1,27 @@
+---
+import LegalDocument from '../../components/LegalDocument.astro';
+import privacy from '../../legal/privacy.html?raw';
+import { defaultLocale, locales, type Locale } from '../../i18n';
+
+// The mobile app and back office link to `/application-privacy-policy/` with no
+// locale prefix (see `privacyPolicyUrl` in fd-backoffice / fd-backoffice-api),
+// which is this route for the default locale. The copy is English-only, so the
+// prefixed locales serve the same text.
+export function getStaticPaths() {
+  return locales.map((locale) => ({
+    params: { locale: locale === defaultLocale ? undefined : locale },
+    props: { locale },
+  }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+---
+
+<LegalDocument
+  locale={locale}
+  path="/application-privacy-policy/"
+  title="Application Privacy Policy | Future Dialog"
+  description="How the Future Dialog platform collects, uses, shares and protects your personal information."
+  heading="Application Privacy Policy"
+  body={privacy}
+/>

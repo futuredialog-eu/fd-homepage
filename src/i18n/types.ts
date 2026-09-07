@@ -72,13 +72,12 @@ export interface Content {
     bookDemo: string;
     readMore: string;
     copyright: string;
-    /** Accessible names for the icon-only header controls and the dialog close. */
+    /** Accessible names for the icon-only header menu controls. */
     openMenu: string;
     closeMenu: string;
-    close: string;
   };
   navigation: NavItem[];
-  policyLinks: (NavItem & { modal?: string; target?: string })[];
+  policyLinks: (NavItem & { target?: string })[];
   hero: {
     title: string;
     description: string;

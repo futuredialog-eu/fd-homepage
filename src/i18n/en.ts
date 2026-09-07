@@ -12,7 +12,6 @@ export const en: Content = {
     copyright: 'All rights reserved.',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
-    close: 'Close',
   },
   navigation: [
     { label: 'Home', href: '/' },
@@ -23,8 +22,8 @@ export const en: Content = {
     { label: 'Log in', href: 'https://app.futuredialog.eu', external: true },
   ],
   policyLinks: [
-    { label: 'Terms of Service', href: '#', modal: 'terms' },
-    { label: 'Privacy policy', href: '#', modal: 'policy' },
+    { label: 'EULA', href: '/eula/' },
+    { label: 'Privacy policy', href: '/application-privacy-policy/' },
   ],
   hero: {
     title: 'A direct connection between you and your community.',
