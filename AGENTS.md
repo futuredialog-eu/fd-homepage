@@ -57,6 +57,11 @@ The footer's legal links (`PolicyLinks.astro`) are plain anchors to the
 `src/legal/*.html` through `LegalDocument.astro`. Those two URLs are also what
 the mobile app and back office link to, so the routes must keep their paths.
 
+`Analytics.astro` is the one third-party script: the Google Analytics gtag
+snippet, rendered in `<head>` by `Layout.astro` and only when the build sees a
+`PUBLIC_GA_MEASUREMENT_ID` (an Actions repository variable in the deploy
+workflow; an unset value ships nothing). `.env.example` documents it.
+
 Two rules for these scripts. Render the initial state server-side and let the
 script only handle changes, so nothing moves on load — a script that paints the
 first state itself leaves the page laid out wrong until it runs, and the
