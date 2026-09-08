@@ -13,6 +13,13 @@ export const fi: Content = {
     openMenu: 'Avaa valikko',
     closeMenu: 'Sulje valikko',
   },
+  consent: {
+    message: 'Käytämme analytiikkaevästeitä ymmärtääksemme, miten sivustoa käytetään. Ne asetetaan vain, jos hyväksyt.',
+    learnMore: 'Tietosuojaseloste',
+    accept: 'Hyväksy',
+    decline: 'Hylkää',
+    settings: 'Evästeasetukset',
+  },
   navigation: [
     { label: 'Koti', href: '/' },
     { label: 'Ominaisuudet', href: '/features/' },

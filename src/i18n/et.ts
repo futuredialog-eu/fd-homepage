@@ -13,6 +13,13 @@ export const et: Content = {
     openMenu: 'Ava menüü',
     closeMenu: 'Sulge menüü',
   },
+  consent: {
+    message: 'Kasutame analüütikaküpsiseid, et mõista, kuidas saiti kasutatakse. Need salvestatakse ainult teie nõusolekul.',
+    learnMore: 'Privaatsuspoliitika',
+    accept: 'Nõustun',
+    decline: 'Keeldun',
+    settings: 'Küpsiste seaded',
+  },
   navigation: [
     { label: 'Esileht', href: '/' },
     { label: 'Omadused', href: '/features/' },

@@ -76,6 +76,16 @@ export interface Content {
     openMenu: string;
     closeMenu: string;
   };
+  /** Cookie-consent bar. Only rendered when analytics is configured. */
+  consent: {
+    message: string;
+    /** Link text for the privacy policy, shown inside the message. */
+    learnMore: string;
+    accept: string;
+    decline: string;
+    /** Footer control that reopens the bar. */
+    settings: string;
+  };
   navigation: NavItem[];
   policyLinks: (NavItem & { target?: string })[];
   hero: {

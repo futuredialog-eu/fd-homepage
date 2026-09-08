@@ -6,7 +6,11 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const { policyLinks } = getContent(locale);
+const { policyLinks, consent } = getContent(locale);
+
+// The consent bar (and so its reopen control) only exists when analytics is
+// configured — see `Analytics.astro`.
+const showConsentSettings = Boolean(import.meta.env.PUBLIC_GA_MEASUREMENT_ID);
 ---
 
 <ul class="inline-list ui-navigation policy-navigation">
@@ -18,6 +22,17 @@ const { policyLinks } = getContent(locale);
         </a>
       </li>
     ))
+  }
+  {
+    showConsentSettings && (
+      <li>
+        {/* A button, not an anchor: it reopens the consent bar rather than
+            navigating. The listener lives in `Analytics.astro`. */}
+        <button type="button" data-consent-settings>
+          {consent.settings}
+        </button>
+      </li>
+    )
   }
 </ul>
 
@@ -31,6 +46,36 @@ const { policyLinks } = getContent(locale);
   @media (width < 768px) {
     .policy-navigation {
       justify-content: center;
+    }
+  }
+
+  /* The one button in this list has to read as the anchors beside it. */
+  .policy-navigation button {
+    padding: 0 1.0625rem;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: inherit;
+    cursor: pointer;
+    background: none;
+    color: var(--color-text);
+  }
+
+  .policy-navigation button:hover {
+    color: var(--color-brand);
+  }
+
+  @media (width < 1440px) {
+    .policy-navigation button {
+      padding: 0 0.9375rem;
+    }
+  }
+
+  @media (width <= 1150px) {
+    .policy-navigation button {
+      padding: 0 0.625rem;
     }
   }
 </style>

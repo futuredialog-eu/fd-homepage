@@ -57,10 +57,14 @@ The footer's legal links (`PolicyLinks.astro`) are plain anchors to the
 `src/legal/*.html` through `LegalDocument.astro`. Those two URLs are also what
 the mobile app and back office link to, so the routes must keep their paths.
 
-`Analytics.astro` is the one third-party script: the Google Analytics gtag
-snippet, rendered in `<head>` by `Layout.astro` and only when the build sees a
+`Analytics.astro` is the one third-party script: Google Analytics, rendered in
+`<head>` by `Layout.astro` and only when the build sees a
 `PUBLIC_GA_MEASUREMENT_ID` (an Actions repository variable in the deploy
-workflow; an unset value ships nothing). `.env.example` documents it.
+workflow; an unset value ships nothing). `.env.example` documents it. It is
+consent-gated — the component server-renders only the cookie bar and an inline
+script; `gtag.js` is injected client-side after Accept, and the choice is kept
+in `localStorage` under `fd:analytics-consent`. The footer's "Cookie settings"
+control (`PolicyLinks.astro`, `[data-consent-settings]`) reopens the bar.
 
 Two rules for these scripts. Render the initial state server-side and let the
 script only handle changes, so nothing moves on load — a script that paints the

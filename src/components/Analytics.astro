@@ -1,29 +1,185 @@
 ---
-// Google Analytics 4 (gtag.js). The snippet is emitted only when
-// `PUBLIC_GA_MEASUREMENT_ID` is set at build time, so local dev and any deploy
-// without the variable ship no tracking and no third-party request.
+import { getContent, localizePath, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { consent } = getContent(locale);
+const privacyHref = localizePath('/application-privacy-policy/', locale);
+
+// Google Analytics 4 (gtag.js). Emitted only when `PUBLIC_GA_MEASUREMENT_ID` is
+// set at build time; without it this component renders nothing at all.
 const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 
 {
   measurementId && (
     <>
-      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} />
-      {/* `define:vars` keeps this inline in <head> so `gtag` and the first
-          `config` call run before the deferred module bundle. */}
+      {/* Nothing is requested from Google until the visitor accepts: the gtag
+          script is injected by the inline script below, never server-rendered. */}
+      <aside id="consent-banner" class="consent-banner" role="region" aria-label={consent.settings} hidden>
+        <p class="consent-message">
+          {consent.message}
+          <a href={privacyHref}>{consent.learnMore}</a>
+        </p>
+        <div class="consent-actions">
+          <button type="button" class="consent-button consent-decline" data-consent="decline">
+            {consent.decline}
+          </button>
+          <button type="button" class="consent-button consent-accept" data-consent="accept">
+            {consent.accept}
+          </button>
+        </div>
+      </aside>
+
       <script define:vars={{ measurementId }}>
-        window.dataLayer = window.dataLayer || [];
-        // Kept on `window` so later inline calls (custom events) can reach it;
-        // `define:vars` wraps this script in an IIFE, so a bare `function gtag`
-        // would not be global.
-        window.gtag =
-          window.gtag ||
-          function () {
-            window.dataLayer.push(arguments);
-          };
-        gtag('js', new Date());
-        gtag('config', measurementId);
+        (function () {
+          const KEY = 'fd:analytics-consent';
+          const banner = document.getElementById('consent-banner');
+          if (!banner) return;
+
+          let stored = null;
+          try {
+            stored = localStorage.getItem(KEY);
+          } catch (e) {}
+
+          let loaded = false;
+          function loadGA() {
+            if (loaded) return;
+            loaded = true;
+            const s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            window.gtag =
+              window.gtag ||
+              function () {
+                window.dataLayer.push(arguments);
+              };
+            gtag('js', new Date());
+            gtag('config', measurementId);
+          }
+
+          function remember(value) {
+            try {
+              localStorage.setItem(KEY, value);
+            } catch (e) {}
+          }
+
+          if (stored === 'granted') loadGA();
+          else if (stored !== 'denied') banner.hidden = false;
+
+          banner.querySelector('[data-consent="accept"]').addEventListener('click', function () {
+            remember('granted');
+            loadGA();
+            banner.hidden = true;
+          });
+          banner.querySelector('[data-consent="decline"]').addEventListener('click', function () {
+            remember('denied');
+            banner.hidden = true;
+          });
+
+          // The footer's "Cookie settings" link (and anything else marked
+          // `data-consent-settings`) reopens the bar so a choice can be changed.
+          document.addEventListener('click', function (event) {
+            const opener = event.target.closest('[data-consent-settings]');
+            if (!opener) return;
+            event.preventDefault();
+            banner.hidden = false;
+          });
+        })();
       </script>
     </>
   )
 }
+
+<style>
+  .consent-banner {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 2rem;
+    box-sizing: border-box;
+    padding: 1.25rem 2rem;
+    background: #fff;
+    box-shadow: 0 -0.0625rem 0.5rem rgba(0, 0, 0, 0.15);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  /* The rule above would otherwise beat the `hidden` attribute. */
+  .consent-banner[hidden] {
+    display: none;
+  }
+
+  .consent-message {
+    max-width: 44rem;
+    margin: 0;
+  }
+
+  .consent-message a {
+    margin-left: 0.375rem;
+    color: var(--color-brand);
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+
+  .consent-actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.75rem;
+  }
+
+  .consent-button {
+    border-radius: 0.25rem;
+    padding: 0.625rem 1.5rem;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .consent-accept {
+    border: 1px solid var(--color-brand);
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  .consent-accept:hover {
+    background: var(--color-brand-90);
+  }
+
+  .consent-decline {
+    border: 1px solid var(--color-brand-30);
+    background: none;
+    color: var(--color-ink);
+  }
+
+  .consent-decline:hover {
+    border-color: var(--color-brand);
+  }
+
+  @media (width < 768px) {
+    .consent-banner {
+      padding: 1rem 1.25rem;
+    }
+
+    .consent-actions {
+      width: 100%;
+    }
+
+    .consent-button {
+      flex: 1;
+    }
+  }
+</style>

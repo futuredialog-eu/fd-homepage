@@ -13,6 +13,13 @@ export const en: Content = {
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
   },
+  consent: {
+    message: 'We use analytics cookies to understand how the site is used. They are only set if you accept.',
+    learnMore: 'Privacy policy',
+    accept: 'Accept',
+    decline: 'Decline',
+    settings: 'Cookie settings',
+  },
   navigation: [
     { label: 'Home', href: '/' },
     { label: 'Features', href: '/features/' },
