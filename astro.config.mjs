@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
+import sitemap from '@astrojs/sitemap';
 import { blogLinks } from './src/utils/blog-links.mjs';
 
 // Every absolute URL on the site derives from this pair, so they are the only
@@ -72,4 +73,6 @@ export default defineConfig({
       hastPlugins: [blogLinks({ base: basePrefix, locales, defaultLocale })],
     }),
   },
+
+  integrations: [sitemap()],
 });
