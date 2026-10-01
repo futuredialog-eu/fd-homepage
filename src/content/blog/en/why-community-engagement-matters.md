@@ -5,6 +5,9 @@ translationKey: why-community-engagement-matters
 pubDate: "2026-10-01T12:00:00+03:00"
 readingMinutes: 3
 categories: ["engagement", "municipality"]
+image: /images/blog/undraw_getting-organized_lyqo.png
+thumbnail: /images/blog/undraw_getting-organized_lyqo.png
+imageCredit: UnDraw
 ---
 
 Local governments today are under pressure from geopolitical insecurity, high energy prices and an ageing population. At the same time, budgets are tight and officials are overstretched. Many decision-makers still treat community engagement as a formality – a box to tick before a decision is made. That view misses the real value of engagement. Done well, engagement is a strategic tool that improves outcomes and strengthens the community. Here are five reasons why.

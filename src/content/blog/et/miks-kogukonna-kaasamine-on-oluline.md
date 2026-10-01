@@ -5,6 +5,9 @@ translationKey: why-community-engagement-matters
 pubDate: "2026-10-01T12:00:00+03:00"
 readingMinutes: 3
 categories: ["engagement", "municipality"]
+image: /images/blog/undraw_getting-organized_lyqo.png
+thumbnail: /images/blog/undraw_getting-organized_lyqo.png
+imageCredit: UnDraw
 ---
 
 Kohalikke omavalitsusi survestavad täna geopoliitiline ebakindlus, kõrged energiahinnad ja rahvastiku vananemine. Samal ajal on eelarved piiratud ja ametnikud ülekoormatud. Paljud otsustajad käsitlevad kogukonna kaasamist endiselt formaalsusena – linnukesena, mis tehakse enne otsuse langetamist. Selline vaade jätab kaasamise tegeliku väärtuse tähelepanuta. Hästi tehtud kaasamine on strateegiline tööriist, mis parandab tulemusi ja tugevdab kogukonda. Siin on viis põhjust.
