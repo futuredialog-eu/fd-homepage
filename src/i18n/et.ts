@@ -179,7 +179,7 @@ export const et: Content = {
       },
       {
         name: 'Margus Räim',
-        position: 'Ärianalüütik',
+        position: 'Tooteomanik',
         phone: '+372 511 9436',
         phoneHref: 'tel:372 511 9436',
         email: 'margus.raim@futuredialog.eu',

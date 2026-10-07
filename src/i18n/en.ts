@@ -162,7 +162,7 @@ export const en: Content = {
       },
       {
         name: 'Margus Räim',
-        position: 'Business Developer',
+        position: 'Product Owner',
         phone: '+372 511 9436',
         phoneHref: 'tel:372 511 9436',
         email: 'margus.raim@futuredialog.eu',

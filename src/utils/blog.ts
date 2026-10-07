@@ -8,6 +8,7 @@ const intlLocales: Record<Locale, string> = {
   en: 'en-US',
   et: 'et-EE',
   fi: 'fi-FI',
+  de: 'de-DE',
 };
 
 /** Content ids look like `et/3-reasons-to-use-a-community-engagement-app`. */
