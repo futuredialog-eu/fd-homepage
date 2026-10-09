@@ -5,6 +5,8 @@ export const site = {
   organization: 'Future Dialog OÜ',
   /** Root-relative; made absolute for structured data at render time. */
   logo: '/images/logo.jpg',
+  /** Root-relative, 1200×630; the social preview for pages without their own image. */
+  ogImage: '/images/og-default.jpg',
 };
 
 export const contact = {
@@ -20,7 +22,7 @@ export const contact = {
 export const social = [
   { icon: 'social-in', href: 'https://www.linkedin.com/company/futuredialog/' },
   { icon: 'social-fb', href: 'https://www.facebook.com/futuredialog/' },
-  { icon: 'social-tw', href: 'https://twitter.com/FutureDialog' },
+  { icon: 'social-tw', href: 'https://x.com/FutureDialog' },
 ];
 
 export const footer = {

@@ -1,10 +1,13 @@
+import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
+import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
+import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
 import type { Content } from './types';
 
 export const de: Content = {
   meta: {
     title: 'Plattform für Bürgerkommunikation und Beteiligung | Future Dialog',
     description:
-      'Wir entwickeln mobile Apps, mit denen Gemeinschaften den Dialog eröffnen, zusammenarbeiten und smarte Technologien in einem wachsenden städtischen oder geschäftlichen Umfeld nutzen können.',
+      'Community-App für Gemeinden: Neuigkeiten teilen, Push-Mitteilungen senden, Umfragen durchführen und Feedback von Bürgern sammeln – alles an einem Ort.',
   },
   ui: {
     bookDemo: 'Demo buchen',
@@ -113,9 +116,21 @@ export const de: Content = {
     readMoreHref: '/blog/',
     posts: [
       {
+        title: 'Warum Bürgerbeteiligung wichtig ist',
+        href: '/blog/warum-buergerbeteiligung-wichtig-ist/',
+        image: gettingOrganizedImage,
+        categories: [
+          { label: 'Beteiligung', href: '/blog/category/engagement/' },
+          { label: 'Kommunen', href: '/blog/category/municipality/' },
+        ],
+        readingTime: '3 Min. Lesezeit',
+        date: '1. Oktober 2026',
+        dateTime: '2026-10-01T12:00:00+03:00',
+      },
+      {
         title: '10 Vorteile von Community-Apps für Gemeinden und Gemeinschaften',
         href: '/blog/10-vorteile-von-community-apps-fuer-gemeinden-und-gemeinschaften/',
-        image: '/images/blog/public-discussion.png',
+        image: publicDiscussionImage,
         categories: [
           { label: 'Beteiligung', href: '/blog/category/engagement/' },
           { label: 'Kommunen', href: '/blog/category/municipality/' },
@@ -123,32 +138,19 @@ export const de: Content = {
         ],
         readingTime: '2 Min. Lesezeit',
         date: '29. Juli 2021',
-        dateTime: '2026-07-29T13:15:40+03:00',
+        dateTime: '2021-07-29T13:15:40+03:00',
       },
       {
         title: '3 Gründe für eine App zur Bürgerbeteiligung',
         href: '/blog/3-gruende-fuer-eine-app-zur-buergerbeteiligung/',
-        image: '/images/blog/nature-on-screen.png',
+        image: natureOnScreenImage,
         categories: [
           { label: 'Beteiligung', href: '/blog/category/engagement/' },
           { label: 'News', href: '/blog/category/news/' },
         ],
         readingTime: '2 Min. Lesezeit',
         date: '6. Juli 2021',
-        dateTime: '2026-07-06T18:02:38+03:00',
-      },
-      {
-        title:
-          'Von der Idee zur Umsetzung: Wie der Wunsch nach Mitbestimmung zur Entstehung einer Community-App führte',
-        href: '/blog/von-der-idee-zur-umsetzung-wie-der-wunsch-nach-mitbestimmung-zur-community-app-fuehrte/',
-        image: '/images/blog/our-solution.png',
-        categories: [
-          { label: 'Beteiligung', href: '/blog/category/engagement/' },
-          { label: 'News', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 Min. Lesezeit',
-        date: '25. Mai 2021',
-        dateTime: '2026-05-25T10:25:47+03:00',
+        dateTime: '2021-07-06T18:02:38+03:00',
       },
     ],
   },
@@ -176,9 +178,9 @@ export const de: Content = {
   },
   featuresPage: {
     meta: {
-      title: 'SaaS-Plattform: Online-Umfragen, Medien-Dashboard, Beiträge - Future Dialog',
+      title: 'Funktionen: Umfragen, Feedback und News | Future Dialog',
       description:
-        'Wir bieten ein digitales SaaS-Produkt mit Umfragetools, Feedback-Kanal, Beiträgen zur Veröffentlichung von Inhalten und Medien-Dashboard. SaaS-Werkzeuge für einfache Verwaltung und einfachen Zugang.',
+        'Beteiligen Sie Bürger mit Umfragen, Feedback-Kanal, Neuigkeiten, Push-Mitteilungen und Analyse-Dashboard in der eigenen App Ihrer Gemeinde.',
     },
     intro:
       'Future Dialog ist die Zukunft engagierter Gemeinschaften. Mit unserer mobilen App wird das Lesen von Nachrichten und die Mitwirkung in der Gemeinschaft transparent und jederzeit für alle verfügbar. Wir helfen Ihnen, aktive Gespräche anzustoßen und mit weniger Ressourcen datenbasierte Entscheidungen zu treffen.',
@@ -187,31 +189,26 @@ export const de: Content = {
         title: 'Mobile App und Website',
         description:
           'Ihre neue App läuft auf iOS, Android und im Web. Passen Sie sie ganz nach Ihren Vorstellungen an – mit Ihrem Logo, Ihren Farben und Ihrem Stil.',
-        image: '/images/features/1.png',
       },
       {
         title: 'Aussagekräftige Daten',
         description:
           'Wissen Sie, mit wem Sie sprechen? Mit unserem Dashboard und Datencenter steuern Sie Inhalte und gewinnen verwertbare Erkenntnisse über Ihre Gemeinschaft.',
-        image: '/images/features/2.png',
       },
       {
         title: 'Beiträge',
         description:
           'Erstellen Sie im Online-Dashboard Beiträge, um Nachrichten zu veröffentlichen, Ankündigungen zu machen oder Umfragen durchzuführen. Beiträge erleichtern die Navigation durch die Inhalte.',
-        image: '/images/features/3.png',
       },
       {
         title: 'RSS',
         description:
           'Weniger Arbeit für Sie, mehr Inhalte für die Gemeinschaft. Bringen Sie die wichtigsten Nachrichten automatisch per RSS-Feed in die App.',
-        image: '/images/features/4.png',
       },
       {
         title: 'Verwertbares Feedback',
         description:
           'Treten Sie im Feedback-Kanal in den Dialog mit den Mitgliedern Ihrer Gemeinschaft. Fragen Sie zusätzlich zu Umfragen nach ausführlichen Meinungen und bieten Sie sofort Lösungen an.',
-        image: '/images/features/5.png',
       },
     ],
     caseSection: {
@@ -244,9 +241,9 @@ export const de: Content = {
   },
   blogPage: {
     meta: {
-      title: 'Neuigkeiten und Fallbeispiele des Unternehmens - Future Dialog',
+      title: 'Blog: Bürgerbeteiligung in Gemeinden | Future Dialog',
       description:
-        'Folgen Sie unseren Geschichten und besonderen Einblicken! Details zu unseren SaaS-Produkten und Beispiele für ihren Einsatz in der Praxis.',
+        'Artikel und Fallstudien zu Bürgerbeteiligung, Bürgerkommunikation und dazu, wie Gemeinden Community-Apps in der Praxis nutzen.',
     },
     title: 'News',
     description:
@@ -262,8 +259,8 @@ export const de: Content = {
   },
   contactsPage: {
     meta: {
-      title: 'Kontaktdaten des Unternehmens - Future Dialog',
-      description: 'Kontaktdaten von Future Dialog, Kontaktformular für den Vertrieb',
+      title: 'Kontakt und Demo-Termin | Future Dialog',
+      description: 'Nehmen Sie Kontakt mit Future Dialog auf und vereinbaren Sie eine Demo unserer Bürgerbeteiligungs-App für Gemeinden und Organisationen.',
     },
     title: 'Kontakt',
     aboutTitle: 'Wer sind wir?',
@@ -272,9 +269,9 @@ export const de: Content = {
   },
   customersPage: {
     meta: {
-      title: 'Cloud-Plattform mit einer Reihe von Werkzeugen - Future Dialog',
+      title: 'Kunden und Partner | Future Dialog',
       description:
-        'Wir bieten cloudbasierte Dienste für Gemeinschaften und Unternehmen. Cloud-Plattformen für unterschiedliche Bereiche – Mitarbeiterführung, Marketing, Bürgerbeteiligung.',
+        'Gemeinden, die ihre Bürger mit Future Dialog beteiligen, und wie Partner unsere Beteiligungsplattform ihren Kunden anbieten können.',
     },
     title: 'Unsere zufriedenen Kunden',
     items: [

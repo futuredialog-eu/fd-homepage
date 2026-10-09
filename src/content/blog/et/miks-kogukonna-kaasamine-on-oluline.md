@@ -5,8 +5,8 @@ translationKey: why-community-engagement-matters
 pubDate: "2026-10-01T12:00:00+03:00"
 readingMinutes: 3
 categories: ["engagement", "municipality"]
-image: /images/blog/undraw_getting-organized_lyqo.png
-thumbnail: /images/blog/undraw_getting-organized_lyqo.png
+image: ../../../assets/blog/undraw_getting-organized_lyqo.png
+thumbnail: ../../../assets/blog/undraw_getting-organized_lyqo.png
 imageCredit: UnDraw
 ---
 

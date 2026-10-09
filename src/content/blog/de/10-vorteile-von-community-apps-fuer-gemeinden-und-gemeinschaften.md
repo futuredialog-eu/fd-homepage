@@ -2,15 +2,15 @@
 title: 10 Vorteile von Community-Apps für Gemeinden und Gemeinschaften
 description: 10 Gründe, warum Apps zur Bürgerbeteiligung sowohl Gemeinschaften als auch Kommunalverwaltungen einen Vorteil verschaffen.
 translationKey: 10-benefits-of-community-apps
-pubDate: "2026-07-29T13:15:40+03:00"
+pubDate: "2021-07-29T13:15:40+03:00"
 readingMinutes: 2
 categories: ["engagement", "municipality", "news"]
-image: /images/blog/public-discussion-full.png
-thumbnail: /images/blog/public-discussion.png
+image: ../../../assets/blog/undraw_public-discussion_693m.png
+thumbnail: ../../../assets/blog/undraw_public-discussion_693m.png
 imageCredit: UnDraw
 ---
 
-## Die Kommunalverwaltung spielt die wichtigste unterstützende Rolle, wenn es darum geht, das Engagement von Gemeinschaften zu stärken und gemeinsame Veranstaltungen, Bürgerinitiativen und andere Formen der Zusammenarbeit entstehen und wachsen zu lassen. Aktuelle Studien zeigen jedoch, dass Kommunalverwaltungen für Gemeinschaften oft keine zugänglichen und flexiblen Partner sind. Wir haben 10 Wege zusammengestellt, wie Apps zur Bürgerbeteiligung sowohl Gemeinschaften als auch Kommunalverwaltungen einen Vorteil verschaffen.
+**Die Kommunalverwaltung spielt die wichtigste unterstützende Rolle, wenn es darum geht, das Engagement von Gemeinschaften zu stärken und gemeinsame Veranstaltungen, Bürgerinitiativen und andere Formen der Zusammenarbeit entstehen und wachsen zu lassen. Aktuelle Studien zeigen jedoch, dass Kommunalverwaltungen für Gemeinschaften oft keine zugänglichen und flexiblen Partner sind. Wir haben 10 Wege zusammengestellt, wie Apps zur Bürgerbeteiligung sowohl Gemeinschaften als auch Kommunalverwaltungen einen Vorteil verschaffen.**
 
 Die Studie [„The current State of Estonian Communities“](https://www.kysk.ee/failid/Upload/files/Uuringud/Kogukonnauuring.pdf) hat gezeigt, dass die Qualität der Kommunikation mit der Kommunalverwaltung aus Sicht der Gemeinschaften nicht sehr hoch ist. Die Zusammenarbeit der Kommunalverwaltung mit den Gemeinschaften drehte sich in der Regel um Finanzierungsfragen. 70 % der Teilnehmenden nannten die Finanzierung als vorherrschende Form der Zusammenarbeit mit der Kommunalverwaltung. Die Beteiligung an Aktivitäten fiel deutlich bescheidener aus: Nur 48 % der Gemeinschaften geben an, in Entwicklungspläne und Entscheidungen eingebunden worden zu sein. Gespräche über Finanzierung sind ein guter Anfang für eine Beziehung. Soll das Delegationsmodell jedoch durch ein Partnerschaftsmodell ersetzt werden, dürfen Finanzierungsfragen nicht der einzige Anlass für Kommunikation bleiben.
 

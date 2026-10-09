@@ -2,15 +2,15 @@
 title: 10 eelist kogukonnaäpi kasutamiseks omavalitsustele ja kogukondadele
 description: 10 põhjust, kuidas kogukonnaäpi kasutamine annab eelise nii kogukondadele kui ka kohalikele omavalitsustele.
 translationKey: 10-benefits-of-community-apps
-pubDate: "2026-07-29T13:13:15+03:00"
+pubDate: "2021-07-29T13:13:15+03:00"
 readingMinutes: 2
 categories: ["engagement", "municipality", "news"]
-image: /images/blog/public-discussion-full.png
-thumbnail: /images/blog/public-discussion.png
+image: ../../../assets/blog/undraw_public-discussion_693m.png
+thumbnail: ../../../assets/blog/undraw_public-discussion_693m.png
 imageCredit: UnDraw
 ---
 
-## Kogukondade aktiivsuse tõstmisel ning koostöökogude, kodanikualgatuste ja muude koostöövormide tekkimisel ja toimimise arendamisel on kõige suurem toetav roll kohalikul omavalitsusel. Hiljutised uuringud aga näitavad, et tihti ei ole KOV kogukondade jaoks piisavalt kättesaadav ja paindlik partner. Toome välja 10 punkti, kuidas kogukonnaäpi kasutamine annab eelise nii kogukondadele kui KOVidele.
+**Kogukondade aktiivsuse tõstmisel ning koostöökogude, kodanikualgatuste ja muude koostöövormide tekkimisel ja toimimise arendamisel on kõige suurem toetav roll kohalikul omavalitsusel. Hiljutised uuringud aga näitavad, et tihti ei ole KOV kogukondade jaoks piisavalt kättesaadav ja paindlik partner. Toome välja 10 punkti, kuidas kogukonnaäpi kasutamine annab eelise nii kogukondadele kui KOVidele.**
 
 [Eesti kogukondade hetkeseisu uuringust](https://www.kysk.ee/failid/Upload/files/Uuringud/Kogukonnauuring.pdf) ilmnes, et suhtluse kvaliteet kohaliku omavalitsusega ei ole väga kõrge ega mitmekesine. KOVi koostöö kogukondadega tähendas üldjuhul rahastamist ning 70% uuringus osalejatest nimetas KOViga valdavaks koostöövormiks neilt saadud toetust. Osalemine sisulistes tegevustes oli oluliselt tagasihoidlikum ja vaid 48% kogukondade sõnul on neid kaasatud näiteks arengukavade ja eelnõude välja töötamisse. Rahastusest rääkimine on heaks alguseks koostöösuhete tekkimisele, aga kui võtta eesmärgiks delegeerimise mudeli asendamine partnerlusmudeliga, ei peaks rahastusasjad jääma ainukeseks suhtluspõhjuseks.
 

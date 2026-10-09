@@ -55,18 +55,27 @@ export function formatDate(date: Date, locale: Locale): string {
   }).format(date);
 }
 
-function pathsByLocale(resolve: (locale: Locale) => string | undefined): Record<Locale, string> {
-  return Object.fromEntries(
-    locales.map((locale) => [locale, resolve(locale) ?? '/blog/']),
-  ) as Record<Locale, string>;
+export interface LocalePaths {
+  /** Path per locale for the language switcher; the blog index where there is no translation. */
+  paths: Record<Locale, string>;
+  /** Locales with an equivalent page, the only ones that get an `hreflang` alternate. */
+  translated: Locale[];
+}
+
+function pathsByLocale(resolve: (locale: Locale) => string | undefined): LocalePaths {
+  return {
+    paths: Object.fromEntries(
+      locales.map((locale) => [locale, resolve(locale) ?? '/blog/']),
+    ) as Record<Locale, string>,
+    translated: locales.filter((locale) => resolve(locale) !== undefined),
+  };
 }
 
 /**
- * Path to use per locale for the language switcher and the `hreflang`
- * alternates. Post slugs are localized, so the variants are matched on
- * `translationKey`; a locale without a translation falls back to its blog index.
+ * Paths per locale for the language switcher and the `hreflang` alternates.
+ * Post slugs are localized, so the variants are matched on `translationKey`.
  */
-export async function postLocalePaths(entry: BlogEntry): Promise<Record<Locale, string>> {
+export async function postLocalePaths(entry: BlogEntry): Promise<LocalePaths> {
   const translations = await getCollection(
     'blog',
     (candidate: BlogEntry) => candidate.data.translationKey === entry.data.translationKey,
@@ -78,7 +87,7 @@ export async function postLocalePaths(entry: BlogEntry): Promise<Record<Locale, 
 /** As `postLocalePaths`, for a category that may be empty in some locales. */
 export async function categoryLocalePaths(
   category: BlogCategory,
-): Promise<Record<Locale, string>> {
+): Promise<LocalePaths> {
   const used = await Promise.all(
     locales.map(async (locale) => [locale, await getUsedCategories(locale)] as const),
   );

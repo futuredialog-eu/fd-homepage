@@ -1,8 +1,14 @@
 ---
+import { Image } from 'astro:assets';
 import SvgIcon from '../../components/SvgIcon.astro';
+import platformsImage from '../../assets/features/1.png';
+import dataImage from '../../assets/features/2.png';
+import postsImage from '../../assets/features/3.png';
+import rssImage from '../../assets/features/4.png';
+import feedbackImage from '../../assets/features/5.png';
 import Layout from '../../layouts/Layout.astro';
 import { contact } from '../../data/site';
-import { defaultLocale, getContent, localizePath, locales, withBase, type Locale } from '../../i18n';
+import { defaultLocale, getContent, localizePath, locales, type Locale } from '../../i18n';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({
@@ -14,6 +20,8 @@ export function getStaticPaths() {
 const { locale } = Astro.props as { locale: Locale };
 const { featuresPage, ui } = getContent(locale);
 const [platforms, data, posts, rss, feedback] = featuresPage.items;
+const sizes = '(width < 768px) 100vw, 50vw';
+const widths = [600, 900, 1200];
 ---
 
 <Layout
@@ -25,18 +33,18 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
 >
   <section class="features-title wrapper">
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-md-9">{featuresPage.intro}</div>
+      <h1 class="col-xs-12 col-sm-10 col-md-9">{featuresPage.intro}</h1>
     </div>
   </section>
   <section class="ui-color-section">
     <div class="wrapper">
       <div class="row middle-xs features features-platforms">
         <div class="col-xs-12 col-sm-6 col-md-4 section-info">
-          <div class="ui-title title">{platforms.title}</div>
+          <h2 class="ui-title title">{platforms.title}</h2>
           <div class="ui-description description">{platforms.description}</div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 images-container">
-          <img class="bottom" src={withBase(platforms.image)} alt={platforms.title} />
+          <Image class="bottom" src={platformsImage} alt={platforms.title} widths={widths} sizes={sizes} />
         </div>
       </div>
     </div>
@@ -45,10 +53,10 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
     <div class="wrapper">
       <div class="row middle-xs features">
         <div class="col-sm-6 col-md-8 features-image">
-          <img src={withBase(data.image)} alt={data.title} />
+          <Image src={dataImage} alt={data.title} widths={widths} sizes={sizes} />
         </div>
         <div class="first-xs last-sm col-xs-12 col-sm-6 col-md-4 section-info">
-          <div class="ui-title title">{data.title}</div>
+          <h2 class="ui-title title">{data.title}</h2>
           <div class="ui-description description">{data.description}</div>
         </div>
       </div>
@@ -58,11 +66,11 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
     <div class="wrapper">
       <div class="row middle-xs features">
         <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 section-info">
-          <div class="ui-title title">{posts.title}</div>
+          <h2 class="ui-title title">{posts.title}</h2>
           <div class="ui-description description">{posts.description}</div>
         </div>
         <div class="col-xs-12 col-sm-6 features-image">
-          <img src={withBase(posts.image)} alt={posts.title} />
+          <Image src={postsImage} alt={posts.title} widths={widths} sizes={sizes} />
         </div>
       </div>
     </div>
@@ -70,10 +78,10 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
   <section class="wrapper">
     <div class="row middle-xs features">
       <div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-5 features-image">
-        <img src={withBase(rss.image)} alt={rss.title} />
+        <Image src={rssImage} alt={rss.title} widths={widths} sizes={sizes} />
       </div>
       <div class="first-xs last-sm col-xs-12 col-sm-6 col-md-4 section-info">
-        <div class="ui-title title">{rss.title}</div>
+        <h2 class="ui-title title">{rss.title}</h2>
         <div class="ui-description description">{rss.description}</div>
       </div>
     </div>
@@ -82,11 +90,11 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
     <div class="wrapper">
       <div class="row middle-xs features">
         <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 section-info">
-          <div class="ui-title title">{feedback.title}</div>
+          <h2 class="ui-title title">{feedback.title}</h2>
           <div class="ui-description description">{feedback.description}</div>
         </div>
         <div class="col-xs-12 col-sm-6 features-image">
-          <img src={withBase(feedback.image)} alt={feedback.title} />
+          <Image src={feedbackImage} alt={feedback.title} widths={widths} sizes={sizes} />
         </div>
       </div>
     </div>
@@ -173,6 +181,12 @@ const [platforms, data, posts, rss, feedback] = featuresPage.items;
       font-size: 1.125rem;
       line-height: 1.75;
     }
+  }
+
+  .features-title h1 {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
   }
 
   .features-title {

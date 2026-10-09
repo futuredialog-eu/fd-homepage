@@ -28,8 +28,9 @@ Plain CSS only, no Tailwind and no preprocessor.
   carries the scope attribute — but a class set on an element another component
   rendered does, which is why the drawer rule in `Header.astro` reaches `<body>`
   through `:global(.nav-open)`.
-- Assets referenced from CSS live in `src/assets/`; `withBase()` assets that
-  markup references stay in `public/`.
+- Assets referenced from CSS live in `src/assets/`. So do content images, which
+  go through `astro:assets` — see Images below. Everything else that markup
+  references through `withBase()` stays in `public/`.
 - Colours are custom properties in `src/styles/tokens.css`, including the brand
   alpha variants — no `rgb(from ...)`, so no dependency on relative colour
   syntax.
@@ -73,6 +74,49 @@ correction reads as a flash of the wrong content. And a script is per page, not
 per instance: it is hoisted out of the component, so it runs once however many
 times the component renders, and reaching for `querySelector` is only safe while
 a page has one of them.
+
+## Images
+
+Blog and features images live in `src/assets/` and render with `<Image>` from
+`astro:assets`, which emits WebP at several widths with `width`/`height` set
+and lazy loading. A wrong path fails the build rather than shipping a broken
+image.
+
+- Blog post `image` and `thumbnail` are validated by `image()` in
+  `content.config.ts` and are relative to the Markdown file:
+  `../../../assets/blog/<file>`.
+- The home page teasers (`blogSection.posts` in `src/i18n/*.ts`) import their
+  image at the top of each locale file; `image` is `ImageMetadata`, not a path.
+- The features page imports its five images directly, so they are not in the
+  i18n files.
+- Give every `<Image>` `widths` and a `sizes` that matches its column. The post
+  hero is the LCP element, so it is `loading="eager"` with
+  `fetchpriority="high"`; everything else stays lazy.
+
+Logos, favicons, flags, customer and team photos, and the default social image
+are still plain files in `public/`.
+
+## SEO and metadata
+
+`Layout.astro` renders the whole `<head>`: title, description, canonical,
+hreflang, Open Graph/Twitter tags and JSON-LD. Pages pass what differs:
+
+- `title` and `description` come from `meta` in `src/i18n/*.ts`. Keep titles
+  within ~60 characters and descriptions within ~160, aimed at the terms a
+  municipality would search for in that language.
+- `image` is the social preview, root-relative or imported; it defaults to
+  `site.ogImage` (`public/images/og-default.jpg`, 1200×630).
+- `translated` lists the locales that have an equivalent page. Only those get
+  an `hreflang` alternate, and `x-default` points at English when it exists.
+  `postLocalePaths` and `categoryLocalePaths` in `src/utils/blog.ts` return it
+  alongside `paths`, whose blog-index fallback is for the language switcher
+  only — never an `hreflang` target.
+- `publishedTime` marks a page as an article (`og:type`,
+  `article:published_time`), and `schema` adds page-specific JSON-LD. Blog posts
+  pass a `BlogPosting`. The `WebSite` and `Organization` schemas are site-wide,
+  and `Organization.sameAs` comes from `social` in `src/data/site.ts`.
+- One `<h1>` per page; section titles are `<h2>`. Article lead paragraphs are
+  bold text, not headings.
 
 ## Documentation
 

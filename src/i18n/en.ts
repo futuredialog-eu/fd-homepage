@@ -1,10 +1,13 @@
+import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
+import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
+import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
 import type { Content } from './types';
 
 export const en: Content = {
   meta: {
     title: 'Resident Communication & Engagement Platform | Future Dialog',
     description:
-      'We create mobile apps that allow communities to open dialogue, work together, and use smart technologies in the growing urban or business environment.',
+      'A community app for municipalities: share news, send push notifications, run surveys and collect feedback from residents – all in one place.',
   },
   ui: {
     bookDemo: 'Book a demo',
@@ -109,9 +112,21 @@ export const en: Content = {
     readMoreHref: '/blog/',
     posts: [
       {
+        title: 'Why community engagement matters',
+        href: '/blog/why-community-engagement-matters/',
+        image: gettingOrganizedImage,
+        categories: [
+          { label: 'Engagement', href: '/blog/category/engagement/' },
+          { label: 'Municipality', href: '/blog/category/municipality/' },
+        ],
+        readingTime: '3 min read',
+        date: 'October 1, 2026',
+        dateTime: '2026-10-01T12:00:00+03:00',
+      },
+      {
         title: '10 benefits of using community apps for municipalities and communities',
         href: '/blog/10-benefits-of-using-community-apps-for-municipalities-and-communities/',
-        image: '/images/blog/public-discussion.png',
+        image: publicDiscussionImage,
         categories: [
           { label: 'Engagement', href: '/blog/category/engagement/' },
           { label: 'Municipality', href: '/blog/category/municipality/' },
@@ -119,32 +134,19 @@ export const en: Content = {
         ],
         readingTime: '2 min read',
         date: 'July 29, 2021',
-        dateTime: '2026-07-29T13:15:40+03:00',
+        dateTime: '2021-07-29T13:15:40+03:00',
       },
       {
         title: '3 reasons to use a community engagement app',
         href: '/blog/3-reasons-to-use-a-community-engagement-app/',
-        image: '/images/blog/nature-on-screen.png',
+        image: natureOnScreenImage,
         categories: [
           { label: 'Engagement', href: '/blog/category/engagement/' },
           { label: 'News', href: '/blog/category/news/' },
         ],
         readingTime: '2 min read',
         date: 'July 6, 2021',
-        dateTime: '2026-07-06T18:02:38+03:00',
-      },
-      {
-        title:
-          'From ideation to creation: How the ambition to participate in decision-making led to the birth of a community app',
-        href: '/blog/from-ideation-to-creation-how-the-ambition-to-participate-in-decision-making-led-to-the-birth-of-a-community-app/',
-        image: '/images/blog/our-solution.png',
-        categories: [
-          { label: 'Engagement', href: '/blog/category/engagement/' },
-          { label: 'News', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 min read',
-        date: 'May 25, 2021',
-        dateTime: '2026-05-25T10:25:47+03:00',
+        dateTime: '2021-07-06T18:02:38+03:00',
       },
     ],
   },
@@ -172,9 +174,9 @@ export const en: Content = {
   },
   featuresPage: {
     meta: {
-      title: 'SaaS platform: online surveys, media dashboard, posts - Future Dialog',
+      title: 'Features: Surveys, Feedback, News and Analytics | Future Dialog',
       description:
-        'We offer digital SaaS product with survey tools, feedback channel, posts for publishing content, media dashboard. SaaS tools for providing ease of management and access.',
+        'Engage residents with surveys, a feedback channel, news posts, push notifications and an analytics dashboard in your municipality’s own app.',
     },
     intro:
       'Future Dialog is the future of engaged communities. Our mobile app makes reading news and contributing to the community transparent and available to people at all times. We help you initiate active conversations and make data-driven decisions with fewer resources.',
@@ -183,31 +185,26 @@ export const en: Content = {
         title: 'Mobile app and website',
         description:
           'Your new app runs on iOS, Android, and the web. Customize it to look exactly like you want - add your logo, colors and style.',
-        image: '/images/features/1.png',
       },
       {
         title: 'Powerful data',
         description:
           "Do you know who you're talking to? Our dashboard and data center let's you control content and gain actionable insights about your community.",
-        image: '/images/features/2.png',
       },
       {
         title: 'Posts',
         description:
           'Create posts in the online dashboard to publish news stories, make announcements or create surveys. Posts make it easy to navigate through the content.',
-        image: '/images/features/3.png',
       },
       {
         title: 'RSS',
         description:
           'Less work for you, more content for the community. Bring the most important news to the app automatically with easy RSS feed.',
-        image: '/images/features/4.png',
       },
       {
         title: 'Actionable feedback',
         description:
           'Create a dialog with the members of your community in the feedback channel. In addition to surveys, ask for detailed opinions and offer solutions immediately.',
-        image: '/images/features/5.png',
       },
     ],
     caseSection: {
@@ -240,9 +237,9 @@ export const en: Content = {
   },
   blogPage: {
     meta: {
-      title: 'News and cases of the company - Future Dialog',
+      title: 'Blog: Community Engagement for Municipalities | Future Dialog',
       description:
-        'Follow our stories and unique insights! Details about our SaaS products and cases of its implementation in practice.',
+        'Articles and case studies on community engagement, resident communication and how municipalities use community apps in practice.',
     },
     title: 'News',
     description: 'Follow our news, stories and unique insights! Solutions for engagement in different spheres',
@@ -257,8 +254,8 @@ export const en: Content = {
   },
   contactsPage: {
     meta: {
-      title: 'Contacts of the company - Future Dialog',
-      description: 'Contact details of Future Dialog, contact form with the sales department',
+      title: 'Contact Us and Book a Demo | Future Dialog',
+      description: 'Get in touch with Future Dialog in Tallinn and book a demo of our community engagement app for municipalities and organisations.',
     },
     title: 'Contacts',
     aboutTitle: 'Who are we?',
@@ -267,9 +264,9 @@ export const en: Content = {
   },
   customersPage: {
     meta: {
-      title: 'Cloud platform with a suite of tools - Future Dialog',
+      title: 'Customers and Partners | Future Dialog',
       description:
-        'We offer cloud based services for communities and business. Best cloud platforms for different spheres – employee management, marketing, civic participation.',
+        'Municipalities that engage their residents with Future Dialog, and how partners can offer our community engagement platform to their clients.',
     },
     title: 'Our happy customers',
     items: [

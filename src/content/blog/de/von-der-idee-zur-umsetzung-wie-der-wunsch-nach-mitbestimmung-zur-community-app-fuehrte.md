@@ -2,11 +2,11 @@
 title: "Von der Idee zur Umsetzung: Wie der Wunsch nach Mitbestimmung zur Entstehung einer Community-App führte"
 description: Der CEO von Future Dialog erklärt, wie ein wirksamer Zwei-Wege-Kommunikationskanal für Kommunalverwaltungen entstand.
 translationKey: from-ideation-to-creation
-pubDate: "2026-05-25T10:25:47+03:00"
+pubDate: "2021-05-25T10:25:47+03:00"
 readingMinutes: 2
 categories: ["engagement", "news"]
-image: /images/blog/our-solution-full.png
-thumbnail: /images/blog/our-solution.png
+image: ../../../assets/blog/undraw_our-solution_qv3b.png
+thumbnail: ../../../assets/blog/undraw_our-solution_qv3b.png
 imageCredit: UnDraw
 ---
 

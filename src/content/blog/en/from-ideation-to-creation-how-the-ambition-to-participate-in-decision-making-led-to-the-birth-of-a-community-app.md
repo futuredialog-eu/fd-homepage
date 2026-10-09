@@ -2,11 +2,11 @@
 title: "From ideation to creation: How the ambition to participate in decision-making led to the birth of a community app"
 description: The CEO of Future Dialog explains what led to creating an effective two-way communication channel for local governments.
 translationKey: from-ideation-to-creation
-pubDate: "2026-05-25T10:25:47+03:00"
+pubDate: "2021-05-25T10:25:47+03:00"
 readingMinutes: 2
 categories: ["engagement", "news"]
-image: /images/blog/our-solution-full.png
-thumbnail: /images/blog/our-solution.png
+image: ../../../assets/blog/undraw_our-solution_qv3b.png
+thumbnail: ../../../assets/blog/undraw_our-solution_qv3b.png
 imageCredit: UnDraw
 ---
 

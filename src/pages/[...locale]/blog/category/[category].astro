@@ -34,13 +34,14 @@ const { blogPage } = getContent(locale);
 const label = blogPage.categoryLabels[category];
 const posts = await getPosts(locale, category);
 const categories = await getUsedCategories(locale);
-const alternates = await categoryLocalePaths(category);
+const { paths: alternates, translated } = await categoryLocalePaths(category);
 ---
 
 <Layout
   locale={locale}
   path={categoryPath(category)}
   paths={alternates}
+  translated={translated}
   title={`${label} - ${site.name}`}
   description={blogPage.meta.description}
   bodyClass="news"

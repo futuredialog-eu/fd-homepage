@@ -2,11 +2,11 @@
 title: "Schnelle Krisenkommunikation für die Gemeinschaft: Eine Fallstudie aus der Gemeinde Elva"
 description: Wie die Gemeinde Elva ihre Community-App nutzte, um verwirrende Krisenmeldungen verständlich zu machen und Feedback der Bürgerinnen und Bürger zu sammeln.
 translationKey: elva-crisis-communication-case-study
-pubDate: "2026-04-05T17:55:02+03:00"
+pubDate: "2021-04-05T17:55:02+03:00"
 readingMinutes: 3
 categories: ["engagement", "municipality", "news"]
-image: /images/blog/process-full.png
-thumbnail: /images/blog/process.png
+image: ../../../assets/blog/undraw_process_0wew.png
+thumbnail: ../../../assets/blog/undraw_process_0wew.png
 imageCredit: UnDraw
 ---
 

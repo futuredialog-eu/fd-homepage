@@ -2,11 +2,11 @@
 title: "Ideasta toteutukseen: Halu tulla kuulluksi ja osallistua päätöksentekoon johti yhteisösovellukseen"
 description: Future Dialogin toimitusjohtaja kertoo, mikä sai aikaan kunnille tarkoitetun tehokkaan kaksisuuntaisen viestintäkanavan luomisen.
 translationKey: from-ideation-to-creation
-pubDate: "2026-05-25T11:03:54+03:00"
+pubDate: "2021-05-25T11:03:54+03:00"
 readingMinutes: 2
 categories: ["engagement", "news"]
-image: /images/blog/our-solution-full.png
-thumbnail: /images/blog/our-solution.png
+image: ../../../assets/blog/undraw_our-solution_qv3b.png
+thumbnail: ../../../assets/blog/undraw_our-solution_qv3b.png
 imageCredit: UnDraw
 ---
 

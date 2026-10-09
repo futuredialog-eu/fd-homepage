@@ -1,5 +1,6 @@
 ---
-import { getContent, localizePath, withBase, type Locale } from '../../i18n';
+import { Image } from 'astro:assets';
+import { getContent, localizePath, type Locale } from '../../i18n';
 
 interface Props {
   locale: Locale;
@@ -28,7 +29,12 @@ const { blogSection, ui } = getContent(locale);
               itemtype="http://schema.org/Article"
             >
               <a href={href} itemprop="url" class="news-images">
-                <img src={withBase(post.image)} alt={post.title} />
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  widths={[400, 800]}
+                  sizes="(width < 768px) 100vw, (width < 1024px) 50vw, 33vw"
+                />
               </a>
               <div class="info">
                 {post.categories.map((category) => (

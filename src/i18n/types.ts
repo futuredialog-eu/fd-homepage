@@ -1,3 +1,4 @@
+import type { ImageMetadata } from 'astro';
 import type { BlogCategory } from '../data/blog';
 
 export interface NavItem {
@@ -28,7 +29,7 @@ export interface Review {
 export interface BlogPost {
   title: string;
   href: string;
-  image: string;
+  image: ImageMetadata;
   categories: NavItem[];
   readingTime: string;
   date: string;
@@ -38,7 +39,6 @@ export interface BlogPost {
 export interface FeatureItem {
   title: string;
   description: string;
-  image: string;
 }
 
 export interface CaseItem {

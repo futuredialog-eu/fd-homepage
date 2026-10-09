@@ -2,11 +2,11 @@
 title: 3 Gründe für eine App zur Bürgerbeteiligung
 description: Drei Gründe, warum eine mobile App zur Belebung der Beteiligung in Ihrer Gemeinschaft Ihr nächster Schritt sein sollte.
 translationKey: 3-reasons-community-engagement-app
-pubDate: "2026-07-06T18:02:38+03:00"
+pubDate: "2021-07-06T18:02:38+03:00"
 readingMinutes: 2
 categories: ["engagement", "news"]
-image: /images/blog/nature-on-screen-full.png
-thumbnail: /images/blog/nature-on-screen.png
+image: ../../../assets/blog/undraw_nature-on-screen_5cbd.png
+thumbnail: ../../../assets/blog/undraw_nature-on-screen_5cbd.png
 imageCredit: UnDraw
 ---
 

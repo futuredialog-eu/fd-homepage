@@ -2,11 +2,11 @@
 title: "Kriisiinfo kiirelt kogukonnani äpi abiga: kogemuslugu Elva vallalt"
 description: Kuidas Elva vald kasutas kogukonnaäppi, et edastada kriisiinfot selgemalt ja koguda elanikelt tagasisidet.
 translationKey: elva-crisis-communication-case-study
-pubDate: "2026-04-05T11:34:34+03:00"
+pubDate: "2021-04-05T11:34:34+03:00"
 readingMinutes: 3
 categories: ["engagement", "municipality", "news"]
-image: /images/blog/process-full.png
-thumbnail: /images/blog/process.png
+image: ../../../assets/blog/undraw_process_0wew.png
+thumbnail: ../../../assets/blog/undraw_process_0wew.png
 imageCredit: UnDraw
 ---
 

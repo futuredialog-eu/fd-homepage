@@ -1,10 +1,13 @@
+import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
+import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
+import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
 import type { Content } from './types';
 
 export const fi: Content = {
   meta: {
     title: 'Asukkaiden viestintä- ja osallistamisalusta | Future Dialog',
     description:
-      'Future Dialog luo mobiilisovelluksia, jotka auttavat yhteisöjä tekemään yhteistyötä, toteuttamaan muutoksia ja parantamaan elinympäristöään älykkään tekniikan avulla.',
+      'Yhteisösovellus kunnille: jaa uutisia, lähetä ilmoituksia, tee kyselyjä ja kerää asukkailta palautetta – kaikki yhdessä paikassa.',
   },
   ui: {
     bookDemo: 'Sovi tapaaminen',
@@ -103,41 +106,41 @@ export const fi: Content = {
     readMoreHref: '/blog/',
     posts: [
       {
+        title: 'Miksi yhteisön osallistaminen on tärkeää',
+        href: '/blog/miksi-yhteison-osallistaminen-on-tarkeaa/',
+        image: gettingOrganizedImage,
+        categories: [
+          { label: 'Kunnat', href: '/blog/category/municipality/' },
+          { label: 'Osallistaminen', href: '/blog/category/engagement/' },
+        ],
+        readingTime: '3 min lukuaika',
+        date: '1 lokakuun, 2026',
+        dateTime: '2026-10-01T12:00:00+03:00',
+      },
+      {
+        title: '10 etua yhteisösovellusten käytöstä kunnille ja yhteisöille',
+        href: '/blog/10-etua-yhteisosovellusten-kaytosta-kunnille-ja-yhteisoille/',
+        image: publicDiscussionImage,
+        categories: [
+          { label: 'Kunnat', href: '/blog/category/municipality/' },
+          { label: 'Osallistaminen', href: '/blog/category/engagement/' },
+          { label: 'Uutiset', href: '/blog/category/news/' },
+        ],
+        readingTime: '2 min lukuaika',
+        date: '29 heinäkuun, 2021',
+        dateTime: '2021-07-29T13:15:40+03:00',
+      },
+      {
         title: '3 syytä käyttää yhteisösovellusta',
         href: '/blog/3-syyta-kayttaa-yhteisosovellusta/',
-        image: '/images/blog/nature-on-screen.png',
+        image: natureOnScreenImage,
         categories: [
           { label: 'Osallistaminen', href: '/blog/category/engagement/' },
           { label: 'Uutiset', href: '/blog/category/news/' },
         ],
         readingTime: '2 min lukuaika',
         date: '6 heinäkuun, 2021',
-        dateTime: '2026-07-06T10:59:18+03:00',
-      },
-      {
-        title: 'Ideasta toteutukseen: Halu tulla kuulluksi ja osallistua päätöksentekoon johti yhteisösovellukseen',
-        href: '/blog/ideasta-toteutukseen-halu-tulla-kuulluksi-ja-osallistua-paatoksentekoon-johti-yhteisosovellukseen/',
-        image: '/images/blog/our-solution.png',
-        categories: [
-          { label: 'Osallistaminen', href: '/blog/category/engagement/' },
-          { label: 'Uutiset', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 min lukuaika',
-        date: '25 toukokuun, 2021',
-        dateTime: '2026-05-25T11:03:54+03:00',
-      },
-      {
-        title: 'Kriisitiedot nopeasti yhteisön tietoon sovelluksen avulla: kokemustarina Elvan kunnalta',
-        href: '/blog/kriisitiedot-nopeasti-yhteison-tietoon-sovelluksen-avulla-kokemustarina-elvan-kunnalta/',
-        image: '/images/blog/process.png',
-        categories: [
-          { label: 'Kunnat', href: '/blog/category/municipality/' },
-          { label: 'Osallistaminen', href: '/blog/category/engagement/' },
-          { label: 'Uutiset', href: '/blog/category/news/' },
-        ],
-        readingTime: '3 min lukuaika',
-        date: '5 huhtikuun, 2021',
-        dateTime: '2026-04-05T11:02:43+03:00',
+        dateTime: '2021-07-06T10:59:18+03:00',
       },
     ],
   },
@@ -165,9 +168,9 @@ export const fi: Content = {
   },
   featuresPage: {
     meta: {
-      title: 'Ominaisuudet - Future Dialog',
+      title: 'Ominaisuudet: kyselyt, palaute ja uutiset | Future Dialog',
       description:
-        'Tarjoamme digitaalisen SaaS-tuotteen, joka sisältää kyselytyökalut, palautekanavan, julkaisut ja analytiikkatyöpöydän. SaaS-työkalut helppoon hallintaan ja käyttöön.',
+        'Osallista asukkaita kyselyillä, palautekanavalla, uutisilla, push-ilmoituksilla ja analytiikkatyöpöydällä kuntasi omassa sovelluksessa.',
     },
     intro:
       'Future Dialog on osallistuvien yhteisöjen tulevaisuus. Mobiilisovelluksemme tekee uutisten lukemisesta ja yhteisöön osallistumisesta asukkaille mukavan ja ympäri vuorokauden käytettävän. Autamme aloittamaan rakentavia keskusteluja ja tekemään tietoon perustuvia päätöksiä tuhlaamatta resursseja.',
@@ -176,31 +179,26 @@ export const fi: Content = {
         title: 'Sovellus ja verkkosivusto',
         description:
           'Uusi sovelluksesi toimii iOS- ja Android- alustoilla sekä internetverkossa. Muokkaa sitä juuri haluamallasi tavalla – lisää logosi, värisi, tyylisi ja keskustele yhteisön kanssa äidinkielellään.',
-        image: '/images/features/1.png',
       },
       {
         title: 'Hyödyllinen analytiikka',
         description:
           'Tunnetko yhteisösi? Tehokkaan analytiikkatyöpöytämme avulla näet, kuka on näytön toisella puolella ja miten sisältöä vastaanotetaan.',
-        image: '/images/features/2.png',
       },
       {
         title: 'Julkaisut',
         description:
           'Luo julkaisuja ja jaa uutisia, ilmoita tulevista tapahtumista tai suorita kyselyjä. Julkaisut helpottavat tarvitsemasi sisällön löytämistä.',
-        image: '/images/features/3.png',
       },
       {
         title: 'RSS syötteet',
         description:
           'Vähemmän työtä, enemmän sisältöä yhteisölle, RSS-syötteet näyttävät sovelluksen tärkeimmät uutiset automaattisesti.',
-        image: '/images/features/4.png',
       },
       {
         title: 'Palaute, joka tavoittaa sinut hetkessä',
         description:
           'Luo keskusteluyhteys yhteisöjäsenten kanssa sekunneissa. Palautteen lisäksi voit pyytää yksityiskohtaisia mielipiteitä ja ehdottaa ratkaisuja.',
-        image: '/images/features/5.png',
       },
     ],
     caseSection: {
@@ -233,9 +231,9 @@ export const fi: Content = {
   },
   blogPage: {
     meta: {
-      title: 'Uutiset - Future Dialog',
+      title: 'Blogi: asukkaiden osallistaminen kunnissa | Future Dialog',
       description:
-        'Seuraa uutisiamme, tarinoitamme ja näkemyksiämme! Tietoa SaaS-tuotteistamme ja niiden käytöstä käytännössä.',
+        'Artikkeleita ja kokemustarinoita yhteisön osallistamisesta, asukasviestinnästä ja siitä, miten kunnat käyttävät yhteisösovellusta.',
     },
     title: 'Uutiset',
     description: 'Seuraa uutisiamme, tarinoitamme ja näkemyksiämme! Osallistamisen ratkaisuja eri toimialoille',
@@ -250,8 +248,8 @@ export const fi: Content = {
   },
   contactsPage: {
     meta: {
-      title: 'Yhteystiedot - Future Dialog',
-      description: 'Future Dialogin yhteystiedot ja yhteydenottolomake myyntiosastolle',
+      title: 'Yhteystiedot ja demon varaus | Future Dialog',
+      description: 'Ota yhteyttä Future Dialogiin ja varaa esittely yhteisösovelluksestamme kunnille ja organisaatioille.',
     },
     title: 'Yhteystiedot',
     aboutTitle: 'Keitä me olemme?',
@@ -262,7 +260,7 @@ export const fi: Content = {
     meta: {
       title: 'Asiakkaat ja kumppanit - Future Dialog',
       description:
-        'Tarjoamme pilvipohjaisia palveluita yhteisöille ja yrityksille. Paras pilvialusta eri tarpeisiin – henkilöstön johtaminen, markkinointi ja kansalaisten osallistaminen.',
+        'Kunnat, jotka osallistavat asukkaitaan Future Dialogin avulla, sekä tietoa kumppanuudesta osallistamisalustamme kanssa.',
     },
     title: 'Tyytyväiset asiakkaamme',
     items: [

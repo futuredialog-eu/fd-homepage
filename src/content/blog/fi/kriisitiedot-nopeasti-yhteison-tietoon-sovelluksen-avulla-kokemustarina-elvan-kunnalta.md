@@ -2,11 +2,11 @@
 title: "Kriisitiedot nopeasti yhteisön tietoon sovelluksen avulla: kokemustarina Elvan kunnalta"
 description: Miten Elvan kunta käytti yhteisösovellusta kriisitietojen selkeään välittämiseen ja asukaspalautteen keräämiseen.
 translationKey: elva-crisis-communication-case-study
-pubDate: "2026-04-05T11:02:43+03:00"
+pubDate: "2021-04-05T11:02:43+03:00"
 readingMinutes: 3
 categories: ["engagement", "municipality", "news"]
-image: /images/blog/process-full.png
-thumbnail: /images/blog/process.png
+image: ../../../assets/blog/undraw_process_0wew.png
+thumbnail: ../../../assets/blog/undraw_process_0wew.png
 imageCredit: UnDraw
 ---
 

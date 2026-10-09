@@ -2,11 +2,11 @@
 title: "Ideest teostuseni: Tahe olla kuulda võetud ja osaleda otsuste tegemisel viis kogukonnaäpini"
 description: Future Dialogi tegevjuht räägib, mis ajendas kohalike omavalitsuste jaoks efektiivse kahepoolse kommunikatsioonikanali loomist.
 translationKey: from-ideation-to-creation
-pubDate: "2026-05-25T10:34:31+03:00"
+pubDate: "2021-05-25T10:34:31+03:00"
 readingMinutes: 2
 categories: ["engagement", "news"]
-image: /images/blog/our-solution-full.png
-thumbnail: /images/blog/our-solution.png
+image: ../../../assets/blog/undraw_our-solution_qv3b.png
+thumbnail: ../../../assets/blog/undraw_our-solution_qv3b.png
 imageCredit: UnDraw
 ---
 

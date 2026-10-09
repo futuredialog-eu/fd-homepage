@@ -1,10 +1,13 @@
+import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
+import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
+import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
 import type { Content } from './types';
 
 export const et: Content = {
   meta: {
     title: 'Elanike suhtlus- ja kaasamisplatvorm | Future Dialog',
     description:
-      'Future Dialog loob mobiilirakendusi, mis aitavad kogukondadel koostööd teha, muudatusi ellu viia ja targa tehnoloogia abil enda elukeskkonda paremaks muuta.',
+      'Kogukonnaäpp omavalitsustele: jaga uudiseid, saada teavitusi, korralda küsitlusi ja kogu elanikelt tagasisidet – kõik ühes kohas.',
   },
   ui: {
     bookDemo: 'Broneeri kohtumine',
@@ -125,35 +128,21 @@ export const et: Content = {
     readMoreHref: '/blog/',
     posts: [
       {
-        title:
-          'Future Dialog kutsus kohaliku omavalitsuse esindajad üle-eestiliselt kokku kogukonnakaasamisest rääkima',
-        href: 'https://www.futuredialog.eu/et/uudised/future-dialog-kutsus-kohaliku-omavalitsuse-esindajad-ule-eestiliselt-kokku-kogukonnakaasamisest-raakima/',
-        image: '/images/blog/share-opinion.png',
+        title: 'Miks kogukonna kaasamine on oluline',
+        href: '/blog/miks-kogukonna-kaasamine-on-oluline/',
+        image: gettingOrganizedImage,
         categories: [
           { label: 'Kaasamine', href: '/blog/category/engagement/' },
           { label: 'Omavalitsused', href: '/blog/category/municipality/' },
-          { label: 'Uudised', href: '/blog/category/news/' },
         ],
         readingTime: '3 min lugemist',
-        date: 'oktoober 4, 2021',
-        dateTime: '2026-10-04T18:10:53+03:00',
-      },
-      {
-        title: 'Future Dialog võtab osa 2021 Linnade ja Valdade Päevadest',
-        href: 'https://www.futuredialog.eu/et/uudised/future-dialog-votab-osa-2026-linnade-ja-valdade-paevadest/',
-        image: '/images/blog/our-neighborhood.png',
-        categories: [
-          { label: 'Omavalitsused', href: '/blog/category/municipality/' },
-          { label: 'Uudised', href: '/blog/category/news/' },
-        ],
-        readingTime: '1 min lugemist',
-        date: 'august 17, 2021',
-        dateTime: '2026-08-17T09:41:41+03:00',
+        date: 'oktoober 1, 2026',
+        dateTime: '2026-10-01T12:00:00+03:00',
       },
       {
         title: '10 eelist kogukonnaäpi kasutamiseks omavalitsustele ja kogukondadele',
         href: '/blog/10-eelist-kogukonnaapi-kasutamiseks-omavalitsustele-ja-kogukondadele/',
-        image: '/images/blog/public-discussion.png',
+        image: publicDiscussionImage,
         categories: [
           { label: 'Kaasamine', href: '/blog/category/engagement/' },
           { label: 'Omavalitsused', href: '/blog/category/municipality/' },
@@ -161,7 +150,19 @@ export const et: Content = {
         ],
         readingTime: '2 min lugemist',
         date: 'juuli 29, 2021',
-        dateTime: '2026-07-29T13:13:15+03:00',
+        dateTime: '2021-07-29T13:13:15+03:00',
+      },
+      {
+        title: '3 põhjust miks võtta kasutusele kogukonnaäpp',
+        href: '/blog/3-pohjust-miks-votta-kasutusele-kogukonnaapp/',
+        image: natureOnScreenImage,
+        categories: [
+          { label: 'Kaasamine', href: '/blog/category/engagement/' },
+          { label: 'Uudised', href: '/blog/category/news/' },
+        ],
+        readingTime: '2 min lugemist',
+        date: 'juuli 6, 2021',
+        dateTime: '2021-07-06T11:34:18+03:00',
       },
     ],
   },
@@ -189,9 +190,9 @@ export const et: Content = {
   },
   featuresPage: {
     meta: {
-      title: 'Omadused - Future Dialog',
+      title: 'Omadused: küsitlused, tagasiside ja uudised | Future Dialog',
       description:
-        'Pakume digitaalset SaaS-lahendust, mis sisaldab küsitlustööriistu, tagasisidekanalit, postitusi ja analüütikatöölauda. SaaS-tööriistad mugavaks haldamiseks ja ligipääsuks.',
+        'Kaasa elanikke küsitluste, tagasisidekanali, uudiste, tõuketeavituste ja analüütikatöölauaga oma omavalitsuse kogukonnaäpis.',
     },
     intro:
       'Future Dialog on kaasatud kogukondade tulevik. Meie mobiilirakendus muudab uudiste lugemise ja kogukonnas panustamise elanike jaoks mugavaks ja ööpäev läbi kättesaadavaks. Aitame alustada edasiviivaid vestlusi ja langetada andmepõhiseid otsuseid ressursse raiskamata.',
@@ -200,31 +201,26 @@ export const et: Content = {
         title: 'Äpp ja veebileht',
         description:
           'Sinu uus rakendus töötab iOS-il, Androidil ja veebis. Kohanda seda täpselt nii, nagu soovid - lisa oma logo, värvid, stiil ja räägi kogukonnaga nende emakeeles.',
-        image: '/images/features/1.png',
       },
       {
         title: 'Kasulik analüütika',
         description:
           'Kas tunned enda kogukonda? Meie võimekas analüütikatöölaud võimaldab näha, kes on teisel pool ekraani ning kuidas ta sisu vastu võtab. See aitab ka sõnumeid paremini sihtida.',
-        image: '/images/features/2.png',
       },
       {
         title: 'Postitused',
         description:
           'Loo postitusi ja avalda neis uudiseid, anna märku eesootavatest sündmustest või korralda küsitlusi. Postitused muudavad vajaliku sisu leidmise mugavaks.',
-        image: '/images/features/3.png',
       },
       {
         title: 'RSS uudistevoog',
         description:
           'Vähem tööd, rohkem sisu kogukonnale. RSS-voo abil ilmuvad kõige olulisemad uudised rakendusse automaatselt.',
-        image: '/images/features/4.png',
       },
       {
         title: 'Tagasiside, mis jõuab sinuni hetkega',
         description:
           'Loo sekunditega vestlus kogukonnaliikmetega. Peale tagasiside saad küsida üksikasjalikke arvamusi ning pakkuda välja lahendusi.',
-        image: '/images/features/5.png',
       },
     ],
     caseSection: {
@@ -257,9 +253,9 @@ export const et: Content = {
   },
   blogPage: {
     meta: {
-      title: 'Uudised - Future Dialog',
+      title: 'Blogi: kogukonna kaasamine omavalitsustes | Future Dialog',
       description:
-        'Jälgi meie uudiseid, lugusid ja teadmisi! Ülevaade meie SaaS-lahendustest ja nende kasutamisest praktikas.',
+        'Artiklid ja kogemuslood kogukonna kaasamisest, elanikega suhtlemisest ja sellest, kuidas omavalitsused kogukonnaäppi kasutavad.',
     },
     title: 'Uudised',
     description: 'Jälgi meie uudiseid, lugusid ja teadmisi! Kaasamislahendused erinevates valdkondades',
@@ -274,8 +270,8 @@ export const et: Content = {
   },
   contactsPage: {
     meta: {
-      title: 'Kontakt - Future Dialog',
-      description: 'Future Dialogi kontaktandmed ja kontaktivorm müügiosakonnaga',
+      title: 'Kontakt ja demo broneerimine | Future Dialog',
+      description: 'Võta Future Dialogiga ühendust ja broneeri demo meie kogukonnaäpist omavalitsustele ja organisatsioonidele.',
     },
     title: 'Kontakt',
     aboutTitle: 'Kes me oleme?',
@@ -284,7 +280,7 @@ export const et: Content = {
   },
   customersPage: {
     meta: {
-      title: 'Kliendid - Future Dialog',
+      title: 'Kliendid ja partnerid | Future Dialog',
       description:
         'Future Dialogi kliendid ja koostööpartnerid – omavalitsused, ettevõtted ja kogukonnad, kes kasutavad meie pilvepõhist platvormi.',
     },

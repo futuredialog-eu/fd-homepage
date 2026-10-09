@@ -21,13 +21,12 @@ const year = new Date().getFullYear();
   <div class="wrapper">
     <div class="row center-xs start-sm">
       <div class="col-xs-12 col-md-3 footer-copyright">
-        <img src={withBase('/theme/images/icons/logo.svg')} alt="Logo" />
+        <img src={withBase('/theme/images/icons/logo.svg')} alt={site.name} />
         <small>
-          © {year}
-          {site.organization}. {ui.copyright}
+          © {year}&nbsp;{site.organization}. {ui.copyright}
           <!-- <br />
           <a href={footer.easHref}>
-            <img src={withBase(footer.easImage)} alt="EAS" />
+            <img src={withBase(footer.easImage)} alt="Enterprise Estonia (EAS)" />
           </a> -->
         </small>
       </div>
@@ -80,13 +79,13 @@ const year = new Date().getFullYear();
     width: 101%;
     height: 101%;
     background-size: contain;
-    content: "";
+    content: '';
   }
 
   .footer-copyright small:before {
     border: none;
     height: 1px;
-    background-image: linear-gradient(270deg,var(--color-brand-0),var(--color-brand-15),var(--color-brand-0));
+    background-image: linear-gradient(270deg, var(--color-brand-0), var(--color-brand-15), var(--color-brand-0));
     text-align: center;
   }
 
@@ -96,7 +95,7 @@ const year = new Date().getFullYear();
     align-items: center;
     width: 3.125rem;
     height: 3.125rem;
-    background-color: rgba(0,156,171,.2);
+    background-color: rgba(0, 156, 171, 0.2);
   }
 
   .footer-social a:after {
@@ -149,24 +148,24 @@ const year = new Date().getFullYear();
     }
   }
 
-  .footer-copyright img+small {
+  .footer-copyright img + small {
     margin-top: 1.125rem;
   }
 
   @media (width >= 1024px) {
-    .footer-copyright img+small {
+    .footer-copyright img + small {
       margin-left: 1.5rem;
     }
   }
 
   .footer-copyright small {
-    font-size: .8125rem;
+    font-size: 0.8125rem;
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
     line-height: 1.615;
     font-weight: 500;
-    color: rgba(0,0,0,.5);
+    color: rgba(0, 0, 0, 0.5);
   }
 
   .footer-copyright small:before {
@@ -188,7 +187,7 @@ const year = new Date().getFullYear();
     }
 
     .footer-copyright small:before {
-      content: "";
+      content: '';
     }
 
     .footer-copyright small br {
@@ -276,7 +275,7 @@ const year = new Date().getFullYear();
     }
   }
 
-  .footer-social li+li {
+  .footer-social li + li {
     margin-left: 1.25rem;
   }
 
@@ -294,5 +293,4 @@ const year = new Date().getFullYear();
       max-width: 41.66667%;
     }
   }
-
 </style>

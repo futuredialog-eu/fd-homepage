@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import BlogQuote from '../../../components/BlogQuote.astro';
 import SvgIcon from '../../../components/SvgIcon.astro';
@@ -38,14 +39,29 @@ const { title, description, pubDate, readingMinutes, categories, image, imageCre
 const { Content } = await render(entry);
 
 const path = postPath(entry);
-const alternates = await postLocalePaths(entry);
+const { paths: alternates, translated } = await postLocalePaths(entry);
 const shareUrl = new URL(localizePath(path, locale), Astro.site!).href;
+const siteRoot = new URL(withBase('/'), Astro.site!).href;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  '@id': `${shareUrl}#article`,
+  mainEntityOfPage: shareUrl,
+  headline: title,
+  description,
+  image: new URL(image.src, Astro.site!).href,
+  datePublished: pubDate.toISOString(),
+  inLanguage: locale,
+  author: { '@id': `${siteRoot}#organization` },
+  publisher: { '@id': `${siteRoot}#organization` },
+};
 const readingTime = blogPage.readingTime.replace('{minutes}', String(readingMinutes));
 
 const shareLinks = [
   { icon: 'social-in', href: `https://www.linkedin.com/shareArticle?url=${shareUrl}` },
   { icon: 'social-fb', href: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}` },
-  { icon: 'social-tw', href: `https://twitter.com/share?url=${shareUrl}` },
+  { icon: 'social-tw', href: `https://x.com/intent/post?url=${shareUrl}` },
 ];
 ---
 
@@ -53,12 +69,16 @@ const shareLinks = [
   locale={locale}
   path={path}
   paths={alternates}
+  translated={translated}
   title={`${title} - ${site.name}`}
   description={description}
+  image={image}
+  publishedTime={pubDate}
+  schema={articleSchema}
   bodyClass="news-single"
 >
   <section class="news-detail">
-    <div class="wrapper" itemscope itemtype="http://schema.org/Article">
+    <div class="wrapper">
       <div class="news-info">
         {
           categories.map((category) => (
@@ -68,27 +88,34 @@ const shareLinks = [
           ))
         }
         <span class="time-for-read">{readingTime}</span>
-        <h1 itemprop="headline">{title}</h1>
-        <time datetime={pubDate.toISOString()} itemprop="datePublished">
+        <h1>{title}</h1>
+        <time datetime={pubDate.toISOString()}>
           {formatDate(pubDate, locale)}
         </time>
       </div>
     </div>
-    <figure itemscope itemtype="http://schema.org/ImageObject">
-      <img itemprop="image" src={withBase(image)} alt={title} />
+    <figure>
+      <Image
+        src={image}
+        alt=""
+        widths={[800, 1200, 1600, 1920]}
+        sizes="(width < 1440px) 50vw, 100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
       {
         imageCredit && (
           <figcaption class="wrapper">
             <div class="row">
               <div class="col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8">
-                {blogPage.photoCredit} <span itemprop="author">{imageCredit}</span>
+                {blogPage.photoCredit} {imageCredit}
               </div>
             </div>
           </figcaption>
         )
       }
     </figure>
-    <div class="wrapper" itemprop="articleBody">
+    <div class="wrapper">
       <div class="row">
         <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 article">
           <Content />
@@ -467,6 +494,10 @@ const shareLinks = [
   .article-footer .social-title+.contact-form-social {
     margin-top: 1.5625rem;
     margin-bottom: 3.75rem;
+  }
+
+  .article-footer .contact-form-social a :global(svg) {
+    fill: #fff;
   }
 
   @media (width < 1440px) {

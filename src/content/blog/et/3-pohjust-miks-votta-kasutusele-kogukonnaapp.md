@@ -2,11 +2,11 @@
 title: 3 põhjust miks võtta kasutusele kogukonnaäpp
 description: Kolm põhjust, miks võtta kogukonna dialoogi elavdamiseks kasutusele mobiilirakendus.
 translationKey: 3-reasons-community-engagement-app
-pubDate: "2026-07-06T11:34:18+03:00"
+pubDate: "2021-07-06T11:34:18+03:00"
 readingMinutes: 2
 categories: ["engagement", "news"]
-image: /images/blog/nature-on-screen-full.png
-thumbnail: /images/blog/nature-on-screen.png
+image: ../../../assets/blog/undraw_nature-on-screen_5cbd.png
+thumbnail: ../../../assets/blog/undraw_nature-on-screen_5cbd.png
 imageCredit: UnDraw
 ---
 
