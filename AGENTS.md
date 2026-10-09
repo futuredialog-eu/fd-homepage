@@ -58,14 +58,15 @@ The footer's legal links (`PolicyLinks.astro`) are plain anchors to the
 `src/legal/*.html` through `LegalDocument.astro`. Those two URLs are also what
 the mobile app and back office link to, so the routes must keep their paths.
 
-`Analytics.astro` is the one third-party script: Google Analytics, rendered in
-`<head>` by `Layout.astro` and only when the build sees a
-`PUBLIC_GA_MEASUREMENT_ID` (an Actions repository variable in the deploy
-workflow; an unset value ships nothing). `.env.example` documents it. It is
-consent-gated — the component server-renders only the cookie bar and an inline
-script; `gtag.js` is injected client-side after Accept, and the choice is kept
-in `localStorage` under `fd:analytics-consent`. The footer's "Cookie settings"
-control (`PolicyLinks.astro`, `[data-consent-settings]`) reopens the bar.
+`Analytics.astro` is the one third-party script: Google Analytics, rendered at the
+start of `<body>` by `Layout.astro` — its `<aside>` would end `<head>` early —
+and only when the build sees a `PUBLIC_GA_MEASUREMENT_ID` (an Actions
+repository variable in the deploy workflow; an unset value ships nothing).
+`.env.example` documents it. It is consent-gated — the component
+server-renders only the cookie bar and an inline script; `gtag.js` is injected
+client-side after Accept, and the choice is kept in `localStorage` under
+`fd:analytics-consent`. The footer's "Cookie settings" control
+(`PolicyLinks.astro`, `[data-consent-settings]`) reopens the bar.
 
 Two rules for these scripts. Render the initial state server-side and let the
 script only handle changes, so nothing moves on load — a script that paints the
@@ -77,10 +78,10 @@ a page has one of them.
 
 ## Images
 
-Blog and features images live in `src/assets/` and render with `<Image>` from
-`astro:assets`, which emits WebP at several widths with `width`/`height` set
-and lazy loading. A wrong path fails the build rather than shipping a broken
-image.
+Blog, features, home hero and team images live in `src/assets/` and render
+with `<Image>` from `astro:assets`, which emits WebP at several widths with
+`width`/`height` set and lazy loading. A wrong path fails the build rather
+than shipping a broken image.
 
 - Blog post `image` and `thumbnail` are validated by `image()` in
   `content.config.ts` and are relative to the Markdown file:
@@ -89,12 +90,16 @@ image.
   image at the top of each locale file; `image` is `ImageMetadata`, not a path.
 - The features page imports its five images directly, so they are not in the
   i18n files.
+- The hero image and the team photos (`hero.image`, `contactSection.people`)
+  are imported at the top of each locale file, like the teasers. The hero is
+  sized by its container's height, so `Hero.astro` resets the `width` that
+  `<Image>` sets; it is hidden below 768px, which its `sizes` reflects.
 - Give every `<Image>` `widths` and a `sizes` that matches its column. The post
   hero is the LCP element, so it is `loading="eager"` with
   `fetchpriority="high"`; everything else stays lazy.
 
-Logos, favicons, flags, customer and team photos, and the default social image
-are still plain files in `public/`.
+Logos, favicons, flags, customer photos and the default social image are still
+plain files in `public/`.
 
 ## SEO and metadata
 

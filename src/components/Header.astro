@@ -18,7 +18,7 @@ const { navigation, ui } = getContent(locale);
 <header class="container-fluid push-container">
   <div class="row between-xs middle-xs header">
     <a class="logo" href={localizePath('/', locale)}>
-      <img src={withBase('/theme/images/icons/logo.svg')} alt={site.name} />
+      <img src={withBase('/theme/images/icons/logo.svg')} alt={site.name} width="225" height="56" />
     </a>
     <nav>
       <div class="nav-container" id="header-nav">
@@ -78,16 +78,19 @@ const { navigation, ui } = getContent(locale);
     // Height of the expanded header. Only ever measured at the very top of the
     // page, where the header cannot already be collapsed, so the threshold can
     // never be taken from the shrunken height and start flapping.
+    // The height comes from a ResizeObserver rather than `offsetHeight`, so it is
+    // delivered after layout instead of forcing a synchronous reflow on load.
     let expandedHeight = 0;
 
     const syncCollapse = () => {
-      if (window.scrollY === 0) expandedHeight = row.offsetHeight;
       header.classList.toggle('header-on', window.scrollY > expandedHeight);
     };
 
-    syncCollapse();
+    new ResizeObserver(([entry]) => {
+      if (window.scrollY === 0) expandedHeight = entry.borderBoxSize[0].blockSize;
+      syncCollapse();
+    }).observe(row);
     window.addEventListener('scroll', syncCollapse, { passive: true });
-    window.addEventListener('resize', syncCollapse);
 
     // The drawer slides in by shifting the whole page, so the class that opens
     // it goes on <body> rather than on anything inside the header.

@@ -27,6 +27,16 @@ import '../styles/base.css';
 import '../styles/ui.css';
 import '../styles/sections.css';
 
+// The Gilroy files every page renders with on first paint, preloaded so they
+// arrive before the fallback has been laid out. Same fingerprinted files as
+// the `@font-face` rules in `fonts.css`.
+import gilroy400 from '../assets/fonts/Gilroy/393C60_1_0.woff2?url';
+import gilroy500 from '../assets/fonts/Gilroy/393C60_2_0.woff2?url';
+import gilroy600 from '../assets/fonts/Gilroy/393C60_0_0.woff2?url';
+import gilroy700 from '../assets/fonts/Gilroy/393C60_3_0.woff2?url';
+
+const preloadFonts = [gilroy400, gilroy500, gilroy600, gilroy700];
+
 interface Props {
   locale: Locale;
   /** Current path with the locale prefix stripped, e.g. `/contacts/`. */
@@ -101,10 +111,10 @@ const organizationSchema = {
   <head>
     <meta charset="utf-8" />
     {detectLocale && <LocaleRedirect />}
-    <Analytics locale={locale} />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {preloadFonts.map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="max-image-preview:large" />
@@ -151,6 +161,9 @@ const organizationSchema = {
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />}
   </head>
   <body class:list={['page-wrapper', 'push-container', bodyClass]}>
+    {/* In <body>, not <head>: the consent bar is an <aside>, which would end
+        <head> early and push the title and meta tags after it into <body>. */}
+    <Analytics locale={locale} />
     <Header locale={locale} path={path} paths={alternates} />
     <div class="content-wrapper push-container">
       <main>

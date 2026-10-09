@@ -1,6 +1,9 @@
 import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
 import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
 import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
+import hubImage from '../assets/images/hub.jpg';
+import margusRaimImage from '../assets/team/margus-raim.png';
+import toomasLaignaImage from '../assets/team/toomas-laigna.jpeg';
 import type { Content } from './types';
 
 export const fi: Content = {
@@ -43,7 +46,7 @@ export const fi: Content = {
     title: 'Yhteys sinun ja yhteisösi välillä.',
     description:
       'Pidä asukkaat ajan tasalla, kerää palautetta ja kannusta osallistumaan – kaikki kunnan omassa mobiilisovelluksessa. Sinun ja yhteisösi välissä ei ole yhtään sosiaalisen median algoritmia.',
-    image: '/images/hub.jpg',
+    image: hubImage,
     imageAlt: 'Yhteisön osallistaminen',
   },
   howSection: {
@@ -155,7 +158,7 @@ export const fi: Content = {
         phone: '+372 559 83 604',
         phoneHref: 'tel:372 559 83 604',
         email: 'toomas@futuredialog.eu',
-        image: '/images/team/toomas-laigna.jpeg',
+        image: toomasLaignaImage,
       },
       {
         name: 'Margus Räim',
@@ -163,7 +166,7 @@ export const fi: Content = {
         phone: '+372 511 9436',
         phoneHref: 'tel:372 511 9436',
         email: 'margus.raim@futuredialog.eu',
-        image: '/images/team/margus-raim.png',
+        image: margusRaimImage,
       },
     ],
   },

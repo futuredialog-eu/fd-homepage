@@ -1,6 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { contact } from '../../data/site';
-import { getContent, localizePath, withBase, type Locale } from '../../i18n';
+import { getContent, localizePath, type Locale } from '../../i18n';
 
 interface Props {
   locale: Locale;
@@ -24,7 +25,14 @@ const { hero, ui } = getContent(locale);
         </a>
       </div>
       <div class="col-xs-12 col-sm-7 col-md-5 images-container">
-        <img class="middle" src={withBase(hero.image)} alt={hero.imageAlt} />
+        <Image
+          class="middle"
+          src={hero.image}
+          alt={hero.imageAlt}
+          widths={[600, 900, 1260, 1800, 2520]}
+          sizes="(width < 768px) 1px, (width < 992px) 600px, (width < 1024px) 790px, (width < 1280px) 900px, (width < 1440px) 1060px, 1260px"
+          loading="eager"
+        />
       </div>
     </div>
   </div>
@@ -145,7 +153,10 @@ const { hero, ui } = getContent(locale);
     }
   }
 
-  .engagement-section .images-container img {
+  /* The image is sized by the container's height, so the width that <Image>
+     sets as an attribute has to give way or the image stretches. */
+  .engagement-section .images-container :global(img) {
+    width: auto;
     padding-bottom: 3.125rem;
   }
 

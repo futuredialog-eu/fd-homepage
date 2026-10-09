@@ -19,7 +19,7 @@
   --color-brand-tint: #cfe0f7;
   --color-ink: #2b2e38;
   --color-text: rgb(0 0 0 / 0.7);
-  --font-body: Gilroy, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-body: Gilroy, 'Gilroy fallback', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 
   /* Height of the fixed header once it has collapsed on scroll. */
   --header-height: 3.75rem;

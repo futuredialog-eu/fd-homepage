@@ -42,3 +42,46 @@
     url('../assets/fonts/Gilroy/393C60_3_0.woff') format('woff'),
     url('../assets/fonts/Gilroy/393C60_3_0.ttf') format('truetype');
 }
+
+/* Arial scaled to Gilroy's metrics, so text keeps its line breaks when Gilroy
+   replaces it and the swap causes no layout shift. The overrides are computed
+   from the Gilroy files against Arial (400, 500) and Arial Bold (600, 700). */
+@font-face {
+  font-family: 'Gilroy fallback';
+  font-weight: 400;
+  src: local('Arial'), local('ArialMT');
+  size-adjust: 104.44%;
+  ascent-override: 74.2%;
+  descent-override: 21.54%;
+  line-gap-override: 19.15%;
+}
+
+@font-face {
+  font-family: 'Gilroy fallback';
+  font-weight: 500;
+  src: local('Arial'), local('ArialMT');
+  size-adjust: 105.05%;
+  ascent-override: 73.68%;
+  descent-override: 21.51%;
+  line-gap-override: 20.28%;
+}
+
+@font-face {
+  font-family: 'Gilroy fallback';
+  font-weight: 600;
+  src: local('Arial Bold'), local('Arial-BoldMT');
+  size-adjust: 97.54%;
+  ascent-override: 79.35%;
+  descent-override: 23.17%;
+  line-gap-override: 23.07%;
+}
+
+@font-face {
+  font-family: 'Gilroy fallback';
+  font-weight: 700;
+  src: local('Arial Bold'), local('Arial-BoldMT');
+  size-adjust: 98.06%;
+  ascent-override: 78.83%;
+  descent-override: 23.15%;
+  line-gap-override: 24.27%;
+}

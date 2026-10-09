@@ -60,7 +60,7 @@ export interface ContactPerson {
   phone: string;
   phoneHref: string;
   email: string;
-  image: string;
+  image: ImageMetadata;
 }
 
 export interface Content {
@@ -91,7 +91,7 @@ export interface Content {
   hero: {
     title: string;
     description: string;
-    image: string;
+    image: ImageMetadata;
     imageAlt: string;
   };
   howSection: {

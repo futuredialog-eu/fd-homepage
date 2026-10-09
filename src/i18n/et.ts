@@ -1,6 +1,9 @@
 import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
 import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
 import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
+import hubImage from '../assets/images/hub.jpg';
+import margusRaimImage from '../assets/team/margus-raim.png';
+import toomasLaignaImage from '../assets/team/toomas-laigna.jpeg';
 import type { Content } from './types';
 
 export const et: Content = {
@@ -43,7 +46,7 @@ export const et: Content = {
     title: 'Ühendus sinu ja sinu kogukonna vahel.',
     description:
       'Hoia elanikke kursis, kogu tagasisidet ja julgusta kaasa rääkima – kõik seda omavalitsuse enda mobiilirakenduses. Sinu ja kogukonna vahel ei seisa ükski sotsiaalmeedia algoritm.',
-    image: '/images/hub.jpg',
+    image: hubImage,
     imageAlt: 'Kogukonna kaasamine',
   },
   howSection: {
@@ -177,7 +180,7 @@ export const et: Content = {
         phone: '+372 559 83 604',
         phoneHref: 'tel:372 559 83 604',
         email: 'toomas@futuredialog.eu',
-        image: '/images/team/toomas-laigna.jpeg',
+        image: toomasLaignaImage,
       },
       {
         name: 'Margus Räim',
@@ -185,7 +188,7 @@ export const et: Content = {
         phone: '+372 511 9436',
         phoneHref: 'tel:372 511 9436',
         email: 'margus.raim@futuredialog.eu',
-        image: '/images/team/margus-raim.png',
+        image: margusRaimImage,
       },
     ],
   },
