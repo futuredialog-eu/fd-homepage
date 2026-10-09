@@ -47,7 +47,7 @@ const year = new Date().getFullYear();
           {
             social.map((item) => (
               <li>
-                <a href={item.href}>
+                <a href={item.href} aria-label={item.label}>
                   <SvgIcon name={item.icon} />
                 </a>
               </li>
@@ -165,7 +165,7 @@ const year = new Date().getFullYear();
     box-sizing: border-box;
     line-height: 1.615;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--color-text);
   }
 
   .footer-copyright small:before {

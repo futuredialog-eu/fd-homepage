@@ -103,6 +103,7 @@ export const fi: Content = {
   ],
   blogSection: {
     title: 'Blogimme',
+    readMore: 'Lue kaikki uutiset',
     readMoreHref: '/blog/',
     posts: [
       {

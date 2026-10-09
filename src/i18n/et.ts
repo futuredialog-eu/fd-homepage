@@ -125,6 +125,7 @@ export const et: Content = {
   ],
   blogSection: {
     title: 'Viimased uudised',
+    readMore: 'Loe kõiki uudiseid',
     readMoreHref: '/blog/',
     posts: [
       {

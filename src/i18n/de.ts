@@ -113,6 +113,7 @@ export const de: Content = {
   ],
   blogSection: {
     title: 'Unser Blog',
+    readMore: 'Alle Neuigkeiten lesen',
     readMoreHref: '/blog/',
     posts: [
       {

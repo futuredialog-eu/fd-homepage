@@ -103,6 +103,7 @@ export interface Content {
   reviews: Review[];
   blogSection: {
     title: string;
+    readMore: string;
     readMoreHref: string;
     posts: BlogPost[];
   };

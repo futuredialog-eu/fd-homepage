@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const { blogSection, ui } = getContent(locale);
+const { blogSection } = getContent(locale);
 ---
 
 <section class="ui-color-section">
@@ -15,7 +15,7 @@ const { blogSection, ui } = getContent(locale);
     <div class="row center-xs">
       <h2 class="ui-title col-xs-12">{blogSection.title}</h2>
       <a class="ui-read-me read-me" href={localizePath(blogSection.readMoreHref, locale)}>
-        {ui.readMore}
+        {blogSection.readMore}
       </a>
     </div>
     <div class="row news-container">

@@ -20,9 +20,9 @@ export const contact = {
 };
 
 export const social = [
-  { icon: 'social-in', href: 'https://www.linkedin.com/company/futuredialog/' },
-  { icon: 'social-fb', href: 'https://www.facebook.com/futuredialog/' },
-  { icon: 'social-tw', href: 'https://x.com/FutureDialog' },
+  { icon: 'social-in', label: 'LinkedIn', href: 'https://www.linkedin.com/company/futuredialog/' },
+  { icon: 'social-fb', label: 'Facebook', href: 'https://www.facebook.com/futuredialog/' },
+  { icon: 'social-tw', label: 'X', href: 'https://x.com/FutureDialog' },
 ];
 
 export const footer = {

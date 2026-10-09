@@ -36,7 +36,7 @@ const { navigation, ui } = getContent(locale);
             {
               social.map((item) => (
                 <li>
-                  <a href={item.href}>
+                  <a href={item.href} aria-label={item.label}>
                     <SvgIcon name={item.icon} />
                   </a>
                 </li>

@@ -109,6 +109,7 @@ export const en: Content = {
   ],
   blogSection: {
     title: 'Our Blog',
+    readMore: 'Read all news',
     readMoreHref: '/blog/',
     posts: [
       {
