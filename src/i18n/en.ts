@@ -218,22 +218,12 @@ export const en: Content = {
         {
           icon: 'case-1',
           title: 'Municipalities',
-          href: 'https://futuredialog.co/category/municipality/',
-        },
-        {
-          icon: 'case-2',
-          title: 'Business',
-          href: 'https://futuredialog.co/category/business/',
-        },
-        {
-          icon: 'case-3',
-          title: 'Political Parties',
-          href: 'https://futuredialog.co/category/political-parties/',
+          href: '/blog/category/municipality/',
         },
         {
           icon: 'case-4',
           title: 'Others',
-          href: 'https://futuredialog.co/category/news/',
+          href: '/blog/category/news/',
         },
       ],
     },

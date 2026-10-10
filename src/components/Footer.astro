@@ -2,7 +2,7 @@
 import Navigation from './Navigation.astro';
 import PolicyLinks from './PolicyLinks.astro';
 import SvgIcon from './SvgIcon.astro';
-import { contact, footer, site, social } from '../data/site';
+import { contact, site, social } from '../data/site';
 import { getContent, withBase, type Locale } from '../i18n';
 
 interface Props {
@@ -24,10 +24,6 @@ const year = new Date().getFullYear();
         <img src={withBase('/theme/images/icons/logo.svg')} alt={site.name} width="225" height="56" />
         <small>
           © {year}&nbsp;{site.organization}. {ui.copyright}
-          <!-- <br />
-          <a href={footer.easHref}>
-            <img src={withBase(footer.easImage)} alt="Enterprise Estonia (EAS)" />
-          </a> -->
         </small>
       </div>
       <div class="col-xs-12 col-md-2 footer-menu">

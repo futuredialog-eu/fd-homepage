@@ -222,22 +222,12 @@ export const de: Content = {
         {
           icon: 'case-1',
           title: 'Kommunen',
-          href: 'https://futuredialog.co/category/municipality/',
-        },
-        {
-          icon: 'case-2',
-          title: 'Unternehmen',
-          href: 'https://futuredialog.co/category/business/',
-        },
-        {
-          icon: 'case-3',
-          title: 'Politische Parteien',
-          href: 'https://futuredialog.co/category/political-parties/',
+          href: '/blog/category/municipality/',
         },
         {
           icon: 'case-4',
           title: 'Sonstige',
-          href: 'https://futuredialog.co/category/news/',
+          href: '/blog/category/news/',
         },
       ],
     },

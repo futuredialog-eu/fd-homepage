@@ -212,22 +212,12 @@ export const fi: Content = {
         {
           icon: 'case-1',
           title: 'Kunnat',
-          href: 'https://fi.futuredialog.co/category/kunnat/',
-        },
-        {
-          icon: 'case-2',
-          title: 'Yritykset',
-          href: 'https://fi.futuredialog.co/category/yritykset/',
-        },
-        {
-          icon: 'case-3',
-          title: 'Puolueet',
-          href: 'https://fi.futuredialog.co/category/puolueet/',
+          href: '/blog/category/municipality/',
         },
         {
           icon: 'case-4',
           title: 'Muut',
-          href: 'https://fi.futuredialog.co/category/uutiset/',
+          href: '/blog/category/news/',
         },
       ],
     },

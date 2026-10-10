@@ -234,22 +234,12 @@ export const et: Content = {
         {
           icon: 'case-1',
           title: 'Omavalitsused',
-          href: 'https://et.futuredialog.co/category/omavalitsused/',
-        },
-        {
-          icon: 'case-2',
-          title: 'Ettevõtted',
-          href: 'https://et.futuredialog.co/category/ettevotted/',
-        },
-        {
-          icon: 'case-3',
-          title: 'Erakonnad',
-          href: 'https://et.futuredialog.co/category/erakonnad',
+          href: '/blog/category/municipality/',
         },
         {
           icon: 'case-4',
           title: 'Muu',
-          href: 'https://et.futuredialog.co/category/uudised/',
+          href: '/blog/category/news/',
         },
       ],
     },

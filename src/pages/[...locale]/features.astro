@@ -110,7 +110,7 @@ const widths = [600, 900, 1200];
       {
         featuresPage.caseSection.items.map((item) => (
           <div class="case-item">
-            <a href={item.href}>
+            <a href={localizePath(item.href, locale)}>
               <SvgIcon name={item.icon} sprite="svg-select-sprite" />
               <span class="title">{item.title}</span>
               <span class="ui-read-me read-me">{ui.readMore}</span>

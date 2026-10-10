@@ -24,8 +24,3 @@ export const social = [
   { icon: 'social-fb', label: 'Facebook', href: 'https://www.facebook.com/futuredialog/' },
   { icon: 'social-tw', label: 'X', href: 'https://x.com/FutureDialog' },
 ];
-
-export const footer = {
-  easHref: 'https://futuredialog.co/future-dialog-arendusosak-2014-2020-4-04-22-2301/',
-  easImage: '/images/EAS.png',
-};
