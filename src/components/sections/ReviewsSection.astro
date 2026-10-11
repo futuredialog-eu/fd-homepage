@@ -16,16 +16,12 @@ const { reviews } = getContent(locale);
         <div class="review-stack">
           {
             reviews.map((item, index) => (
-              <div
-                class:list={['review-item', { 'is-current': index === 0 }]}
-                itemscope
-                itemtype="http://schema.org/Review"
-              >
+              <div class:list={['review-item', { 'is-current': index === 0 }]}>
                 <p>
-                  <q class="review" itemprop="description">
+                  <q class="review">
                     {item.review}
                   </q>
-                  <cite class="author" itemprop="author">
+                  <cite class="author">
                     {item.author}
                     <span>{item.position}</span>
                   </cite>
