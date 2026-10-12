@@ -1,6 +1,6 @@
 import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
 import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
-import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
+import puzzleSolvedImage from '../assets/blog/undraw_puzzle-solved_qdjq.png';
 import hubImage from '../assets/images/hub.jpg';
 import margusRaimImage from '../assets/team/margus-raim.png';
 import toomasLaignaImage from '../assets/team/toomas-laigna.jpeg';
@@ -132,6 +132,18 @@ export const et: Content = {
     readMoreHref: '/blog/',
     posts: [
       {
+        title: 'Kommunikatsioonijuhtimise väljakutsed kohalikes omavalitsustes',
+        href: '/blog/kommunikatsioonijuhtimise-valjakutsed-kohalikes-omavalitsustes/',
+        image: puzzleSolvedImage,
+        categories: [
+          { label: 'Kaasamine', href: '/blog/category/engagement/' },
+          { label: 'Omavalitsused', href: '/blog/category/municipality/' },
+        ],
+        readingTime: '3 min lugemist',
+        date: 'oktoober 12, 2026',
+        dateTime: '2026-10-12T12:00:00+03:00',
+      },
+      {
         title: 'Miks kogukonna kaasamine on oluline',
         href: '/blog/miks-kogukonna-kaasamine-on-oluline/',
         image: gettingOrganizedImage,
@@ -155,18 +167,6 @@ export const et: Content = {
         readingTime: '2 min lugemist',
         date: 'juuli 29, 2021',
         dateTime: '2021-07-29T13:13:15+03:00',
-      },
-      {
-        title: '3 põhjust miks võtta kasutusele kogukonnaäpp',
-        href: '/blog/3-pohjust-miks-votta-kasutusele-kogukonnaapp/',
-        image: natureOnScreenImage,
-        categories: [
-          { label: 'Kaasamine', href: '/blog/category/engagement/' },
-          { label: 'Uudised', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 min lugemist',
-        date: 'juuli 6, 2021',
-        dateTime: '2021-07-06T11:34:18+03:00',
       },
     ],
   },

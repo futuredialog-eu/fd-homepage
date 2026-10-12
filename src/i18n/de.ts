@@ -1,6 +1,6 @@
 import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
 import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
-import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
+import puzzleSolvedImage from '../assets/blog/undraw_puzzle-solved_qdjq.png';
 import hubImage from '../assets/images/hub.jpg';
 import margusRaimImage from '../assets/team/margus-raim.png';
 import toomasLaignaImage from '../assets/team/toomas-laigna.jpeg';
@@ -120,6 +120,18 @@ export const de: Content = {
     readMoreHref: '/blog/',
     posts: [
       {
+        title: 'Die Herausforderungen der Kommunikation in Kommunalverwaltungen',
+        href: '/blog/die-herausforderungen-der-kommunikation-in-kommunalverwaltungen/',
+        image: puzzleSolvedImage,
+        categories: [
+          { label: 'Beteiligung', href: '/blog/category/engagement/' },
+          { label: 'Kommunen', href: '/blog/category/municipality/' },
+        ],
+        readingTime: '3 Min. Lesezeit',
+        date: '12. Oktober 2026',
+        dateTime: '2026-10-12T12:00:00+03:00',
+      },
+      {
         title: 'Warum Bürgerbeteiligung wichtig ist',
         href: '/blog/warum-buergerbeteiligung-wichtig-ist/',
         image: gettingOrganizedImage,
@@ -143,18 +155,6 @@ export const de: Content = {
         readingTime: '2 Min. Lesezeit',
         date: '29. Juli 2021',
         dateTime: '2021-07-29T13:15:40+03:00',
-      },
-      {
-        title: '3 Gründe für eine App zur Bürgerbeteiligung',
-        href: '/blog/3-gruende-fuer-eine-app-zur-buergerbeteiligung/',
-        image: natureOnScreenImage,
-        categories: [
-          { label: 'Beteiligung', href: '/blog/category/engagement/' },
-          { label: 'News', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 Min. Lesezeit',
-        date: '6. Juli 2021',
-        dateTime: '2021-07-06T18:02:38+03:00',
       },
     ],
   },

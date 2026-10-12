@@ -9,15 +9,15 @@ const { locale } = Astro.props;
 const { consent } = getContent(locale);
 const privacyHref = localizePath('/application-privacy-policy/', locale);
 
-// Google Analytics 4 (gtag.js). Emitted only when `PUBLIC_GA_MEASUREMENT_ID` is
-// set at build time; without it this component renders nothing at all.
-const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+// Google Tag Manager (gtm.js). Emitted only when `PUBLIC_GTM_ID` is set at
+// build time; without it this component renders nothing at all.
+const containerId = import.meta.env.PUBLIC_GTM_ID;
 ---
 
 {
-  measurementId && (
+  containerId && (
     <>
-      {/* Nothing is requested from Google until the visitor accepts: the gtag
+      {/* Nothing is requested from Google until the visitor accepts: the GTM
           script is injected by the inline script below, never server-rendered. */}
       <aside id="consent-banner" class="consent-banner" role="region" aria-label={consent.settings} hidden>
         <p class="consent-message">
@@ -34,7 +34,7 @@ const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
         </div>
       </aside>
 
-      <script define:vars={{ measurementId }}>
+      <script define:vars={{ containerId }}>
         (function () {
           const KEY = 'fd:analytics-consent';
           const banner = document.getElementById('consent-banner');
@@ -46,21 +46,15 @@ const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
           } catch (e) {}
 
           let loaded = false;
-          function loadGA() {
+          function loadGTM() {
             if (loaded) return;
             loaded = true;
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
             const s = document.createElement('script');
             s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+            s.src = 'https://www.googletagmanager.com/gtm.js?id=' + containerId;
             document.head.appendChild(s);
-            window.dataLayer = window.dataLayer || [];
-            window.gtag =
-              window.gtag ||
-              function () {
-                window.dataLayer.push(arguments);
-              };
-            gtag('js', new Date());
-            gtag('config', measurementId);
           }
 
           function remember(value) {
@@ -69,12 +63,12 @@ const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
             } catch (e) {}
           }
 
-          if (stored === 'granted') loadGA();
+          if (stored === 'granted') loadGTM();
           else if (stored !== 'denied') banner.hidden = false;
 
           banner.querySelector('[data-consent="accept"]').addEventListener('click', function () {
             remember('granted');
-            loadGA();
+            loadGTM();
             banner.hidden = true;
           });
           banner.querySelector('[data-consent="decline"]').addEventListener('click', function () {

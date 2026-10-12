@@ -1,4 +1,4 @@
-export const locales = ['en', 'et', 'fi', 'de'] as const;
+export const locales = ['en', 'et', 'fi', 'de', 'sv'] as const;
 
 export type Locale = (typeof locales)[number];
 
@@ -9,6 +9,7 @@ export const localeNames: Record<Locale, string> = {
   et: 'Eesti',
   fi: 'Suomi',
   de: 'Deutsch',
+  sv: 'Svenska',
 };
 
 export const ogLocales: Record<Locale, string> = {
@@ -16,6 +17,7 @@ export const ogLocales: Record<Locale, string> = {
   et: 'et_EE',
   fi: 'fi_FI',
   de: 'de_DE',
+  sv: 'sv_SE',
 };
 
 export function isLocale(value: string | undefined): value is Locale {

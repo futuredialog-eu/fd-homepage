@@ -3,9 +3,10 @@ import { en } from './en';
 import { et } from './et';
 import { fi } from './fi';
 import { de } from './de';
+import { sv } from './sv';
 import type { Content } from './types';
 
-const content: Record<Locale, Content> = { en, et, fi, de };
+const content: Record<Locale, Content> = { en, et, fi, de, sv };
 
 export function getContent(locale: Locale): Content {
   return content[locale] ?? content[defaultLocale];

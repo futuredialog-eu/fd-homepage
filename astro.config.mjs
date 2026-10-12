@@ -14,7 +14,7 @@ const base = '/';
 /** `base` without a trailing slash, and empty when serving from the root. */
 const basePrefix = base === '/' ? '' : base.replace(/\/$/, '');
 
-const locales = ['en', 'et', 'fi', 'de'];
+const locales = ['en', 'et', 'fi', 'de', 'sv'];
 const defaultLocale = 'en';
 
 // https://astro.build/config

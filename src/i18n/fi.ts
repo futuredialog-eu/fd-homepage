@@ -1,6 +1,6 @@
 import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
 import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
-import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
+import puzzleSolvedImage from '../assets/blog/undraw_puzzle-solved_qdjq.png';
 import hubImage from '../assets/images/hub.jpg';
 import margusRaimImage from '../assets/team/margus-raim.png';
 import toomasLaignaImage from '../assets/team/toomas-laigna.jpeg';
@@ -110,6 +110,18 @@ export const fi: Content = {
     readMoreHref: '/blog/',
     posts: [
       {
+        title: 'Viestinnän johtamisen haasteet kunnissa',
+        href: '/blog/viestinnan-johtamisen-haasteet-kunnissa/',
+        image: puzzleSolvedImage,
+        categories: [
+          { label: 'Kunnat', href: '/blog/category/municipality/' },
+          { label: 'Osallistaminen', href: '/blog/category/engagement/' },
+        ],
+        readingTime: '3 min lukuaika',
+        date: '12 lokakuun, 2026',
+        dateTime: '2026-10-12T12:00:00+03:00',
+      },
+      {
         title: 'Miksi yhteisön osallistaminen on tärkeää',
         href: '/blog/miksi-yhteison-osallistaminen-on-tarkeaa/',
         image: gettingOrganizedImage,
@@ -133,18 +145,6 @@ export const fi: Content = {
         readingTime: '2 min lukuaika',
         date: '29 heinäkuun, 2021',
         dateTime: '2021-07-29T13:15:40+03:00',
-      },
-      {
-        title: '3 syytä käyttää yhteisösovellusta',
-        href: '/blog/3-syyta-kayttaa-yhteisosovellusta/',
-        image: natureOnScreenImage,
-        categories: [
-          { label: 'Osallistaminen', href: '/blog/category/engagement/' },
-          { label: 'Uutiset', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 min lukuaika',
-        date: '6 heinäkuun, 2021',
-        dateTime: '2021-07-06T10:59:18+03:00',
       },
     ],
   },

@@ -31,7 +31,7 @@ jobs:
           # Set this as an Actions repository variable (Settings → Secrets and
           # variables → Actions → Variables). Unset means the build ships no
           # analytics.
-          PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
+          PUBLIC_GTM_ID: ${{ vars.PUBLIC_GTM_ID }}
 
   deploy:
     needs: build

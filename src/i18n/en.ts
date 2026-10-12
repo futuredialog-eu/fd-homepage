@@ -1,6 +1,6 @@
 import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
 import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
-import natureOnScreenImage from '../assets/blog/undraw_nature-on-screen_5cbd.png';
+import puzzleSolvedImage from '../assets/blog/undraw_puzzle-solved_qdjq.png';
 import hubImage from '../assets/images/hub.jpg';
 import margusRaimImage from '../assets/team/margus-raim.png';
 import toomasLaignaImage from '../assets/team/toomas-laigna.jpeg';
@@ -116,6 +116,18 @@ export const en: Content = {
     readMoreHref: '/blog/',
     posts: [
       {
+        title: 'The challenges of communication management in local governments',
+        href: '/blog/the-challenges-of-communication-management-in-local-governments/',
+        image: puzzleSolvedImage,
+        categories: [
+          { label: 'Engagement', href: '/blog/category/engagement/' },
+          { label: 'Municipality', href: '/blog/category/municipality/' },
+        ],
+        readingTime: '3 min read',
+        date: 'October 12, 2026',
+        dateTime: '2026-10-12T12:00:00+03:00',
+      },
+      {
         title: 'Why community engagement matters',
         href: '/blog/why-community-engagement-matters/',
         image: gettingOrganizedImage,
@@ -139,18 +151,6 @@ export const en: Content = {
         readingTime: '2 min read',
         date: 'July 29, 2021',
         dateTime: '2021-07-29T13:15:40+03:00',
-      },
-      {
-        title: '3 reasons to use a community engagement app',
-        href: '/blog/3-reasons-to-use-a-community-engagement-app/',
-        image: natureOnScreenImage,
-        categories: [
-          { label: 'Engagement', href: '/blog/category/engagement/' },
-          { label: 'News', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 min read',
-        date: 'July 6, 2021',
-        dateTime: '2021-07-06T18:02:38+03:00',
       },
     ],
   },
