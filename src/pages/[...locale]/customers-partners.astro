@@ -69,6 +69,8 @@ const { partners } = customersPage;
         <div class="quote">{customersPage.quote}<br /><br /></div>
         <a
           href={localizePath(contact.demoPath, locale)}
+          data-track="book_demo"
+          data-track-location="customers_partners"
           class="ui-button ui-button-shadow nav-button fd-meet-button"
         >
           {ui.bookDemo}

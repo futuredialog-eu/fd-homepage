@@ -59,9 +59,9 @@ const articleSchema = {
 const readingTime = blogPage.readingTime.replace('{minutes}', String(readingMinutes));
 
 const shareLinks = [
-  { icon: 'social-in', href: `https://www.linkedin.com/shareArticle?url=${shareUrl}` },
-  { icon: 'social-fb', href: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}` },
-  { icon: 'social-tw', href: `https://x.com/intent/post?url=${shareUrl}` },
+  { icon: 'social-in', method: 'linkedin', href: `https://www.linkedin.com/shareArticle?url=${shareUrl}` },
+  { icon: 'social-fb', method: 'facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}` },
+  { icon: 'social-x', method: 'x', href: `https://x.com/intent/post?url=${shareUrl}` },
 ];
 ---
 
@@ -127,7 +127,7 @@ const shareLinks = [
           {
             shareLinks.map((link) => (
               <li>
-                <a href={link.href} target="_blank" rel="noopener">
+                <a href={link.href} target="_blank" rel="noopener" data-track="share" data-track-method={link.method}>
                   <SvgIcon name={link.icon} />
                 </a>
               </li>

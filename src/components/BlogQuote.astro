@@ -16,6 +16,8 @@ const { contactSection, ui } = getContent(locale);
     <div class="quote">{contactSection.quote}<br /><br /></div>
     <a
       href={localizePath(contact.demoPath, locale)}
+      data-track="book_demo"
+      data-track-location="blog_quote"
       class="ui-button ui-button-shadow nav-button fd-meet-button"
     >
       {ui.bookDemo}

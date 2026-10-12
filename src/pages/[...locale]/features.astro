@@ -123,7 +123,12 @@ const widths = [600, 900, 1200];
     <div class="row center-xs ui-quote-container">
       <div class="col-lg-8">
         <div class="quote">{featuresPage.quote}<br /><br /></div>
-        <a href={localizePath(contact.demoPath, locale)} class="ui-button ui-button-shadow nav-button fd-meet-button">
+        <a
+          href={localizePath(contact.demoPath, locale)}
+          data-track="book_demo"
+          data-track-location="features"
+          class="ui-button ui-button-shadow nav-button fd-meet-button"
+        >
           {ui.bookDemo}
         </a>
       </div>

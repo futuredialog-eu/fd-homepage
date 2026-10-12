@@ -84,6 +84,28 @@ const containerId = import.meta.env.PUBLIC_GTM_ID;
             event.preventDefault();
             banner.hidden = false;
           });
+
+          document.addEventListener('click', function (event) {
+            const el = event.target.closest('[data-track]');
+            if (!el) return;
+            const locale = document.documentElement.lang;
+            window.dataLayer = window.dataLayer || [];
+            if (el.dataset.track === 'share') {
+              window.dataLayer.push({
+                event: 'share',
+                method: el.dataset.trackMethod,
+                content_type: 'article',
+                item_id: location.pathname,
+                locale: locale,
+              });
+            } else if (el.dataset.track === 'book_demo') {
+              window.dataLayer.push({
+                event: 'book_demo_click',
+                cta_location: el.dataset.trackLocation,
+                locale: locale,
+              });
+            }
+          });
         })();
       </script>
     </>
