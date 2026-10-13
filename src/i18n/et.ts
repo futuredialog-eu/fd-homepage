@@ -8,9 +8,9 @@ import type { Content } from './types';
 
 export const et: Content = {
   meta: {
-    title: 'Elanike suhtlus- ja kaasamisplatvorm | Future Dialog',
+    title: 'Elanike teavitamine ja kaasamine omavalitsuses | Future Dialog',
     description:
-      'Kogukonnaäpp omavalitsustele: jaga uudiseid, saada teavitusi, korralda küsitlusi ja kogu elanikelt tagasisidet – kõik ühes kohas.',
+      'Tee oluline info elanikele kergesti kättesaadavaks, kuula nende vajadusi ja kaasa neid kohalikesse otsustesse – omavalitsuse enda äpi kaudu.',
   },
   ui: {
     bookDemo: 'Broneeri kohtumine',
@@ -20,7 +20,8 @@ export const et: Content = {
     closeMenu: 'Sulge menüü',
   },
   consent: {
-    message: 'Kasutame analüütikaküpsiseid, et mõista, kuidas saiti kasutatakse. Need salvestatakse ainult teie nõusolekul.',
+    message:
+      'Kasutame analüütikaküpsiseid, et mõista, kuidas saiti kasutatakse. Need salvestatakse ainult teie nõusolekul.',
     learnMore: 'Privaatsuspoliitika',
     accept: 'Nõustun',
     decline: 'Keeldun',
@@ -43,48 +44,48 @@ export const et: Content = {
     { label: 'Privaatsuspoliitika', href: '/application-privacy-policy/' },
   ],
   hero: {
-    title: 'Ühendus sinu ja sinu kogukonna vahel.',
+    title: 'Avalikud teenused, kujundatud koos elanikega, kelle jaoks need on mõeldud.',
     description:
-      'Hoia elanikke kursis, kogu tagasisidet ja julgusta kaasa rääkima – kõik seda omavalitsuse enda mobiilirakenduses. Sinu ja kogukonna vahel ei seisa ükski sotsiaalmeedia algoritm.',
+      'Tee oluline info kergesti leitavaks, anna elanikele lihtne võimalus kaasa rääkida ja kaasa neid otsustesse, mis nende kogukonda kujundavad. Jätka kanalitega, mida juba kasutad – koondame nende sisu ühte kohta, teeme avaldamise lihtsamaks ja lisame otsekanali elanike telefonidesse.',
     image: hubImage,
     imageAlt: 'Kogukonna kaasamine',
   },
   howSection: {
-    title: 'Kuidas kogukonnaäpp aitab?',
-    description: 'Aitame luua väärtuslikke vestlusi ning tugevdada sidet kohaliku omavalitsuse ja elanike vahel.',
+    title: 'Mida see omavalitsusele annab?',
+    description: 'Paremini informeeritud elanikud, selgemad prioriteedid ja tugevam usaldus.',
     items: [
       {
         icon: 'how-1',
-        title: 'Kaasa oma elanikke',
-        subTitle: 'Kutsu arutlema ja anna arutlemiseks võimalus',
+        title: 'Teavita',
+        subTitle: 'Info, mis jõuab inimesteni',
         list: [
-          'Sinu valitud keeles ja kujundusega mobiilirakendus, mis näeb välja täpselt selline nagu soovid',
-          'Küsimustikud, ürituste kalender, uudised ja kiirteavitused otse elanike telefoniekraanidele',
+          'Elanikud leiavad uudised, sündmused ja teenuste info ühest tuttavast kohast',
+          'Kiireloomulised teated jõuavad inimesteni kiiresti ja otse, ka kriisi ajal',
         ],
       },
       {
         icon: 'how-2',
-        title: 'Jälgi',
-        subTitle: 'Mõista oma kogukonda',
+        title: 'Kuula',
+        subTitle: 'Saa teada, mida elanikud vajavad',
         list: [
-          'Saa teada, milline on inimeste meelestatus ja arvamus',
-          'Kogu nende ettepanekuid ja ideid vajalike muutuste elluviimiseks',
+          'Elanikud saavad muresid ja ideid jagada just siis, kui neile sobib',
+          'Märkad probleeme varakult, enne kui need kasvavad',
         ],
       },
       {
         icon: 'how-3',
-        title: 'Analüüsi',
-        subTitle: 'Vajalik info vaid ühe kliki kaugusel',
-        list: ['Kogu, kategoriseeri ja analüüsi statistikat', 'Tee andmetel põhinevaid argumenteeritud otsuseid'],
+        title: 'Otsusta',
+        subTitle: 'Andmetel põhinevad otsused',
+        list: [
+          'Mõista, mis on elanikele kõige olulisem',
+          'Sea prioriteete ja põhjenda otsuseid elanike tegeliku tagasisidega',
+        ],
       },
       {
         icon: 'how-4',
         title: 'Liida',
-        subTitle: 'Aita kogukonnal kokku tulla',
-        list: [
-          'Suurenda omavahelist usaldust ja pühendumust tegutsemiseks',
-          'Saa reaalajas tagasisidet ja alusta arutelusid',
-        ],
+        subTitle: 'Usaldus, mis kasvab',
+        list: ['Elanikud näevad, et nende panus viib tegudeni', 'Rohkem inimesi osaleb kohalikus elus ja otsustes'],
       },
     ],
   },
@@ -265,7 +266,8 @@ export const et: Content = {
   contactsPage: {
     meta: {
       title: 'Kontakt ja demo broneerimine | Future Dialog',
-      description: 'Võta Future Dialogiga ühendust ja broneeri demo meie kogukonnaäpist omavalitsustele ja organisatsioonidele.',
+      description:
+        'Võta Future Dialogiga ühendust ja broneeri demo meie kogukonnaäpist omavalitsustele ja organisatsioonidele.',
     },
     title: 'Kontakt',
     aboutTitle: 'Kes me oleme?',

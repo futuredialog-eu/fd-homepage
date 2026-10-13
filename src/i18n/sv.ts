@@ -8,9 +8,9 @@ import type { Content } from './types';
 
 export const sv: Content = {
   meta: {
-    title: 'Invånarapp för kommunal kommunikation | Future Dialog',
+    title: 'Invånarkommunikation för kommuner | Future Dialog',
     description:
-      'En invånarapp för kommuner: dela nyheter, skicka pushnotiser, gör enkäter och samla in synpunkter från invånarna – allt på ett ställe.',
+      'Gör viktig information lätt att hitta för invånarna, lyssna in deras behov och involvera dem i lokala beslut – via kommunens egen app.',
   },
   ui: {
     bookDemo: 'Boka en demo',
@@ -39,42 +39,51 @@ export const sv: Content = {
     { label: 'Integritetspolicy', href: '/application-privacy-policy/' },
   ],
   hero: {
-    title: 'En direkt kontakt mellan dig och dina invånare.',
+    title: 'Offentlig service, formad tillsammans med dem den är till för.',
     description:
-      'Håll invånarna informerade, samla in synpunkter och uppmuntra till delaktighet – allt via kommunens egen mobilapp. Inga algoritmer från sociala medier mellan dig och invånarna.',
+      'Gör viktig information lätt att hitta, ge invånarna ett enkelt sätt att bli hörda och involvera dem i besluten som formar deras närmiljö. Fortsätt använda de kanaler du redan har – vi samlar innehållet på ett ställe, gör det enklare att publicera och lägger till en direkt kanal till invånarnas telefoner.',
     image: hubImage,
     imageAlt: 'Invånardelaktighet',
   },
   howSection: {
-    title: 'Hur kan vi hjälpa till?',
-    description: 'Vi för samman människor.',
+    title: 'Vad kommunen vinner',
+    description: 'Bättre informerade invånare, tydligare prioriteringar och starkare förtroende.',
     items: [
       {
         icon: 'how-1',
-        title: 'Engagera',
-        subTitle: 'Håll människor delaktiga',
+        title: 'Informera',
+        subTitle: 'Information som når fram',
         list: [
-          'Mobilapp och webbpanel med er egen profil, precis som ni vill ha den',
-          'Enkäter, evenemangskalender och pushnotiser',
+          'Invånarna hittar nyheter, evenemang och information om service på ett välkänt ställe',
+          'Brådskande meddelanden når människor snabbt och direkt, även i en kris',
         ],
       },
       {
         icon: 'how-2',
         title: 'Lyssna',
-        subTitle: 'Förstå era invånare',
-        list: ['Kartlägg invånarnas behov och önskemål', 'Samla in deras förslag och synpunkter'],
+        subTitle: 'Vet vad invånarna behöver',
+        list: [
+          'Invånarna kan dela synpunkter och idéer när det passar dem',
+          'Ni ser problem tidigt, innan de växer',
+        ],
       },
       {
         icon: 'how-3',
-        title: 'Analysera',
-        subTitle: 'Informationen nära till hands',
-        list: ['Samla in och kategorisera insikter', 'Fatta beslut baserade på insikter'],
+        title: 'Besluta',
+        subTitle: 'Beslut med stöd i underlag',
+        list: [
+          'Förstå vad som betyder mest för invånarna',
+          'Prioritera och motivera beslut med verkliga synpunkter från invånarna',
+        ],
       },
       {
         icon: 'how-4',
         title: 'Knyt samman',
-        subTitle: 'Kontakter som gör skillnad',
-        list: ['Bygg upp invånarnas förtroende och engagemang', 'Få omedelbar återkoppling och starta samtal'],
+        subTitle: 'Förtroende som växer',
+        list: [
+          'Invånarna ser att deras synpunkter leder till handling',
+          'Fler deltar i det lokala livet och i besluten',
+        ],
       },
     ],
   },

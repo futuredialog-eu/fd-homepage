@@ -8,9 +8,9 @@ import type { Content } from './types';
 
 export const de: Content = {
   meta: {
-    title: 'Plattform für Bürgerkommunikation und Beteiligung | Future Dialog',
+    title: 'Bürgerinformation und Beteiligung für Gemeinden | Future Dialog',
     description:
-      'Community-App für Gemeinden: Neuigkeiten teilen, Push-Mitteilungen senden, Umfragen durchführen und Feedback von Bürgern sammeln – alles an einem Ort.',
+      'Wichtige Informationen leicht zugänglich machen, Anliegen der Bürger hören und sie an Entscheidungen beteiligen – mit der eigenen App Ihrer Gemeinde.',
   },
   ui: {
     bookDemo: 'Demo buchen',
@@ -40,44 +40,50 @@ export const de: Content = {
     { label: 'Datenschutzerklärung', href: '/application-privacy-policy/' },
   ],
   hero: {
-    title: 'Eine direkte Verbindung zwischen Ihnen und Ihrer Gemeinschaft.',
+    title: 'Öffentliche Dienste, gestaltet mit den Menschen, für die sie da sind.',
     description:
-      'Informieren Sie Ihre Bürgerinnen und Bürger, sammeln Sie Feedback und fördern Sie die Beteiligung – alles über die eigene mobile App Ihrer Gemeinde. Keine Social-Media-Algorithmen zwischen Ihnen und Ihrer Gemeinschaft.',
+      'Machen Sie wichtige Informationen leicht auffindbar, geben Sie Bürgerinnen und Bürgern eine einfache Möglichkeit, gehört zu werden, und beteiligen Sie sie an den Entscheidungen, die ihr Umfeld prägen. Nutzen Sie weiterhin Ihre bestehenden Kanäle – wir bündeln ihre Inhalte an einem Ort, erleichtern das Veröffentlichen und ergänzen einen direkten Kanal auf die Smartphones der Bürger.',
     image: hubImage,
     imageAlt: 'Bürgerbeteiligung',
   },
   howSection: {
-    title: 'Wie können wir helfen?',
-    description: 'Wir bringen Gemeinschaften zusammen.',
+    title: 'Was Ihre Gemeinde gewinnt',
+    description: 'Besser informierte Bürger, klarere Prioritäten und mehr Vertrauen.',
     items: [
       {
         icon: 'how-1',
-        title: 'Beteiligen',
-        subTitle: 'Menschen einbinden',
+        title: 'Informieren',
+        subTitle: 'Informationen, die ankommen',
         list: [
-          'Mobile App und Web-Dashboard in Ihrem eigenen Design',
-          'Umfragen, Veranstaltungskalender und Push-Benachrichtigungen',
+          'Bürger finden Neuigkeiten, Veranstaltungen und Service-Hinweise an einem vertrauten Ort',
+          'Dringende Meldungen erreichen die Menschen schnell und direkt – auch in der Krise',
         ],
       },
       {
         icon: 'how-2',
-        title: 'Beobachten',
-        subTitle: 'Ihre Gemeinschaft verstehen',
-        list: ['Bedürfnisse und Anforderungen der Menschen erkennen', 'Vorschläge und Rückmeldungen sammeln'],
+        title: 'Zuhören',
+        subTitle: 'Wissen, was Bürger brauchen',
+        list: [
+          'Bürger teilen Anliegen und Ideen, wann es ihnen passt',
+          'Sie erkennen Probleme früh, bevor sie größer werden',
+        ],
       },
       {
         icon: 'how-3',
-        title: 'Analysieren',
-        subTitle: 'Informationen auf einen Blick',
-        list: ['Erkenntnisse sammeln und kategorisieren', 'Datenbasierte Entscheidungen treffen'],
+        title: 'Entscheiden',
+        subTitle: 'Entscheidungen mit fundierter Grundlage',
+        list: [
+          'Verstehen, was den Menschen in Ihrer Gemeinde am wichtigsten ist',
+          'Prioritäten setzen und Entscheidungen mit echtem Bürgerfeedback begründen',
+        ],
       },
       {
         icon: 'how-4',
         title: 'Verbinden',
-        subTitle: 'Verbindungen, die zählen',
+        subTitle: 'Vertrauen, das wächst',
         list: [
-          'Vertrauen und Engagement der Gemeinschaft aufbauen',
-          'Sofortiges Feedback erhalten und Gespräche beginnen',
+          'Bürger sehen, dass ihre Beiträge zu Ergebnissen führen',
+          'Mehr Menschen beteiligen sich am Gemeindeleben und an Entscheidungen',
         ],
       },
     ],

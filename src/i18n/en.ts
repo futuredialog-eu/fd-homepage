@@ -8,9 +8,9 @@ import type { Content } from './types';
 
 export const en: Content = {
   meta: {
-    title: 'Resident Communication & Engagement Platform | Future Dialog',
+    title: 'Community Engagement App for Municipalities | Future Dialog',
     description:
-      'A community app for municipalities: share news, send push notifications, run surveys and collect feedback from residents – all in one place.',
+      'A community engagement app for municipalities: make important information easy to find, hear what residents need and involve them in local decisions.',
   },
   ui: {
     bookDemo: 'Book a demo',
@@ -39,42 +39,48 @@ export const en: Content = {
     { label: 'Privacy policy', href: '/application-privacy-policy/' },
   ],
   hero: {
-    title: 'A direct connection between you and your community.',
+    title: 'Public services, shaped with the people they serve.',
     description:
-      'Keep residents informed, collect feedback, and encourage participation—all through your municipality’s own mobile app. No social media algorithms standing between you and your community.',
+      'Make important information easy to find, give residents a simple way to be heard, and involve them in the decisions that shape their community. Keep the channels you already use. Your community engagement app brings their content together in one place, makes publishing easier and adds a direct channel to residents’ phones.',
     image: hubImage,
-    imageAlt: 'Community Engagement',
+    imageAlt: 'Community engagement app connecting a municipality with its residents',
   },
   howSection: {
-    title: 'How can we help?',
-    description: 'We bring communities together.',
+    title: 'What your municipality gains',
+    description: 'Better-informed residents, clearer priorities and stronger trust.',
     items: [
       {
         icon: 'how-1',
-        title: 'Engage',
-        subTitle: 'Keep people involved',
+        title: 'Inform',
+        subTitle: 'Information that reaches people',
         list: [
-          'Branded mobile app and web dashboard that looks exactly like you want',
-          'Questionnaires, events calendar and push notifications',
+          'Residents find news, events and service updates in one familiar place',
+          'Urgent messages reach people quickly and directly, even in a crisis',
         ],
       },
       {
         icon: 'how-2',
-        title: 'Observe',
-        subTitle: 'Understand your community',
-        list: ["Study people's needs and requirements", 'Collect their suggestions and input'],
+        title: 'Listen',
+        subTitle: 'Hear what residents need',
+        list: [
+          'Residents can raise concerns and ideas whenever it suits them',
+          'Your team spots issues early, before they grow',
+        ],
       },
       {
         icon: 'how-3',
-        title: 'Analyze',
-        subTitle: 'Info at your fingertips',
-        list: ['Collect and categorize insights', 'Make insight driven decisions'],
+        title: 'Decide',
+        subTitle: 'Decisions backed by evidence',
+        list: [
+          'Understand what matters most to residents',
+          'Set priorities and justify decisions with real resident input',
+        ],
       },
       {
         icon: 'how-4',
         title: 'Connect',
-        subTitle: 'Connections that matter',
-        list: ["Build the community's trust and commitment", 'Get instant feedback and start conversations'],
+        subTitle: 'Trust that grows over time',
+        list: ['Residents see that their input leads to action', 'More people take part in local life and decisions'],
       },
     ],
   },
@@ -249,7 +255,8 @@ export const en: Content = {
   contactsPage: {
     meta: {
       title: 'Contact Us and Book a Demo | Future Dialog',
-      description: 'Get in touch with Future Dialog in Tallinn and book a demo of our community engagement app for municipalities and organisations.',
+      description:
+        'Get in touch with Future Dialog in Tallinn and book a demo of our community engagement app for municipalities and organisations.',
     },
     title: 'Contacts',
     aboutTitle: 'Who are we?',

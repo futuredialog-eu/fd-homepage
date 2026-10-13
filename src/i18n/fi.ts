@@ -8,9 +8,9 @@ import type { Content } from './types';
 
 export const fi: Content = {
   meta: {
-    title: 'Asukkaiden viestintä- ja osallistamisalusta | Future Dialog',
+    title: 'Asukasviestintä ja osallistaminen kunnille | Future Dialog',
     description:
-      'Yhteisösovellus kunnille: jaa uutisia, lähetä ilmoituksia, tee kyselyjä ja kerää asukkailta palautetta – kaikki yhdessä paikassa.',
+      'Tee tärkeä tieto helposti asukkaiden saataville, kuule heidän tarpeensa ja osallista heidät päätöksiin – kunnan omalla sovelluksella.',
   },
   ui: {
     bookDemo: 'Sovi tapaaminen',
@@ -43,47 +43,50 @@ export const fi: Content = {
     { label: 'Tietosuojalauseke', href: '/application-privacy-policy/' },
   ],
   hero: {
-    title: 'Yhteys sinun ja yhteisösi välillä.',
+    title: 'Julkiset palvelut, suunniteltu yhdessä niiden kanssa, joita ne palvelevat.',
     description:
-      'Pidä asukkaat ajan tasalla, kerää palautetta ja kannusta osallistumaan – kaikki kunnan omassa mobiilisovelluksessa. Sinun ja yhteisösi välissä ei ole yhtään sosiaalisen median algoritmia.',
+      'Tee tärkeä tieto helposti löydettäväksi, anna asukkaille vaivaton tapa tulla kuulluksi ja osallista heidät päätöksiin, jotka muovaavat heidän yhteisöään. Jatka jo käyttämiesi kanavien parissa – kokoamme niiden sisällön yhteen paikkaan, helpotamme julkaisemista ja lisäämme suoran kanavan asukkaiden puhelimiin.',
     image: hubImage,
     imageAlt: 'Yhteisön osallistaminen',
   },
   howSection: {
-    title: 'Kuinka yhteisösovellus auttaa?',
-    description: 'Autamme luomaan arvokkaita keskusteluja.',
+    title: 'Mitä kuntasi hyötyy?',
+    description: 'Paremmin perillä olevat asukkaat, selkeämmät painopisteet ja vahvempi luottamus.',
     items: [
       {
         icon: 'how-1',
-        title: 'Osallista',
-        subTitle: 'Pidä keskusteluja yllä',
+        title: 'Tiedota',
+        subTitle: 'Tieto, joka tavoittaa ihmiset',
         list: [
-          'Mobiilisovellus valitsemallasi kielellä ja muotoilulla, joka näyttää juuri sellaiselta kuin haluat',
-          'Kyselylomakkeet, tapahtumakalenteri, sivustokartat ja push-notifikaatiot',
+          'Asukkaat löytävät uutiset, tapahtumat ja palvelutiedotteet yhdestä tutusta paikasta',
+          'Kiireelliset tiedotteet tavoittavat ihmiset nopeasti ja suoraan, myös kriisitilanteessa',
         ],
       },
       {
         icon: 'how-2',
-        title: 'Seuraa',
-        subTitle: 'Ymmärrä yhteisösi',
+        title: 'Kuuntele',
+        subTitle: 'Tiedä, mitä asukkaat tarvitsevat',
         list: [
-          'Ota selvää, millainen on ihmisten mielenlaatu',
-          'Kerää aloitteensa ja panoksensa muutosten aikaansaamiseksi',
+          'Asukkaat voivat kertoa huolistaan ja ideoistaan silloin, kun heille sopii',
+          'Huomaat ongelmat ajoissa, ennen kuin ne kasvavat',
         ],
       },
       {
         icon: 'how-3',
-        title: 'Analysoi',
-        subTitle: 'Tarvittavat tiedot vain yhden napsautuksen päässä',
-        list: ['Kerää ja luokittele tilastot', 'Tee tietoisia päätöksiä'],
+        title: 'Päätä',
+        subTitle: 'Päätökset, joilla on pohja',
+        list: [
+          'Ymmärrä, mikä asukkaille on tärkeintä',
+          'Aseta painopisteet ja perustele päätökset asukkaiden todellisella palautteella',
+        ],
       },
       {
         icon: 'how-4',
         title: 'Tuo yhteen',
-        subTitle: 'Auta tuomaan yhteisöä yhteen',
+        subTitle: 'Luottamus, joka kasvaa',
         list: [
-          'Lisää yhteisön luottamusta ja sitoutumista',
-          'Saa reaaliaikaista palautetta ja aloita rakentavia keskusteluja',
+          'Asukkaat näkevät, että heidän panoksensa johtaa tekoihin',
+          'Yhä useampi osallistuu paikalliseen elämään ja päätöksiin',
         ],
       },
     ],
