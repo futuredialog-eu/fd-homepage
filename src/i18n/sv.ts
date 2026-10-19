@@ -62,10 +62,7 @@ export const sv: Content = {
         icon: 'how-2',
         title: 'Lyssna',
         subTitle: 'Vet vad invånarna behöver',
-        list: [
-          'Invånarna kan dela synpunkter och idéer när det passar dem',
-          'Ni ser problem tidigt, innan de växer',
-        ],
+        list: ['Invånarna kan dela synpunkter och idéer när det passar dem', 'Du ser problem tidigt, innan de växer'],
       },
       {
         icon: 'how-3',
@@ -96,7 +93,7 @@ export const sv: Content = {
   reviews: [
     {
       review:
-        'Appen är en idealisk lösning för kriskommunikation. Om det uppstår någon form av kris på lokal nivå är appen den bästa kanalen för att informera människor – informationen når fram snabbt och direkt.',
+        'Appen är en ideal lösning för kriskommunikation. Om det uppstår någon form av kris på lokal nivå är appen den bästa kanalen för att informera människor – informationen når fram snabbt och direkt.',
       author: 'Liina Siniveer',
       position: 'Kommunikationschef, Hiiumaa kommun',
     },
@@ -110,7 +107,7 @@ export const sv: Content = {
       review:
         'Ur en invånares perspektiv är appen ett smidigt sätt att framföra sina bekymmer och tankar. Det är viktigt för kommunen att veta vad som fungerar bra och vad som behöver förbättras, för att kunna hitta alla frågor som behöver hanteras. Appen knyter samman och skapar möjligheten till detta.',
       author: 'Maarja Ilves',
-      position: 'Tidigare kommunikatör, Järva kommun',
+      position: 'Före detta kommunikatör, Järva kommun',
     },
     {
       review:
@@ -137,8 +134,8 @@ export const sv: Content = {
         dateTime: '2026-10-12T12:00:00+03:00',
       },
       {
-        title: 'Varför invånardelaktighet är viktigt',
-        href: '/blog/varfor-invanardelaktighet-ar-viktigt/',
+        title: 'Varför invånardelaktighet är viktig',
+        href: '/blog/varfor-invanardelaktighet-ar-viktig/',
         image: gettingOrganizedImage,
         categories: [
           { label: 'Delaktighet', href: '/blog/category/engagement/' },
@@ -165,7 +162,7 @@ export const sv: Content = {
   },
   contactSection: {
     title: 'Kontakta oss',
-    quote: 'Låt oss prata om hur Future Dialog kan hjälpa er att förstå era invånare bättre!',
+    quote: 'Låt oss prata om hur Future Dialog kan hjälpa dig att förstå dina invånare bättre!',
     people: [
       {
         name: 'Toomas Laigna',
@@ -192,17 +189,17 @@ export const sv: Content = {
         'Engagera invånarna med enkäter, en kanal för synpunkter, nyheter, pushnotiser och en analyspanel i kommunens egen app.',
     },
     intro:
-      'Future Dialog är framtiden för engagerade lokalsamhällen. Vår mobilapp gör det transparent och alltid möjligt för invånarna att läsa nyheter och bidra till samhället. Vi hjälper er att starta aktiva samtal och fatta datadrivna beslut med mindre resurser.',
+      'Future Dialog är framtiden för engagerade lokalsamhällen. Vår mobilapp gör det transparent och alltid möjligt för invånarna att läsa nyheter och bidra till samhället. Vi hjälper dig att starta aktiva samtal och fatta datadrivna beslut med mindre resurser.',
     items: [
       {
         title: 'Mobilapp och webbplats',
         description:
-          'Er nya app fungerar på iOS, Android och webben. Anpassa den så att den ser ut precis som ni vill – lägg till er logotyp, era färger och er stil.',
+          'Din nya app fungerar på iOS, Android och webben. Anpassa den så att den ser ut precis som du vill – lägg till er logotyp, dina färger och din stil.',
       },
       {
-        title: 'Kraftfull data',
+        title: 'Kraftfull analys',
         description:
-          'Vet ni vem ni pratar med? Med vår panel och vårt datacenter styr ni innehållet och får användbara insikter om era invånare.',
+          'Känner du till din gemenskap? Med vår panel och vårt datacenter styr du innehållet och får användbara insikter om era invånare.',
       },
       {
         title: 'Inlägg',
@@ -212,12 +209,12 @@ export const sv: Content = {
       {
         title: 'RSS',
         description:
-          'Mindre arbete för er, mer innehåll för invånarna. Få in de viktigaste nyheterna i appen automatiskt med ett enkelt RSS-flöde.',
+          'Mindre arbete för dig, mer innehåll för invånarna. Få in de viktigaste nyheterna i appen automatiskt med ett enkelt RSS-flöde.',
       },
       {
         title: 'Synpunkter som leder till handling',
         description:
-          'Skapa en dialog med invånarna i kanalen för synpunkter. Utöver enkäter kan ni be om utförliga åsikter och erbjuda lösningar direkt.',
+          'Skapa en dialog med invånarna i kanalen för synpunkter. Utöver enkäter kan du be om utförliga åsikter och erbjuda lösningar direkt.',
       },
     ],
     caseSection: {
@@ -236,7 +233,7 @@ export const sv: Content = {
         },
       ],
     },
-    quote: 'Låt oss prata om hur Future Dialog kan hjälpa er att förstå era invånare bättre!',
+    quote: 'Låt oss prata om hur Future Dialog kan hjälpa dig att förstå dina invånare bättre!',
   },
   blogPage: {
     meta: {
@@ -264,7 +261,7 @@ export const sv: Content = {
     title: 'Kontakt',
     aboutTitle: 'Vilka är vi?',
     aboutDescription:
-      'Future Dialog grundades för att överbrygga klyftan mellan människor som bor i smarta städer och de offentliga aktörer som vill göra skillnad. Vi bygger moderna mobilappar som främjar delaktighet. Vi hjälper er att starta aktiva samtal och fatta datadrivna beslut med mindre resurser.',
+      'Future Dialog grundades för att överbrygga klyftan mellan människor som bor i smarta städer och de offentliga aktörer som vill göra skillnad. Vi bygger moderna mobilappar som främjar delaktighet. Vi hjälper dig att starta aktiva samtal och fatta datadrivna beslut med mindre resurser.',
   },
   customersPage: {
     meta: {
@@ -304,6 +301,6 @@ export const sv: Content = {
       workDescription:
         'Vi bygger modern teknik för delaktighet i mobila miljöer. Därför förväntar vi oss att våra partner är starka och väletablerade aktörer inom sina expertområden, för att säkerställa bästa möjliga upplevelse för slutanvändaren. Om du har en etablerad gemenskap som du vill engagera på ett mobilt och mätbart sätt, kontakta oss så berättar vi gärna mer om vår molnplattform.',
     },
-    quote: 'Låt oss prata om hur Future Dialog kan hjälpa er att förstå era invånare bättre!',
+    quote: 'Låt oss prata om hur Future Dialog kan hjälpa dig att förstå dina invånare bättre!',
   },
 };

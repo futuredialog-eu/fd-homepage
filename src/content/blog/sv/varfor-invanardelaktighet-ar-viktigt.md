@@ -1,10 +1,10 @@
 ---
-title: Varför invånardelaktighet är viktigt
+title: Varför invånardelaktighet är viktig
 description: Fem skäl till att invånardelaktighet är ett strategiskt verktyg för kommuner, inte en formalitet.
 translationKey: why-community-engagement-matters
-pubDate: "2026-10-01T12:00:00+03:00"
+pubDate: '2026-10-01T12:00:00+03:00'
 readingMinutes: 3
-categories: ["engagement", "municipality"]
+categories: ['engagement', 'municipality']
 image: ../../../assets/blog/undraw_getting-organized_lyqo.png
 thumbnail: ../../../assets/blog/undraw_getting-organized_lyqo.png
 imageCredit: UnDraw

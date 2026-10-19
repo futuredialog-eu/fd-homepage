@@ -35,7 +35,7 @@ Facebookgrupper och -sidor är ofta där den lokala diskussionen faktiskt förs.
 Kommunens informationsblad eller den regionala tidningen är fortfarande en betrodd källa, särskilt för äldre invånare.
 
 - **Fördelar:** Hög trovärdighet och god räckvidd på landsbygden. Lämpar sig för längre förklaringar och bakgrundsartiklar.
-- **Nackdelar:** Långsam – ett månatligt nummer kan inte förmedla brådskande nyheter. Tryck och distribution är dyra, och läsarna ger ingen återkoppling.
+- **Nackdelar:** Långsam – en månadstidning kan inte förmedla brådskande nyheter. Tryck och distribution är dyra, och läsarna ger ingen återkoppling.
 
 ## Nyhetsbrev och e-post
 
