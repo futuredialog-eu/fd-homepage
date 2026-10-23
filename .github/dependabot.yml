@@ -1,0 +1,30 @@
+# Weekly dependency update PRs. Minor/patch updates are grouped into one PR
+# per ecosystem; majors get their own PR each, since those are the ones that
+# need reading release notes. Security updates (Settings → Code security →
+# Dependabot security updates) arrive immediately regardless of this
+# schedule.
+#
+# Merging to main deploys (see workflows/) — test.yml runs on every PR.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    # Skip versions published in the last few days — most malicious or
+    # broken npm releases are caught and yanked within that window.
+    cooldown:
+      default-days: 3
+    open-pull-requests-limit: 10
+    groups:
+      npm-minor-patch:
+        update-types: [minor, patch]
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      actions:
+        patterns: ["*"]
