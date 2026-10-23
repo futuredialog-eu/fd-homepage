@@ -142,37 +142,42 @@ export const sv: Content = {
   },
   featuresPage: {
     meta: {
-      title: 'Funktioner: enkäter, synpunkter och nyheter | Future Dialog',
+      title: 'Funktioner: nyheter, evenemang och synpunkter | Future Dialog',
       description:
-        'Engagera invånarna med enkäter, en kanal för synpunkter, nyheter, pushnotiser och en analyspanel i kommunens egen app.',
+        'Kommunens egen app: nyheter med pushnotiser, evenemang, invånarnas synpunkter på en karta och en analyspanel.',
     },
     intro:
       'Future Dialog är framtiden för engagerade lokalsamhällen. Vår mobilapp gör det transparent och alltid möjligt för invånarna att läsa nyheter och bidra till samhället. Vi hjälper dig att starta aktiva samtal och fatta datadrivna beslut med mindre resurser.',
     items: [
       {
-        title: 'Mobilapp och webbplats',
+        title: 'Er egen app',
         description:
-          'Din nya app fungerar på iOS, Android och webben. Anpassa den så att den ser ut precis som du vill – lägg till er logotyp, dina färger och din stil.',
+          'Kommunen får en egen app för iOS och Android, med ert namn, er ikon och era färger. Du väljer själv omslagsbild, profilfärg och tjänster på startsidan – på alla språk ni kommunicerar på.',
       },
       {
-        title: 'Kraftfull analys',
+        title: 'Se vad som fungerar',
         description:
-          'Känner du till din gemenskap? Med vår panel och vårt datacenter styr du innehållet och får användbara insikter om era invånare.',
+          'Panelen visar hur många invånare som använder appen, på vilka enheter och hur många som läser dina inlägg. Öppna synpunkter och nya rapporter finns på samma sida, så att inget blir liggande.',
       },
       {
         title: 'Inlägg',
         description:
-          'Skapa inlägg i webbpanelen för att publicera nyheter, göra tillkännagivanden eller skapa enkäter. Inläggen gör det enkelt att navigera i innehållet.',
+          'Publicera nyheter och tillkännagivanden på flera språk från en och samma editor. Schemalägg dem, fäst det viktigaste, lägg till en länkknapp eller fråga om inlägget var till hjälp – och skicka en pushnotis så att det når invånarna direkt.',
+      },
+      {
+        title: 'Evenemang',
+        description:
+          'Invånarna ser vad som händer i närheten, med tid, plats och pris. Evenemangen hämtas automatiskt från kalendern ni redan använder, så inget behöver matas in två gånger.',
       },
       {
         title: 'RSS',
         description:
-          'Mindre arbete för dig, mer innehåll för invånarna. Få in de viktigaste nyheterna i appen automatiskt med ett enkelt RSS-flöde.',
+          'Mindre arbete för dig, mer innehåll för invånarna. Koppla nyhetsflödet från er webbplats eller lokaltidning, så visas nya artiklar automatiskt i appen.',
       },
       {
         title: 'Synpunkter som leder till handling',
         description:
-          'Skapa en dialog med invånarna i kanalen för synpunkter. Utöver enkäter kan du be om utförliga åsikter och erbjuda lösningar direkt.',
+          'Invånarna anmäler ett problem eller föreslår en idé med foto och en markering på kartan. Du ser allt på en tavla eller karta, svarar direkt i appen, och invånaren får en notis när du har svarat.',
       },
     ],
     caseSection: {

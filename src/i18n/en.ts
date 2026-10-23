@@ -142,37 +142,42 @@ export const en: Content = {
   },
   featuresPage: {
     meta: {
-      title: 'Features: Surveys, Feedback, News and Analytics | Future Dialog',
+      title: 'Features: News, Events, Feedback, Analytics | Future Dialog',
       description:
-        'Engage residents with surveys, a feedback channel, news posts, push notifications and an analytics dashboard in your municipality’s own app.',
+        'Your municipality’s own app with news posts, push notifications, events, resident feedback on a map and an analytics dashboard.',
     },
     intro:
       'Future Dialog is the future of engaged communities. Our mobile app makes reading news and contributing to the community transparent and available to people at all times. We help you initiate active conversations and make data-driven decisions with fewer resources.',
     items: [
       {
-        title: 'Mobile app and website',
+        title: 'Your own app',
         description:
-          'Your new app runs on iOS, Android, and the web. Customize it to look exactly like you want - add your logo, colors and style.',
+          'Your municipality gets its own app on iOS and Android, with your name, icon and colours. You choose the cover image, the brand colour and the services on the home screen, in every language you serve.',
       },
       {
-        title: 'Powerful data',
+        title: 'See what works',
         description:
-          "Do you know who you're talking to? Our dashboard and data center let's you control content and gain actionable insights about your community.",
+          'The dashboard shows how many residents use the app, on which devices, and how many of them read your posts. Open feedback and new reports are on the same page, so nothing waits unnoticed.',
       },
       {
         title: 'Posts',
         description:
-          'Create posts in the online dashboard to publish news stories, make announcements or create surveys. Posts make it easy to navigate through the content.',
+          'Publish news and announcements in several languages from one editor. Schedule them, pin what matters, add a link button or ask whether a post was helpful – and send a push notification so it reaches residents right away.',
+      },
+      {
+        title: 'Events',
+        description:
+          'Residents see what is on near them, with the time, place and price. Events sync automatically from the calendar you already use, so nothing has to be entered twice.',
       },
       {
         title: 'RSS',
         description:
-          'Less work for you, more content for the community. Bring the most important news to the app automatically with easy RSS feed.',
+          'Less work for you, more content for the community. Connect the news feed of your website or local paper and new articles appear in the app automatically.',
       },
       {
         title: 'Actionable feedback',
         description:
-          'Create a dialog with the members of your community in the feedback channel. In addition to surveys, ask for detailed opinions and offer solutions immediately.',
+          'Residents report a problem or suggest an idea with a photo and a pin on the map. You see everything on a board or a map, reply in the app, and the resident is notified when you answer.',
       },
     ],
     caseSection: {

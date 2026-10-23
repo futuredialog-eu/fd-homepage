@@ -89,8 +89,10 @@ than shipping a broken image.
 - The home page teasers are the three newest posts in the locale, rendered by
   `BlogSection.astro` through `BlogCard` from the collection, so a new post
   shows up there without touching `src/i18n/*.ts`.
-- The features page imports its five images directly, so they are not in the
-  i18n files.
+- The features page imports its six images directly, so they are not in the
+  i18n files; they pair with `featuresPage.items` by position. They are
+  composites of real back-office and iOS screenshots in device frames, on a
+  transparent background.
 - The hero image and the team photos (`hero.image`, `contactSection.people`)
   are imported at the top of each locale file, like the teasers. The hero is
   sized by its container's height, so `Hero.astro` resets the `width` that

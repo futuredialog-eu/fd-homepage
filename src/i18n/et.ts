@@ -153,37 +153,42 @@ export const et: Content = {
   },
   featuresPage: {
     meta: {
-      title: 'Omadused: küsitlused, tagasiside ja uudised | Future Dialog',
+      title: 'Omadused: uudised, sündmused ja tagasiside | Future Dialog',
       description:
-        'Kaasa elanikke küsitluste, tagasisidekanali, uudiste, tõuketeavituste ja analüütikatöölauaga oma omavalitsuse kogukonnaäpis.',
+        'Sinu omavalitsuse oma äpp: uudised ja tõuketeavitused, sündmused, elanike tagasiside kaardil ning analüütikatöölaud.',
     },
     intro:
       'Future Dialog on kaasatud kogukondade tulevik. Meie mobiilirakendus muudab uudiste lugemise ja kogukonnas panustamise elanike jaoks mugavaks ja ööpäev läbi kättesaadavaks. Aitame alustada edasiviivaid vestlusi ja langetada andmepõhiseid otsuseid ressursse raiskamata.',
     items: [
       {
-        title: 'Äpp ja veebileht',
+        title: 'Sinu oma äpp',
         description:
-          'Sinu uus rakendus töötab iOS-il, Androidil ja veebis. Kohanda seda täpselt nii, nagu soovid - lisa oma logo, värvid, stiil ja räägi kogukonnaga nende emakeeles.',
+          'Omavalitsus saab oma äpi iOS-ile ja Androidile, oma nime, ikooni ja värvidega. Avalehe kaanepildi, põhivärvi ja teenused valid ise – igas keeles, milles kogukonnaga suhtled.',
       },
       {
-        title: 'Kasulik analüütika',
+        title: 'Näe, mis toimib',
         description:
-          'Kas tunned enda kogukonda? Meie võimekas analüütikatöölaud võimaldab näha, kes on teisel pool ekraani ning kuidas ta sisu vastu võtab. See aitab ka sõnumeid paremini sihtida.',
+          'Töölaualt näed, kui palju elanikke äppi kasutab, millistes seadmetes ja kui paljud neist sinu postitusi loevad. Avatud tagasiside ja uued teated on samal lehel, nii et midagi ei jää märkamata.',
       },
       {
         title: 'Postitused',
         description:
-          'Loo postitusi ja avalda neis uudiseid, anna märku eesootavatest sündmustest või korralda küsitlusi. Postitused muudavad vajaliku sisu leidmise mugavaks.',
+          'Avalda uudiseid ja teadaandeid mitmes keeles ühest redaktorist. Ajasta need, tõsta olulisemad esile, lisa lingiga nupp või küsi, kas postitusest oli abi – ja saada tõuketeavitus, et sõnum jõuaks elanikeni kohe.',
+      },
+      {
+        title: 'Sündmused',
+        description:
+          'Elanikud näevad, mis nende lähedal toimub, koos aja, koha ja hinnaga. Sündmused jõuavad äppi automaatselt kalendrist, mida juba kasutad, nii et midagi ei pea kaks korda sisestama.',
       },
       {
         title: 'RSS uudistevoog',
         description:
-          'Vähem tööd, rohkem sisu kogukonnale. RSS-voo abil ilmuvad kõige olulisemad uudised rakendusse automaatselt.',
+          'Vähem tööd, rohkem sisu kogukonnale. Ühenda oma veebilehe või kohaliku ajalehe uudistevoog ja uued artiklid ilmuvad äppi automaatselt.',
       },
       {
         title: 'Tagasiside, mis jõuab sinuni hetkega',
         description:
-          'Loo sekunditega vestlus kogukonnaliikmetega. Peale tagasiside saad küsida üksikasjalikke arvamusi ning pakkuda välja lahendusi.',
+          'Elanik saab anda teada murest või pakkuda ideed koos foto ja asukohaga kaardil. Näed kõike tahvlil või kaardil, vastad otse äpis ning elanik saab sinu vastusest teavituse.',
       },
     ],
     caseSection: {

@@ -133,37 +133,42 @@ export const fi: Content = {
   },
   featuresPage: {
     meta: {
-      title: 'Ominaisuudet: kyselyt, palaute ja uutiset | Future Dialog',
+      title: 'Ominaisuudet: uutiset, tapahtumat ja palaute | Future Dialog',
       description:
-        'Osallista asukkaita kyselyillä, palautekanavalla, uutisilla, push-ilmoituksilla ja analytiikkatyöpöydällä kuntasi omassa sovelluksessa.',
+        'Kuntasi oma sovellus: uutiset ja push-ilmoitukset, tapahtumat, asukkaiden palaute kartalla ja analytiikkatyöpöytä.',
     },
     intro:
       'Future Dialog on osallistuvien yhteisöjen tulevaisuus. Mobiilisovelluksemme tekee uutisten lukemisesta ja yhteisöön osallistumisesta asukkaille mukavan ja ympäri vuorokauden käytettävän. Autamme aloittamaan rakentavia keskusteluja ja tekemään tietoon perustuvia päätöksiä tuhlaamatta resursseja.',
     items: [
       {
-        title: 'Sovellus ja verkkosivusto',
+        title: 'Oma sovellus',
         description:
-          'Uusi sovelluksesi toimii iOS- ja Android- alustoilla sekä internetverkossa. Muokkaa sitä juuri haluamallasi tavalla – lisää logosi, värisi, tyylisi ja keskustele yhteisön kanssa äidinkielellään.',
+          'Kuntasi saa oman sovelluksen iOS- ja Android-laitteille omalla nimellä, kuvakkeella ja väreillä. Valitset itse etusivun kansikuvan, päävärin ja palvelut – jokaisella kielellä, jolla palvelet asukkaita.',
       },
       {
-        title: 'Hyödyllinen analytiikka',
+        title: 'Näe, mikä toimii',
         description:
-          'Tunnetko yhteisösi? Tehokkaan analytiikkatyöpöytämme avulla näet, kuka on näytön toisella puolella ja miten sisältöä vastaanotetaan.',
+          'Työpöydältä näet, kuinka moni asukas käyttää sovellusta, millä laitteilla ja kuinka moni lukee julkaisujasi. Avoimet palautteet ja uudet ilmoitukset ovat samalla sivulla, joten mikään ei jää huomaamatta.',
       },
       {
         title: 'Julkaisut',
         description:
-          'Luo julkaisuja ja jaa uutisia, ilmoita tulevista tapahtumista tai suorita kyselyjä. Julkaisut helpottavat tarvitsemasi sisällön löytämistä.',
+          'Julkaise uutisia ja tiedotteita usealla kielellä samasta editorista. Ajasta ne, kiinnitä tärkeimmät, lisää linkkipainike tai kysy, oliko julkaisusta apua – ja lähetä push-ilmoitus, jotta viesti tavoittaa asukkaat heti.',
       },
       {
-        title: 'RSS syötteet',
+        title: 'Tapahtumat',
         description:
-          'Vähemmän työtä, enemmän sisältöä yhteisölle, RSS-syötteet näyttävät sovelluksen tärkeimmät uutiset automaattisesti.',
+          'Asukkaat näkevät, mitä lähellä tapahtuu, sekä ajan, paikan ja hinnan. Tapahtumat siirtyvät sovellukseen automaattisesti jo käyttämästäsi kalenterista, joten mitään ei tarvitse syöttää kahteen kertaan.',
+      },
+      {
+        title: 'RSS-syötteet',
+        description:
+          'Vähemmän työtä, enemmän sisältöä yhteisölle. Yhdistä verkkosivustosi tai paikallislehden uutissyöte, niin uudet artikkelit näkyvät sovelluksessa automaattisesti.',
       },
       {
         title: 'Palaute, joka tavoittaa sinut hetkessä',
         description:
-          'Luo keskusteluyhteys yhteisöjäsenten kanssa sekunneissa. Palautteen lisäksi voit pyytää yksityiskohtaisia mielipiteitä ja ehdottaa ratkaisuja.',
+          'Asukas voi ilmoittaa ongelmasta tai ehdottaa ideaa kuvan ja karttasijainnin kanssa. Näet kaiken taululla tai kartalla, vastaat suoraan sovelluksessa, ja asukas saa ilmoituksen vastauksestasi.',
       },
     ],
     caseSection: {

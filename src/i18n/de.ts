@@ -146,37 +146,42 @@ export const de: Content = {
   },
   featuresPage: {
     meta: {
-      title: 'Funktionen: Umfragen, Feedback und News | Future Dialog',
+      title: 'Funktionen: News, Termine, Feedback, Analyse | Future Dialog',
       description:
-        'Beteiligen Sie Bürger mit Umfragen, Feedback-Kanal, Neuigkeiten, Push-Mitteilungen und Analyse-Dashboard in der eigenen App Ihrer Gemeinde.',
+        'Die eigene App Ihrer Gemeinde: Neuigkeiten mit Push-Mitteilungen, Veranstaltungen, Bürgerfeedback auf der Karte und ein Analyse-Dashboard.',
     },
     intro:
       'Future Dialog ist die Zukunft engagierter Gemeinschaften. Mit unserer mobilen App wird das Lesen von Nachrichten und die Mitwirkung in der Gemeinschaft transparent und jederzeit für alle verfügbar. Wir helfen Ihnen, aktive Gespräche anzustoßen und mit weniger Ressourcen datenbasierte Entscheidungen zu treffen.',
     items: [
       {
-        title: 'Mobile App und Website',
+        title: 'Ihre eigene App',
         description:
-          'Ihre neue App läuft auf iOS, Android und im Web. Passen Sie sie ganz nach Ihren Vorstellungen an – mit Ihrem Logo, Ihren Farben und Ihrem Stil.',
+          'Ihre Gemeinde erhält eine eigene App für iOS und Android – mit Ihrem Namen, Ihrem Icon und Ihren Farben. Titelbild, Markenfarbe und Dienste auf der Startseite wählen Sie selbst, in jeder Sprache, in der Sie kommunizieren.',
       },
       {
-        title: 'Aussagekräftige Daten',
+        title: 'Sehen, was wirkt',
         description:
-          'Wissen Sie, mit wem Sie sprechen? Mit unserem Dashboard und Datencenter steuern Sie Inhalte und gewinnen verwertbare Erkenntnisse über Ihre Gemeinschaft.',
+          'Das Dashboard zeigt, wie viele Bürgerinnen und Bürger die App nutzen, auf welchen Geräten und wie viele Ihre Beiträge lesen. Offenes Feedback und neue Meldungen stehen auf derselben Seite, damit nichts liegen bleibt.',
       },
       {
         title: 'Beiträge',
         description:
-          'Erstellen Sie im Online-Dashboard Beiträge, um Nachrichten zu veröffentlichen, Ankündigungen zu machen oder Umfragen durchzuführen. Beiträge erleichtern die Navigation durch die Inhalte.',
+          'Veröffentlichen Sie Neuigkeiten und Bekanntmachungen in mehreren Sprachen aus einem Editor. Planen Sie sie ein, heften Sie Wichtiges oben an, fügen Sie einen Link-Button hinzu oder fragen Sie, ob ein Beitrag hilfreich war – und erreichen Sie alle sofort per Push-Mitteilung.',
+      },
+      {
+        title: 'Veranstaltungen',
+        description:
+          'Bürgerinnen und Bürger sehen, was in ihrer Nähe los ist – mit Zeit, Ort und Preis. Veranstaltungen kommen automatisch aus dem Kalender, den Sie bereits nutzen, sodass nichts doppelt eingegeben werden muss.',
       },
       {
         title: 'RSS',
         description:
-          'Weniger Arbeit für Sie, mehr Inhalte für die Gemeinschaft. Bringen Sie die wichtigsten Nachrichten automatisch per RSS-Feed in die App.',
+          'Weniger Arbeit für Sie, mehr Inhalte für die Gemeinschaft. Verbinden Sie den Newsfeed Ihrer Website oder Lokalzeitung, und neue Artikel erscheinen automatisch in der App.',
       },
       {
         title: 'Verwertbares Feedback',
         description:
-          'Treten Sie im Feedback-Kanal in den Dialog mit den Mitgliedern Ihrer Gemeinschaft. Fragen Sie zusätzlich zu Umfragen nach ausführlichen Meinungen und bieten Sie sofort Lösungen an.',
+          'Bürgerinnen und Bürger melden ein Problem oder schlagen eine Idee vor – mit Foto und Standort auf der Karte. Sie sehen alles als Board oder Karte, antworten direkt in der App, und die meldende Person wird über Ihre Antwort benachrichtigt.',
       },
     ],
     caseSection: {

@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import SvgIcon from '../../components/SvgIcon.astro';
-import platformsImage from '../../assets/features/1.png';
-import dataImage from '../../assets/features/2.png';
-import postsImage from '../../assets/features/3.png';
-import rssImage from '../../assets/features/4.png';
-import feedbackImage from '../../assets/features/5.png';
+import platformsImage from '../../assets/features/platforms.png';
+import dataImage from '../../assets/features/data.png';
+import postsImage from '../../assets/features/posts.png';
+import eventsImage from '../../assets/features/events.png';
+import rssImage from '../../assets/features/rss.png';
+import feedbackImage from '../../assets/features/feedback.png';
 import Layout from '../../layouts/Layout.astro';
 import { contact } from '../../data/site';
 import { defaultLocale, getContent, localizePath, locales, type Locale } from '../../i18n';
@@ -19,8 +20,10 @@ export function getStaticPaths() {
 
 const { locale } = Astro.props as { locale: Locale };
 const { featuresPage, ui } = getContent(locale);
-const [platforms, data, posts, rss, feedback] = featuresPage.items;
-const sizes = '(width < 768px) 100vw, 50vw';
+/** In the order of `featuresPage.items`; the sections alternate image side and background. */
+const images = [platformsImage, dataImage, postsImage, eventsImage, rssImage, feedbackImage];
+const features = featuresPage.items.map((item, index) => ({ ...item, image: images[index] }));
+const sizes = '(width < 768px) 100vw, 60vw';
 const widths = [600, 900, 1200];
 ---
 
@@ -36,69 +39,28 @@ const widths = [600, 900, 1200];
       <h1 class="col-xs-12 col-sm-10 col-md-9">{featuresPage.intro}</h1>
     </div>
   </section>
-  <section class="ui-color-section">
-    <div class="wrapper">
-      <div class="row middle-xs features features-platforms">
-        <div class="col-xs-12 col-sm-6 col-md-4 section-info">
-          <h2 class="ui-title title">{platforms.title}</h2>
-          <div class="ui-description description">{platforms.description}</div>
+  {
+    features.map((feature, index) => (
+      <section class:list={{ 'ui-color-section': index % 2 === 0 }}>
+        <div class="wrapper">
+          <div class="row middle-xs features">
+            <div
+              class:list={[
+                'col-xs-12 col-sm-6 col-md-offset-1 col-md-4 section-info',
+                { 'first-xs last-sm': index % 2 === 1 },
+              ]}
+            >
+              <h2 class="ui-title title">{feature.title}</h2>
+              <div class="ui-description description">{feature.description}</div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-7 features-image">
+              <Image src={feature.image} alt={feature.title} widths={widths} sizes={sizes} />
+            </div>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 images-container">
-          <Image class="bottom" src={platformsImage} alt={platforms.title} widths={widths} sizes={sizes} />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="wrapper">
-      <div class="row middle-xs features">
-        <div class="col-sm-6 col-md-8 features-image">
-          <Image src={dataImage} alt={data.title} widths={widths} sizes={sizes} />
-        </div>
-        <div class="first-xs last-sm col-xs-12 col-sm-6 col-md-4 section-info">
-          <h2 class="ui-title title">{data.title}</h2>
-          <div class="ui-description description">{data.description}</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="ui-color-section">
-    <div class="wrapper">
-      <div class="row middle-xs features">
-        <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 section-info">
-          <h2 class="ui-title title">{posts.title}</h2>
-          <div class="ui-description description">{posts.description}</div>
-        </div>
-        <div class="col-xs-12 col-sm-6 features-image">
-          <Image src={postsImage} alt={posts.title} widths={widths} sizes={sizes} />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="wrapper">
-    <div class="row middle-xs features">
-      <div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-5 features-image">
-        <Image src={rssImage} alt={rss.title} widths={widths} sizes={sizes} />
-      </div>
-      <div class="first-xs last-sm col-xs-12 col-sm-6 col-md-4 section-info">
-        <h2 class="ui-title title">{rss.title}</h2>
-        <div class="ui-description description">{rss.description}</div>
-      </div>
-    </div>
-  </section>
-  <section class="ui-color-section">
-    <div class="wrapper">
-      <div class="row middle-xs features">
-        <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-4 section-info">
-          <h2 class="ui-title title">{feedback.title}</h2>
-          <div class="ui-description description">{feedback.description}</div>
-        </div>
-        <div class="col-xs-12 col-sm-6 features-image">
-          <Image src={feedbackImage} alt={feedback.title} widths={widths} sizes={sizes} />
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    ))
+  }
   <section class="wrapper case-studies-section contact-section">
     <!-- <div class="row center-xs">
       <div class="col-lg-4">
@@ -141,20 +103,6 @@ const widths = [600, 900, 1200];
     .features {
       height: 100vh;
       min-height: 768px;
-    }
-  }
-
-  .features .images-container {
-    height: 100vh;
-  }
-
-  .features .images-container img {
-    width: auto;
-  }
-
-  @media (width < 992px) {
-    .features .images-container {
-      height: 32.5rem;
     }
   }
 
