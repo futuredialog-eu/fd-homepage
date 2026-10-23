@@ -1,12 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import SvgIcon from '../../components/SvgIcon.astro';
-import platformsImage from '../../assets/features/platforms.png';
-import dataImage from '../../assets/features/data.png';
-import postsImage from '../../assets/features/posts.png';
-import eventsImage from '../../assets/features/events.png';
-import rssImage from '../../assets/features/rss.png';
-import feedbackImage from '../../assets/features/feedback.png';
 import Layout from '../../layouts/Layout.astro';
 import { contact } from '../../data/site';
 import { defaultLocale, getContent, localizePath, locales, type Locale } from '../../i18n';
@@ -20,9 +14,19 @@ export function getStaticPaths() {
 
 const { locale } = Astro.props as { locale: Locale };
 const { featuresPage, ui } = getContent(locale);
+const screenshots = import.meta.glob<{ default: ImageMetadata }>('../../assets/features/*/*.png', {
+  eager: true,
+});
+/** The apps have no Finnish translation yet, so the Finnish page shows the English screenshots. */
+const screenshotLocale: Record<Locale, Locale> = { en: 'en', de: 'de', et: 'et', sv: 'sv', fi: 'en' };
 /** In the order of `featuresPage.items`; the sections alternate image side and background. */
-const images = [platformsImage, dataImage, postsImage, eventsImage, rssImage, feedbackImage];
-const features = featuresPage.items.map((item, index) => ({ ...item, image: images[index] }));
+const imageNames = ['platforms', 'data', 'posts', 'events', 'rss', 'feedback'];
+const features = featuresPage.items.map((item, index) => {
+  const file = `../../assets/features/${screenshotLocale[locale]}/${imageNames[index]}.png`;
+  const image = screenshots[file]?.default;
+  if (!image) throw new Error(`Missing features image ${file}`);
+  return { ...item, image };
+});
 const sizes = '(width < 768px) 100vw, 60vw';
 const widths = [600, 900, 1200];
 ---
