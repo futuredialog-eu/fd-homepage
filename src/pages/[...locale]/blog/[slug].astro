@@ -95,14 +95,20 @@ const shareLinks = [
       </div>
     </div>
     <figure>
-      <Image
-        src={image}
-        alt=""
-        widths={[800, 1200, 1600, 1920]}
-        sizes="(width < 1440px) 50vw, 100vw"
-        loading="eager"
-        fetchpriority="high"
-      />
+      <div class="wrapper">
+        <div class="row">
+          <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8">
+            <Image
+              src={image}
+              alt=""
+              widths={[800, 1200, 1600, 1920]}
+              sizes="(width >= 1200px) 890px, (width >= 768px) 83vw, 100vw"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </div>
       {
         imageCredit && (
           <figcaption class="wrapper">
@@ -498,13 +504,5 @@ const shareLinks = [
 
   .article-footer .contact-form-social a :global(svg) {
     fill: #fff;
-  }
-
-  @media (width < 1440px) {
-    .news-detail figure img {
-      width: 50% !important;
-      text-align: center;
-      margin: auto;
-    }
   }
 </style>
