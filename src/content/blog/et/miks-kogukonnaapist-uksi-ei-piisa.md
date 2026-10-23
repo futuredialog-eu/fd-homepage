@@ -34,13 +34,13 @@ Plaan muudab killustatud tegevuse selge eesmärgiga kampaaniaks. Samuti võimald
 Kui plaan on paigas, on elluviimisel oluline rütm ja järjepidevus. Elanikud märkavad, kui omavalitsus postitab regulaarselt, vastab küsimustele ja selgitab, mis edasi saab. Nad märkavad ka seda, kui küsitlus kaob sõnagi lausumata.
 
 - Avalda sisu ennustatava sagedusega, et elanikud teaksid, et kanal on elus.
-- Kasuta äppi koos tuttavate kanalitega – koduleht, sotsiaalmeedia ja vallaleht – ning suuna need osalemiseks ühte kohta.
+- Kasuta äppi koos tuttavate kanalitega – koduleht, sotsiaalmeedia ja vallaleht – ning suuna neid osalemiseks ühte kohta.
 - Vasta kommentaaridele ja küsimustele mõistliku aja jooksul.
-- Sulge ring: räägi elanikele, mis otsustati ja kuidas nende sisendit kasutati. See on pikaajalise osaluse loomisel kõige olulisem samm.
+- Sulge ring: räägi elanikele, mis otsustati ja kuidas nende sisendit kasutati. See on kaasamises kõige olulisem samm.
 
 ## Mõõtmine: tea, mis tegelikult juhtus
 
-Ilma mõõtmiseta põhineb kaasamine muljetel. Kogukonnaäpp annab andmeid, mida teised kanalid ei anna: kui paljud elanikud avasid sõnumi, kui paljud vastasid küsitlusele, millised teemad pälvisid tähelepanu ja millised jäid tähelepanuta.
+Ilma mõõtmiseta põhineb kaasamine sisetunnetel. Kogukonnaäpp annab andmeid, mida teised kanalid ei anna: kui paljud elanikud avasid sõnumi, kui paljud vastasid küsitlusele, millised teemad pälvisid tähelepanu ja millised jäid tähelepanuta.
 
 Kasulikud näitajad on näiteks:
 
@@ -49,7 +49,7 @@ Kasulikud näitajad on näiteks:
 - **Esindatus:** Kas osalejad peegeldavad kogukonda või ainult selle kõige aktiivsemaid liikmeid?
 - **Vastamine ja tagasiside:** Kui kiiresti küsimustele vastati ja kas tulemustest anti teada?
 
-Eesmärk ei ole koguda võimalikult palju numbreid, vaid mõõta seda, mida plaan defineeris eduna.
+Eesmärk ei ole koguda võimalikult palju numbreid, vaid mõõta seda, mida plaaneerimisel peeti oluliseks.
 
 ## Analüüs: õpi ja paranda
 
@@ -59,7 +59,7 @@ Vastused on otsene sisend järgmisele plaanile. Aja jooksul muudab see tsükkel 
 
 ## Kogukonnaäpist kaasamisprotsessini
 
-Kõige edukamad omavalitsused käsitlevad oma kogukonnaäppi protsessi osana, mitte protsessina iseenesest. Nad planeerivad, mida soovivad teada saada, viivad tegevused järjepidevalt ellu, mõõdavad tulemusi ja kasutavad analüüsi, et järgmisel korral paremini teha.
+Kõige edukamad omavalitsused käsitlevad oma kogukonnaäppi protsessi osana, mitte protsessina iseenesest. Nad planeerivad, mida soovivad teada saada, viivad tegevused järjepidevalt ellu, mõõdavad tulemusi ja analüüsivad, mida järgmisel korral paremini teha.
 
 Future Dialog arendab praegu tööriistu, mis toetavad kogu seda tsüklit – aitavad kommunikatsioonimeeskondadel kaasamistegevusi planeerida, neid eri kanalites ellu viia, osalust mõõta ja tulemusi ühes kohas analüüsida. Meie eesmärk on teha struktureeritud kaasamine kättesaadavaks igale omavalitsusele, ka neile, kus kommunikatsioon on ühe-kahe inimese õlgadel.
 
