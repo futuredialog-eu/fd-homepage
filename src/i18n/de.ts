@@ -1,6 +1,3 @@
-import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
-import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
-import puzzleSolvedImage from '../assets/blog/undraw_puzzle-solved_qdjq.png';
 import hubImage from '../assets/images/hub.jpg';
 import margusRaimImage from '../assets/team/margus-raim.png';
 import toomasLaignaImage from '../assets/team/toomas-laigna.jpeg';
@@ -124,45 +121,6 @@ export const de: Content = {
     title: 'Unser Blog',
     readMore: 'Alle Neuigkeiten lesen',
     readMoreHref: '/blog/',
-    posts: [
-      {
-        title: 'Die Herausforderungen der Kommunikation in Kommunalverwaltungen',
-        href: '/blog/die-herausforderungen-der-kommunikation-in-kommunalverwaltungen/',
-        image: puzzleSolvedImage,
-        categories: [
-          { label: 'Beteiligung', href: '/blog/category/engagement/' },
-          { label: 'Kommunen', href: '/blog/category/municipality/' },
-        ],
-        readingTime: '3 Min. Lesezeit',
-        date: '12. Oktober 2026',
-        dateTime: '2026-10-12T12:00:00+03:00',
-      },
-      {
-        title: 'Warum Bürgerbeteiligung wichtig ist',
-        href: '/blog/warum-buergerbeteiligung-wichtig-ist/',
-        image: gettingOrganizedImage,
-        categories: [
-          { label: 'Beteiligung', href: '/blog/category/engagement/' },
-          { label: 'Kommunen', href: '/blog/category/municipality/' },
-        ],
-        readingTime: '3 Min. Lesezeit',
-        date: '1. Oktober 2026',
-        dateTime: '2026-10-01T12:00:00+03:00',
-      },
-      {
-        title: '10 Vorteile von Community-Apps für Gemeinden und Gemeinschaften',
-        href: '/blog/10-vorteile-von-community-apps-fuer-gemeinden-und-gemeinschaften/',
-        image: publicDiscussionImage,
-        categories: [
-          { label: 'Beteiligung', href: '/blog/category/engagement/' },
-          { label: 'Kommunen', href: '/blog/category/municipality/' },
-          { label: 'News', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 Min. Lesezeit',
-        date: '29. Juli 2021',
-        dateTime: '2021-07-29T13:15:40+03:00',
-      },
-    ],
   },
   contactSection: {
     title: 'Kontakt aufnehmen',

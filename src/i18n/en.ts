@@ -1,6 +1,3 @@
-import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
-import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
-import puzzleSolvedImage from '../assets/blog/undraw_puzzle-solved_qdjq.png';
 import hubImage from '../assets/images/hub.jpg';
 import margusRaimImage from '../assets/team/margus-raim.png';
 import toomasLaignaImage from '../assets/team/toomas-laigna.jpeg';
@@ -120,45 +117,6 @@ export const en: Content = {
     title: 'Our Blog',
     readMore: 'Read all news',
     readMoreHref: '/blog/',
-    posts: [
-      {
-        title: 'The challenges of communication management in local governments',
-        href: '/blog/the-challenges-of-communication-management-in-local-governments/',
-        image: puzzleSolvedImage,
-        categories: [
-          { label: 'Engagement', href: '/blog/category/engagement/' },
-          { label: 'Municipality', href: '/blog/category/municipality/' },
-        ],
-        readingTime: '3 min read',
-        date: 'October 12, 2026',
-        dateTime: '2026-10-12T12:00:00+03:00',
-      },
-      {
-        title: 'Why community engagement matters',
-        href: '/blog/why-community-engagement-matters/',
-        image: gettingOrganizedImage,
-        categories: [
-          { label: 'Engagement', href: '/blog/category/engagement/' },
-          { label: 'Municipality', href: '/blog/category/municipality/' },
-        ],
-        readingTime: '3 min read',
-        date: 'October 1, 2026',
-        dateTime: '2026-10-01T12:00:00+03:00',
-      },
-      {
-        title: '10 benefits of using community apps for municipalities and communities',
-        href: '/blog/10-benefits-of-using-community-apps-for-municipalities-and-communities/',
-        image: publicDiscussionImage,
-        categories: [
-          { label: 'Engagement', href: '/blog/category/engagement/' },
-          { label: 'Municipality', href: '/blog/category/municipality/' },
-          { label: 'News', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 min read',
-        date: 'July 29, 2021',
-        dateTime: '2021-07-29T13:15:40+03:00',
-      },
-    ],
   },
   contactSection: {
     title: 'Get in touch',

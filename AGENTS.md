@@ -86,8 +86,9 @@ than shipping a broken image.
 - Blog post `image` and `thumbnail` are validated by `image()` in
   `content.config.ts` and are relative to the Markdown file:
   `../../../assets/blog/<file>`.
-- The home page teasers (`blogSection.posts` in `src/i18n/*.ts`) import their
-  image at the top of each locale file; `image` is `ImageMetadata`, not a path.
+- The home page teasers are the three newest posts in the locale, rendered by
+  `BlogSection.astro` through `BlogCard` from the collection, so a new post
+  shows up there without touching `src/i18n/*.ts`.
 - The features page imports its five images directly, so they are not in the
   i18n files.
 - The hero image and the team photos (`hero.image`, `contactSection.people`)

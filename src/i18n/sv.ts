@@ -1,6 +1,3 @@
-import gettingOrganizedImage from '../assets/blog/undraw_getting-organized_lyqo.png';
-import publicDiscussionImage from '../assets/blog/undraw_public-discussion_693m.png';
-import puzzleSolvedImage from '../assets/blog/undraw_puzzle-solved_qdjq.png';
 import hubImage from '../assets/images/hub.jpg';
 import margusRaimImage from '../assets/team/margus-raim.png';
 import toomasLaignaImage from '../assets/team/toomas-laigna.jpeg';
@@ -120,45 +117,6 @@ export const sv: Content = {
     title: 'Vår blogg',
     readMore: 'Läs alla nyheter',
     readMoreHref: '/blog/',
-    posts: [
-      {
-        title: 'Utmaningarna med kommunikationsarbete i kommuner',
-        href: '/blog/utmaningarna-med-kommunikationsarbete-i-kommuner/',
-        image: puzzleSolvedImage,
-        categories: [
-          { label: 'Delaktighet', href: '/blog/category/engagement/' },
-          { label: 'Kommun', href: '/blog/category/municipality/' },
-        ],
-        readingTime: '3 min läsning',
-        date: '12 oktober 2026',
-        dateTime: '2026-10-12T12:00:00+03:00',
-      },
-      {
-        title: 'Varför invånardelaktighet är viktig',
-        href: '/blog/varfor-invanardelaktighet-ar-viktig/',
-        image: gettingOrganizedImage,
-        categories: [
-          { label: 'Delaktighet', href: '/blog/category/engagement/' },
-          { label: 'Kommun', href: '/blog/category/municipality/' },
-        ],
-        readingTime: '3 min läsning',
-        date: '1 oktober 2026',
-        dateTime: '2026-10-01T12:00:00+03:00',
-      },
-      {
-        title: '10 fördelar med invånarappar för kommuner och lokalsamhällen',
-        href: '/blog/10-fordelar-med-invanarappar-for-kommuner-och-lokalsamhallen/',
-        image: publicDiscussionImage,
-        categories: [
-          { label: 'Delaktighet', href: '/blog/category/engagement/' },
-          { label: 'Kommun', href: '/blog/category/municipality/' },
-          { label: 'Nyheter', href: '/blog/category/news/' },
-        ],
-        readingTime: '2 min läsning',
-        date: '29 juli 2021',
-        dateTime: '2021-07-29T13:15:40+03:00',
-      },
-    ],
   },
   contactSection: {
     title: 'Kontakta oss',

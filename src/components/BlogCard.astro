@@ -7,9 +7,11 @@ interface Props {
   entry: BlogEntry;
   locale: Locale;
   class?: string;
+  /** Matches the column the card sits in. */
+  sizes?: string;
 }
 
-const { entry, locale, class: className } = Astro.props;
+const { entry, locale, class: className, sizes = '(width < 768px) 100vw, 50vw' } = Astro.props;
 const { blogPage } = getContent(locale);
 const { title, thumbnail, categories, readingMinutes, pubDate } = entry.data;
 const href = localizePath(postPath(entry), locale);
@@ -22,7 +24,7 @@ const readingTime = blogPage.readingTime.replace('{minutes}', String(readingMinu
   itemtype="http://schema.org/Article"
 >
   <a class="news-images" href={href} itemprop="url">
-    <Image src={thumbnail} alt={title} widths={[400, 800, 1200]} sizes="(width < 768px) 100vw, 50vw" />
+    <Image src={thumbnail} alt={title} widths={[400, 800, 1200]} sizes={sizes} />
   </a>
   <div class="info">
     {

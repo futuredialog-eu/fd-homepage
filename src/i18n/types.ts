@@ -26,16 +26,6 @@ export interface Review {
   position: string;
 }
 
-export interface BlogPost {
-  title: string;
-  href: string;
-  image: ImageMetadata;
-  categories: NavItem[];
-  readingTime: string;
-  date: string;
-  dateTime: string;
-}
-
 export interface FeatureItem {
   title: string;
   description: string;
@@ -105,7 +95,6 @@ export interface Content {
     title: string;
     readMore: string;
     readMoreHref: string;
-    posts: BlogPost[];
   };
   contactSection: {
     title: string;
