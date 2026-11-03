@@ -55,12 +55,12 @@ Poängen är inte att samla in så många siffror som möjligt, utan att mäta d
 
 Siffror ensamma säger inte vad som bör göras härnäst. Analysen kopplar resultaten till målen och frågar varför. Fick en enkät få svar för att ämnet inte var relevant, för att den publicerades vid fel tidpunkt eller för att den aldrig nådde rätt personer? Vilka meddelanden ledde till handling, och vilka ignorerades?
 
-Svaren går direkt in i nästa plan. Med tiden gör den här cykeln – planera, genomföra, mäta, analysera – delaktighet till en rutin som blir bättre för varje varv, i stället för en engångsinsats. Den ger också beslutsfattarna belägg för att invånarna har blivit hörda, vilket stärker beslutens legitimitet. Vi utvecklar detta i [varför invånardelaktighet är viktigt](/blog/varfor-invanardelaktighet-ar-viktigt/).
+Svaren går direkt in i nästa plan. Med tiden gör den här cykeln – planera, genomföra, mäta, analysera – delaktighet till en rutin som blir bättre för varje varv, i stället för en engångsinsats. Den ger också beslutsfattarna belägg för att invånarna har blivit hörda, vilket stärker beslutens legitimitet. Vi utvecklar detta i [varför invånardelaktighet är viktig](/blog/varfor-invanardelaktighet-ar-viktigt/).
 
 ## Från invånarapp till delaktighetsprocess
 
 De mest framgångsrika kommunerna ser sin invånarapp som en del av en process, inte som själva processen. De planerar vad de vill ta reda på, genomför konsekvent, mäter resultaten och använder analysen för att göra bättre nästa gång.
 
-Future Dialog utvecklar just nu verktyg som stöder hela denna cykel – som hjälper kommunikationsteam att planera insatser för delaktighet, genomföra dem i flera kanaler, mäta deltagandet och analysera resultaten på ett ställe. Vårt mål är att göra strukturerad invånardialog möjlig för varje kommun, även de där kommunikationen vilar på en eller två personers axlar.
+Future Dialog utvecklar just nu verktyg som stöder hela denna cykel – som hjälper kommunikationsteam att planera insatser för delaktighet, genomföra dem i flera kanaler, mäta deltagandet och analysera resultaten på ett ställe. Vårt mål är att göra strukturerad invånardialog möjlig för varje kommun, även for dem kommunikationen vilar på en eller två personers axlar.
 
-Vill du se hur Future Dialog kan stödja ert arbete med delaktighet? Se [vad vår app kan göra](/features/) och kontakta oss.
+Vill du se hur Future Dialog kan stödja ditt arbete med delaktighet? Se [vad vår app kan göra](/features/) och kontakta oss.
