@@ -7,6 +7,12 @@ It also serves `/eula/` and `/application-privacy-policy/` (from
 `src/legal/`). The mobile apps and the back office link to those two URLs,
 so keep them stable.
 
+The privacy policy's "Usage statistics in the mobile apps" and "Usage
+statistics in the back office" sections describe the opt-in analytics in
+fd-android, fd-ios and fd-backoffice. When an event there starts
+collecting a new kind of data, update these sections too. The "Usage
+analytics" section of each repo's README has the event list.
+
 ```sh
 npm install
 npm run dev       # http://localhost:4321
